@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myapplication/ACET/Acet_Brancehes.dart';
-import 'package:myapplication/Courses/Btech.dart';
+import 'package:myapplication/Courses/Btech/ACET/Acet_Brancehes.dart';
+import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:slide_action/slide_action.dart';
 
 class Acet_home extends StatefulWidget {

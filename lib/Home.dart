@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:myapplication/Courses/Btech.dart';
+import 'package:myapplication/Courses/Btech/Btech.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
