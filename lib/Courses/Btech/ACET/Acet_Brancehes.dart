@@ -1,5 +1,3 @@
-//omm
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Branches extends StatefulWidget {
@@ -9,22 +7,50 @@ class Branches extends StatefulWidget {
   State<Branches> createState() => _BranchesState();
 }
 
-class _BranchesState extends State<Branches> {
-  late PageController _pageController = new PageController(initialPage: 0);
+class _BranchesState extends State<Branches>
+    with SingleTickerProviderStateMixin {
+  final PageController _pageController = PageController(initialPage: 0);
+  AnimationController? controller;
+  Animation? container;
 
   @override
-  List<String> names = ['CSE' , 'ECE' , 'CIV' , 'MEC' , 'IT' , 'EEE' , 'AIML&CSD'];
+  void initState() {
+    super.initState();
+
+    controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
+    container = Tween<double>(begin: 200, end: 1000).animate(controller!);
+
+    controller!.addListener(() {
+      setState(() {
+        print(controller);
+      });
+    });
+
+    controller!.forward();
+  }
+
+  @override
+  void dispose() {
+    controller!.dispose();
+    super.dispose();
+  }
+
+  @override
+  List<String> names = ['CSE', 'ECE', 'CIV', 'MEC', 'IT', 'EEE', 'AIML&CSD'];
   int selectedIndex = 0;
   //Details? d;
 
   List<Details> det = [
     //CSE
-    Details('Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.Department of CSE has good interactions and MOUs with leading technology domain Training & Development Industries. Department of CSE under ACET, signed pacts in the form of MoUs with Infosys (Campus Connect), Microsoft (Campus Agreement), APSSDC. It organizes Exhibitions, Conferences, Seminars and Workshops for both students and Faculty belonging to various Technical Educational Institutions all over India.\n'
-        'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
-        'https://assets.telegraphindia.com/telegraph/2021/Dec/1640601906_resized1.jpg',
+    Details(
+        'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.Department of CSE has good interactions and MOUs with leading technology domain Training & Development Industries. Department of CSE under ACET, signed pacts in the form of MoUs with Infosys (Campus Connect), Microsoft (Campus Agreement), APSSDC. It organizes Exhibitions, Conferences, Seminars and Workshops for both students and Faculty belonging to various Technical Educational Institutions all over India.\n'
+            'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
+        //'https://img.freepik.com/free-vector/engineers-team-discussing-issues-construction-site_74855-4786.jpg?w=1060&t=st=1697969526~exp=1697970126~hmac=718e23f6dca871bb4f60f8ea0e8b85c23b999dadce55e3b7a951af42b781053a',
+        'https://cdn.pixabay.com/photo/2023/10/15/13/59/walnuts-8316999_1280.jpg',
         '23',
         '180',
-        'img/19P31A0513.jpg',
+        '19P31A0513.jpg',
         '19P31A0513',
         'DASI NYISHITHA',
         '6.5',
@@ -45,7 +71,7 @@ class _BranchesState extends State<Branches> {
     Details(
       'The Department of Civil Engineering was established in 2013. It affords the students a solid grounding in better utilization of resources and increased standardization of construction techniques required by means of the construction industry. Students are taught how to use and rent progressive diagram methods and techniques. Exposure to cutting-edge facets planning, development plan and undertaking administration are key factors of the course.\n\n'
           'Civil engineers create, improve and protect the environment in which we live. They plan, design and oversee construction and maintenance of building structures and infrastructure, such as roads, railways, airports, bridges, harbors, dams, irrigation projects, power plants, and water and sewerage systems.',
-      'data:image/jpeg;base64,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',
+      'https://img.freepik.com/free-vector/business-people-working-laptop-development_1262-18907.jpg?w=900&t=st=1697969449~exp=1697970049~hmac=dff737b96796cac2abad3f6bde6af7f4e8866a2fad917017fcbec83b53bbb427',
       '5',
       '150',
       '',
@@ -65,8 +91,7 @@ class _BranchesState extends State<Branches> {
         '20P3540358',
         'KALLA TATAJI',
         '4.5',
-        '61039 to 101347'
-    ),
+        '61039 to 101347'),
     //IT
     Details(
         'The main source and strength of the department is its faculty, the department maintains the faculty as per the ratio , the main focus of the faculty members is to provide in-depth knowledge to the students in the respective course. The undergraduate program is emphasized on theoretical and practical aspects, apart from these the students are nurtured to participate in online coding competitions like TCS Hack Quest, Microsoft Imagine Cup, etc., the department has taken an initiation to expose the student towards the online coding platforms like Hackerrank, Code Chef. The department possesses computer labs with high end configuration and also CM Skill Excellence Center and also possesses a good placement record.\n\n'
@@ -78,8 +103,7 @@ class _BranchesState extends State<Branches> {
         '18P31A1230',
         'PADALA SATYA PRIYA',
         '15',
-        '24581 to 29581'
-    ),
+        '24581 to 29581'),
     //EEE
     Details(
         'The Department was established during the inception of the institute in 2004 as the department of Electrical and Electronics Engineering (EEE). Since its commencement, the primary objective of the department is to impart quality education, training and research at the undergraduate level in various areas of Electrical and Electronics Engineering with broad emphasis on design aspects of electrical systems.. The major areas of faculty expertise of the department include Power Electronics and Drives, Power Systems & Control Systems.The department has adequate teaching faculty having varied fields of specialization in Electrical Engineering. The faculty is engaged in active research in the areas of Power System Optimization, Adaptive Power System Stabilizers, Hybrid Power Systems, Power Electronic Drives, and Large Scale Uncertain Systems.\n\n'
@@ -91,8 +115,7 @@ class _BranchesState extends State<Branches> {
         '20P35A0207',
         'KARRI SIVARAM DURGA',
         '4.2',
-        '26532 to 72696'
-    ),
+        '26532 to 72696'),
     //AIML & CSD
     Details(
         'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.\n\n'
@@ -104,428 +127,392 @@ class _BranchesState extends State<Branches> {
         '19P31A0556',
         'DASI VEERRAJU',
         '7.5',
-        '16591 to 32732'
-
-    ),
-
-
+        '16591 to 32732'),
   ];
 
-  Container con(String txt)
-  {
+  Container con(String txt) {
     return Container(
-      margin:EdgeInsets.symmetric(horizontal:25),
+      margin: EdgeInsets.symmetric(horizontal: 25),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(360),
-          color: Colors.white
-      ),
+          borderRadius: BorderRadius.circular(360), color: Colors.white),
       child: Text(
         txt,
         style: TextStyle(
             color: Colors.deepPurple,
             fontSize: 18,
-            fontWeight: FontWeight.bold
-        ),
+            fontWeight: FontWeight.bold),
       ),
     );
   }
   //Details  = new Details();
 
   Widget build(BuildContext context) {
-
     Size s = MediaQuery.of(context).size;
 
     return Container(
       decoration: BoxDecoration(
-
           gradient: LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
-
-
-              colors: [Colors.pink, Colors.blue])
-      ),
+              colors: [Colors.pink, Colors.blue])),
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
           //appBar: AppBar(title:  Text('OM' , style: TextStyle(fontSize: 20),),),
-          body:
-          Container(
+          body: Center(
+            child: Container(
+              // color: Colors.red,
 
-            height: double.infinity,
-            width: double.infinity,
-            child: SingleChildScrollView(
+              height: container!.value,
+              width: container!.value,
               child: Column(
                 children: [
-                  SizedBox(height: 10,),
-                  Container(
-                    margin: EdgeInsets.only(top:20),
-                    height: 50,
-                    child: Expanded(
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: names.length,
-                          itemBuilder: (context , ind){
-
-                            return InkWell(
-                              // splashFactory: InteractiveInkFeatureFactory(),
-                              onTap: (){
-                                selectedIndex = ind;
-                                print('list view : '+ selectedIndex.toString());
-
-                                setState(() {
-                                });
-                                _pageController.animateToPage(
-                                    selectedIndex,
-                                    duration:Duration(milliseconds: 100),
-                                    curve:Curves.linear
-                                );
-                              },
-                              child:Hero(
-                                tag: 'Swaroop',
-                                child: Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 20),
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(360),
-                                      color: (selectedIndex == ind) ? Colors.white : Colors.black.withOpacity(0.3),
-                                      border: Border.all(color: Colors.white)
-                                  ),
-                                  width: (names[ind].length > 3) ? 120 : 70,
-                                  child: Center(
-                                    child: Text(
-                                      names[ind],style: TextStyle(
-                                        fontSize: 18,
-                                        color: (selectedIndex == ind) ? Colors.deepPurple : Colors.white,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                      ),
-                    ),
+                  SizedBox(
+                    height: 20,
                   ),
-                  //SizedBox(height: 10,),
-                  Container(
-                    height: s.height - 130,
-                    width: double.infinity,
-                    child: Expanded(
-                      child: PageView.builder(
-                          physics: ScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics()
-                          ),
-                          // pageSnapping: true,
-                          padEnds: false,
-                          controller: _pageController,
+                  Expanded(
+                    flex: 4,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: names.length,
+                        itemBuilder: (context, ind) {
+                          return InkWell(
+                            borderRadius: BorderRadius.circular(360),
+                            radius: 0,
+                            onTap: () {
+                              selectedIndex = ind;
+                              print('list view : ' + selectedIndex.toString());
 
-                          onPageChanged: (val){
-                            selectedIndex = val;
-                            print('page view: '+ selectedIndex.toString());
-                            setState(() {
-
-
-                            });
-                            // _pageController.animateToPage(
-                            //     selectedIndex,
-                            //     duration: Duration(seconds: 1),
-                            //     curve: Curves.easeIn
-                            // );
-                          },
-                          itemCount: names.length,
-                          // allowImplicitScrolling: true,
-                          itemBuilder: (context , ind) {
-                            return Hero(
+                              setState(() {});
+                              _pageController.animateToPage(selectedIndex,
+                                  duration: Duration(milliseconds: 100),
+                                  curve: Curves.linear);
+                            },
+                            child: Hero(
                               tag: 'Swaroop',
                               child: Container(
-
-
-                                padding: EdgeInsets.only(top: 30),
-                                // color: Colors.white,
+                                margin: EdgeInsets.symmetric(horizontal: 20),
+                                padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(60),
-                                    topLeft: Radius.circular(60),
-
-                                  ),
-                                  // color: Colors.black.withOpacity(0.3)
-                                ),
-
-                                child: SingleChildScrollView(
-
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 20,),
-                                      Container(
-                                        margin: EdgeInsets.symmetric(horizontal: 20),
-                                        height: 250,
-                                        width: s.width,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(40),
-                                          color: Colors.deepPurple,
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(40),
-                                          child: Image.network(
-                                            //gaplessPlayback: true,
-                                              fit: BoxFit.cover,
-                                              det[selectedIndex].img.toString()
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(height: 20,),
-
-                                      Container(
-                                        padding: EdgeInsets.all(20),
-                                        decoration: BoxDecoration(
-                                            color: Colors.black.withOpacity(0.4),
-                                            borderRadius: BorderRadius.circular(30)
-                                        ),
-                                        margin: EdgeInsets.symmetric(horizontal: 20),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              det[selectedIndex].description.toString(),
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                height: 1.5,
-                                                color: Colors.white,
-                                                // textBaseline: TextBaseline.ideographic
-                                              ),
-                                              textAlign: TextAlign.justify,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height: 20,),
-
-                                      Container(
-                                        height: 450,
-                                        width: double.infinity,
-                                        margin: EdgeInsets.symmetric(horizontal: 20),
-                                        decoration: BoxDecoration(
-                                            color: Colors.black.withOpacity(0.4),
-                                            borderRadius: BorderRadius.circular(30)
-                                        ),
-
-                                        child: Stack(
-                                          alignment: Alignment.topCenter,
-                                          children: [
-                                            Positioned(
-                                              top: 18,
-                                              child: Text('Highest Package: ' +
-                                                  det[selectedIndex].pack.toString() +
-                                                  ' LPA', style: TextStyle(
-                                                  fontSize: 20,
-                                                  letterSpacing: 2,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.white,
-                                                  fontStyle: FontStyle.italic
-                                              ),
-                                              ),
-                                            ),
-
-                                            Positioned(
-
-                                              bottom: 20,
-                                              child: Container(
-                                                height: 300,
-                                                width: 300,
-
-                                                margin: EdgeInsets.only(top: 80),
-                                                decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(
-                                                        60),
-                                                    color: Colors.white
-                                                ),
-                                                //padding: EdgeInsets.symmetric(horizontal: 30),
-                                                child: Stack(
-                                                    children: [
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment
-                                                            .center,
-                                                        children: [
-                                                          Text('PIN: ' +
-                                                              det[selectedIndex].stuid
-                                                                  .toString(),
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .deepPurple,
-                                                                fontSize: 20
-                                                            ),),
-                                                          SizedBox(height: 10,),
-                                                          Text('NAME: ' +
-                                                              det[selectedIndex].stuname
-                                                                  .toString(),
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .deepPurple,
-                                                                fontSize: 20
-                                                            ),),
-                                                          SizedBox(height: 10,),
-                                                          Text(det[selectedIndex].pack
-                                                              .toString() + ' LPA',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .deepPurple,
-                                                                fontSize: 25
-                                                            ),)
-                                                        ],
-                                                      ),
-
-                                                      Positioned(
-                                                          bottom: 0,
-                                                          left: 4,
-                                                          child: Container(
-                                                            padding: EdgeInsets.all(10),
-                                                            decoration: BoxDecoration(
-                                                                borderRadius: BorderRadius
-                                                                    .only(
-                                                                    topRight: Radius
-                                                                        .circular(60),
-                                                                    bottomLeft: Radius
-                                                                        .circular(60)),
-                                                                color: Colors.orange
-                                                            ),
-                                                            child: Center(child: Text(
-                                                              'LPA: ' +
-                                                                  det[selectedIndex]
-                                                                      .pack.toString(),
-                                                              style: TextStyle(
-                                                                fontSize: 18,
-                                                              ),
-                                                            ),
-
-                                                            ),
-                                                          )
-                                                      )
-                                                    ]
-                                                ),
-                                              ),
-                                            ),
-
-                                            Positioned(
-                                              top: 60,
-                                              child: Card(
-                                                elevation: 40,
-                                                shadowColor: Colors.black,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(
-                                                        360)
-                                                ),
-                                                child: Container(
-                                                  height: 130,
-                                                  width: 130,
-
-                                                  decoration: BoxDecoration(
-                                                      borderRadius: BorderRadius
-                                                          .circular(360),
-                                                      color: Colors.red
-                                                  ),
-
-                                                  child: ClipRRect(
-                                                    borderRadius: BorderRadius.circular(
-                                                        (360)),
-                                                    child: Image.asset(
-                                                        fit: BoxFit.cover,
-                                                        det[selectedIndex].stuimg
-                                                            .toString()
-
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      SizedBox(height: 20,),
-
-                                      Container(
-                                        width: s.width,
-                                        margin: EdgeInsets.symmetric(horizontal: 20),
-                                        padding: EdgeInsets.symmetric(vertical: 20),
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(20),
-                                            color: Colors.black.withOpacity(0.4)
-
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .start,
-                                              children: [
-                                                con('Management Cost: '),
-                                                con(det[selectedIndex].mcost.toString())
-                                              ],
-                                            ),
-
-                                            SizedBox(height: 20,),
-
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .start,
-                                              children: [
-                                                con('EAPCET cut off: '),
-                                                con(det[selectedIndex].cutoff
-                                                    .toString())
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      SizedBox(height: 20,)
-                                    ],
+                                    borderRadius: BorderRadius.circular(360),
+                                    color: (selectedIndex == ind)
+                                        ? Colors.white
+                                        : Colors.black.withOpacity(0.3),
+                                    border: Border.all(color: Colors.white)),
+                                width: (names[ind].length > 3) ? 120 : 70,
+                                child: Center(
+                                  child: Text(
+                                    names[ind],
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: (selectedIndex == ind)
+                                            ? Colors.deepPurple
+                                            : Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
-                            );
-                          }
-                      ),
-                    ),
+                            ),
+                          );
+                        }),
                   ),
-                  //SizedBox(height: 20,),
-                  Text(selectedIndex.toString()),
-                  Container(
-                      margin: EdgeInsets.only(left: (s.width/2)-80),
-                      height: 8,
-                      child: Expanded(
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: names.length,
-                            itemBuilder: (context , i){
-                              return Container(
-                                margin: EdgeInsets.symmetric(horizontal: 7),
-                                width: (selectedIndex == i) ? 30 : 8,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(360),
-                                  color: Colors.white,
-                                ),
+                  //SizedBox(height: 10,),
+                  Expanded(
+                    flex: 40,
+                    child: PageView.builder(
 
-                              );
-                            }
-                        ),
-                      )
+                      // pageSnapping: true,
+                        padEnds: false,
+                        controller: _pageController,
+                        onPageChanged: (val) {
+                          selectedIndex = val;
+                          print('page view: ' + selectedIndex.toString());
+                          setState(() {});
+                        },
+                        itemCount: names.length,
+                        // allowImplicitScrolling: true,
+                        itemBuilder: (context, ind) {
+                          return Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            padding: EdgeInsets.only(top: 30),
+                            // color: Colors.white,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(60),
+                                topLeft: Radius.circular(60),
+                              ),
+                              // color: Colors.black.withOpacity(0.3)
+                            ),
+
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    margin:
+                                    EdgeInsets.symmetric(horizontal: 20),
+                                    height: 250,
+                                    width: s.width,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(40),
+                                      color: Colors.deepPurple,
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(40),
+                                      child: Image.network(
+                                          fit: BoxFit.cover,
+                                          det[selectedIndex].img.toString()),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(20),
+                                    decoration: BoxDecoration(
+                                        color: Colors.black.withOpacity(0.4),
+                                        borderRadius:
+                                        BorderRadius.circular(30)),
+                                    margin:
+                                    EdgeInsets.symmetric(horizontal: 20),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          det[selectedIndex]
+                                              .description
+                                              .toString(),
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              height: 1.5,
+                                              color: Colors.white,
+                                              overflow: TextOverflow.clip),
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    height: 450,
+                                    width: double.infinity,
+                                    margin:
+                                    EdgeInsets.symmetric(horizontal: 20),
+                                    decoration: BoxDecoration(
+                                        color: Colors.black.withOpacity(0.4),
+                                        borderRadius:
+                                        BorderRadius.circular(30)),
+                                    child: Stack(
+                                      alignment: Alignment.topCenter,
+                                      children: [
+                                        Positioned(
+                                          top: 18,
+                                          child: Text(
+                                            'Highest Package: ' +
+                                                det[selectedIndex]
+                                                    .pack
+                                                    .toString() +
+                                                ' LPA',
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                letterSpacing: 2,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontStyle: FontStyle.italic),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 20,
+                                          child: Container(
+                                            height: 300,
+                                            width: 300,
+
+                                            margin: EdgeInsets.only(top: 80),
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                BorderRadius.circular(60),
+                                                color: Colors.white),
+                                            //padding: EdgeInsets.symmetric(horizontal: 30),
+                                            child: Stack(children: [
+                                              Column(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'PIN: ' +
+                                                        det[selectedIndex]
+                                                            .stuid
+                                                            .toString(),
+                                                    style: TextStyle(
+                                                        color:
+                                                        Colors.deepPurple,
+                                                        fontSize: 20),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    'NAME: ' +
+                                                        det[selectedIndex]
+                                                            .stuname
+                                                            .toString(),
+                                                    style: TextStyle(
+                                                        color:
+                                                        Colors.deepPurple,
+                                                        fontSize: 20),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    det[selectedIndex]
+                                                        .pack
+                                                        .toString() +
+                                                        ' LPA',
+                                                    style: TextStyle(
+                                                        color:
+                                                        Colors.deepPurple,
+                                                        fontSize: 25),
+                                                  )
+                                                ],
+                                              ),
+                                              Positioned(
+                                                  bottom: 0,
+                                                  left: 4,
+                                                  child: Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                        BorderRadius.only(
+                                                            topRight: Radius
+                                                                .circular(
+                                                                60),
+                                                            bottomLeft: Radius
+                                                                .circular(
+                                                                60)),
+                                                        color: Colors.orange),
+                                                    child: Center(
+                                                      child: Text(
+                                                        'LPA: ' +
+                                                            det[selectedIndex]
+                                                                .pack
+                                                                .toString(),
+                                                        style: TextStyle(
+                                                          fontSize: 18,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ))
+                                            ]),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          top: 60,
+                                          child: Card(
+                                            elevation: 40,
+                                            shadowColor: Colors.black,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.circular(360)),
+                                            child: Container(
+                                              height: 130,
+                                              width: 130,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      360),
+                                                  color: Colors.red),
+                                              // child: ClipRRect(
+                                              //   borderRadius:
+                                              //       BorderRadius.circular(
+                                              //           (360)),
+                                              //   child: Image.asset(
+                                              //       fit: BoxFit.cover,
+                                              //       det[selectedIndex]
+                                              //           .stuimg
+                                              //           .toString()),
+                                              // ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Container(
+                                    width: s.width,
+                                    margin:
+                                    EdgeInsets.symmetric(horizontal: 20),
+                                    padding: EdgeInsets.symmetric(vertical: 20),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.black.withOpacity(0.4)),
+                                    child: Column(
+                                      children: [
+                                        con('Management Cost: ' +
+                                            det[selectedIndex]
+                                                .mcost
+                                                .toString()),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        con('EAPCET cut off: ' +
+                                            det[selectedIndex]
+                                                .cutoff
+                                                .toString()),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  Expanded(
+                    flex: 1,
+                    child: ListView.builder(
+                        padding: EdgeInsets.only(left: s.width / 3),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: names.length,
+                        itemBuilder: (context, i) {
+                          return Container(
+
+                            margin: EdgeInsets.symmetric(horizontal: 7),
+                            width: (selectedIndex == i) ? 30 : 8,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: Colors.white,
+                            ),
+                          );
+                        }),
+                  ),
+                  SizedBox(height: 20,)
                 ],
               ),
             ),
           ),
-
         ),
       ),
     );
   }
 }
 
-class Details
-{
+class Details {
   String? description;
   String? img;
   String? mcost;
@@ -536,8 +523,8 @@ class Details
   String? pack;
   String? cutoff;
 
-  Details(String des , String img , String mcost , String seats , String stuimg , String stuid , String stuname , String pack , String cutoff)
-  {
+  Details(String des, String img, String mcost, String seats, String stuimg,
+      String stuid, String stuname, String pack, String cutoff) {
     this.description = des;
     this.img = img;
     this.mcost = mcost;
@@ -547,7 +534,5 @@ class Details
     this.stuname = stuname;
     this.pack = pack;
     this.cutoff = cutoff;
-
   }
-
 }
