@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/ACET/Acet_home.dart';
+import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 
 class Btech extends StatefulWidget {
   const Btech({super.key});
@@ -30,6 +31,9 @@ class _BtechState extends State<Btech> {
             title: Text("Aditya College of Engineering And Technology"),
           ),
           ListTile(
+            onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>Acoe_home()));
+            },
             title: Text("Aditya college of Engineering"),
           ),
         ],

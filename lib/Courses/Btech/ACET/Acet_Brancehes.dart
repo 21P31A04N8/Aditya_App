@@ -18,7 +18,7 @@ class _BranchesState extends State<Branches>
     super.initState();
 
     controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
     container = Tween<double>(begin: 200, end: 1000).animate(controller!);
 
     controller!.addListener(() {

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
-
-import 'Courses/Btech/ACET/Acet_home.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
@@ -95,53 +92,23 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text('Courses'),
                   childrenPadding: EdgeInsets.symmetric(vertical: 8),
                   children: [
-                    ListTile(
-                      title: Text('                Btech',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),onTap: (){},
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          PopupMenuButton(color: Colors.white,itemBuilder: (context){
-                            return [
-                              PopupMenuItem(child: InkWell(onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Acet_home()));
-                              },
-                                child: Container(width: double.infinity,
-                                    child: Text('AEC',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-                              ),
-
-                              ),
-                              PopupMenuItem(child: Text('ACET',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),
-                              onTap: (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Acet_home()));
-                              },),
-                              PopupMenuItem(child: InkWell(onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Acoe_home()));
-                              },
-                                child: Container(width:double.infinity,
-                                    child: Text('ACOE',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-                              ))
-                            ];
-                          },
-                            child: Icon(Icons.keyboard_arrow_right,color: Colors.white,size: 30,),
-                          )
-                        ],
+                    InkWell(
+                      onTap: (){
+                        widget.onpagechange(Btech());
+                      },
+                      child: SizedBox(
+                        height: 30,
+                        width: 160,
+                        child: Card(color: Colors.white,
+                          child: Center(child: Text("Btech",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                        ),
                       ),
                     ),
-
-                    ListTile(
-                      title: Text('              Pharmacy',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),onTap: (){},
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          PopupMenuButton(color: Colors.white,itemBuilder: (context){
-                            return [
-                              PopupMenuItem(child: Text('APC',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),),
-                              PopupMenuItem(child: Text('ACP',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-                             ];
-                          },
-                            child: Icon(Icons.keyboard_arrow_right,color: Colors.white,size: 30,),
-                          )
-                        ],
+                    SizedBox(
+                      height: 30,
+                      width: 160,
+                      child: Card(color: Colors.white,
+                        child: Center(child: Text("Pharmacy",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
                       ),
                     ),
                     SizedBox(
