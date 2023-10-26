@@ -1,5 +1,3 @@
-// import 'package:animation/Branch_detail.dart';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:myapplication/Courses/Diploma/Branches.dart';

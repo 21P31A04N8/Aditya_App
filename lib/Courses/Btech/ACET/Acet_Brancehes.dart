@@ -189,28 +189,25 @@ class _BranchesState extends State<Branches>
                                   duration: Duration(milliseconds: 100),
                                   curve: Curves.linear);
                             },
-                            child: Hero(
-                              tag: 'Swaroop',
-                              child: Container(
-                                margin: EdgeInsets.symmetric(horizontal: 20),
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(360),
-                                    color: (selectedIndex == ind)
-                                        ? Colors.white
-                                        : Colors.black.withOpacity(0.3),
-                                    border: Border.all(color: Colors.white)),
-                                width: (names[ind].length > 3) ? 120 : 70,
-                                child: Center(
-                                  child: Text(
-                                    names[ind],
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        color: (selectedIndex == ind)
-                                            ? Colors.deepPurple
-                                            : Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20),
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(360),
+                                  color: (selectedIndex == ind)
+                                      ? Colors.white
+                                      : Colors.black.withOpacity(0.3),
+                                  border: Border.all(color: Colors.white)),
+                              width: (names[ind].length > 3) ? 120 : 70,
+                              child: Center(
+                                child: Text(
+                                  names[ind],
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: (selectedIndex == ind)
+                                          ? Colors.deepPurple
+                                          : Colors.white,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ),
