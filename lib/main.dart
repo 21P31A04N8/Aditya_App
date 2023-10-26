@@ -6,6 +6,7 @@ import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Home.dart';
 import 'package:myapplication/Practice.dart';
+import 'package:sizer/sizer.dart';
 
 void main(){
   runApp(MyApp());
@@ -16,11 +17,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
-      title: "Flutter Demo",
-      theme: ThemeData(primarySwatch: Colors.orange),
-      home:Screen(),
-      // home: Acoe_home(),
+    return Sizer(
+      builder:(BuildContext context , Orientation orientation , DeviceType deviceType) {
+
+       return MaterialApp(debugShowCheckedModeBanner: false,
+          title: "Flutter Demo",
+          theme: ThemeData(primarySwatch: Colors.orange),
+          home: Screen(),
+          // home: Acoe_home(),
+        );
+      }
     );
   }
 }
