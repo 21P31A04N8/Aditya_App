@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
+import 'package:myapplication/Courses/Diploma/home.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
@@ -140,7 +141,11 @@ class _MenuScreenState extends State<MenuScreen> {
                       height: 30,
                       width: 160,
                       child: Card(color: Colors.white,
-                        child: Center(child: Text("Diploma",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                        child: Center(child: InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Courses()));
+                            },
+                            child: Text("Diploma",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),))),
                       ),
                     ),
                     SizedBox(
