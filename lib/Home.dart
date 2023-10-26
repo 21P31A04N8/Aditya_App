@@ -44,14 +44,39 @@ class _MainScreenState extends State<MainScreen> {
   @override
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Home")),
-        leading: IconButton(icon:
-        Icon(Icons.menu),onPressed: ()=>ZoomDrawer.of(context)!.toggle(),),
+    return WillPopScope(
+      onWillPop: ()=>_onBackButtonpressed(context),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("Home")),
+          leading: IconButton(icon:
+          Icon(Icons.menu),onPressed: ()=>ZoomDrawer.of(context)!.toggle(),),
+        ),
       ),
     );
   }
+}
+Future <bool> _onBackButtonpressed(BuildContext context) async {
+  bool exitApp=await showDialog(context: context, builder: (BuildContext contex){
+    return AlertDialog(
+      icon: Icon(Icons.info,size: 35,color: Colors.orange,),
+      title: Center(child: Text("Are you sure?")),
+      content: Text("Do you really want to close the app?"),
+      actions: <Widget>[
+        ElevatedButton(
+            onPressed: (){
+          Navigator.of(context).pop(false);
+        },
+            child: Text("No")),
+        ElevatedButton(
+            onPressed: (){
+              Navigator.of(context).pop(true);
+            },
+            child: Text("Yes"))
+      ]
+    );
+  });
+  return exitApp?? false;
 }
 class MenuScreen extends StatefulWidget {
   MenuScreen({super.key,required this.onpagechange});
