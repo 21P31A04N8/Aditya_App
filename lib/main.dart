@@ -1,11 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:myapplication/Courses/Btech/ACET/Acet_home.dart';
-import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
-import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Home.dart';
-import 'package:myapplication/Practice.dart';
 import 'package:sizer/sizer.dart';
 
 void main(){
