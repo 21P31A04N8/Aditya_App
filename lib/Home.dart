@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
-import 'package:myapplication/Courses/Diploma/home.dart';
+import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
+import 'package:myapplication/T-Hub/Thub_Home.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
@@ -193,7 +194,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text('Thub'),
                   leading: Icon(Icons.style_outlined),
                   onTap: (){
-                    widget.onpagechange(Thub());
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>thub_home()));
                   },
                 ),
                 ListTile(
@@ -205,28 +206,6 @@ class _MenuScreenState extends State<MenuScreen> {
               ]
           ),
         )
-    );
-  }
-}
-
-
-class Thub extends StatefulWidget {
-  const Thub({super.key});
-
-  @override
-  State<Thub> createState() => _ThubState();
-}
-
-class _ThubState extends State<Thub> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Thub")),
-        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
-          ZoomDrawer.of(context)!.toggle();
-        },),
-      ),
     );
   }
 }

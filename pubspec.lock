@@ -192,6 +192,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  tale_drawer:
+    dependency: "direct main"
+    description:
+      name: tale_drawer
+      sha256: "47020a9b7efebd06ca36a3b07170a40c7213b4421eff23d26198862f33ecb18c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
@@ -208,6 +216,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  tools_tkmonkey:
+    dependency: transitive
+    description:
+      name: tools_tkmonkey
+      sha256: edc25c28b912b8f5b2f6678d37648e9559e586e80ff0c75c85be6f5b37cec7a6
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   typed_data:
     dependency: transitive
     description:
