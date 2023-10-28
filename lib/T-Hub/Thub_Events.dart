@@ -9,10 +9,7 @@ class Thub_Events extends StatefulWidget {
 class _Thub_EventsState extends State<Thub_Events> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Events")),
-      ),
+    return Scaffold(body: Center(child: Text("Events")),
     );
   }
 }

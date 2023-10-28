@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
-import 'package:myapplication/T-Hub/Thub_Home.dart';
+import 'package:myapplication/T-Hub/Thub.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 

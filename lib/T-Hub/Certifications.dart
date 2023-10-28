@@ -9,10 +9,7 @@ class Certifications extends StatefulWidget {
 class _CertificationsState extends State<Certifications> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Certifications")),
-      ),
+    return Scaffold(body: Center(child: Text("Certificatins")),
     );
   }
 }

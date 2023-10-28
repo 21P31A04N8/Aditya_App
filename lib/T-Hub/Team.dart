@@ -10,10 +10,7 @@ class Team extends StatefulWidget {
 class _TeamState extends State<Team> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Team")),
-      ),
-    );;
+    return Scaffold(body: Center(child: Text("Teams")),
+    );
   }
 }
