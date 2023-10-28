@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapplication/T-Hub/Certifications.dart';
+import 'package:myapplication/T-Hub/Team.dart';
+import 'package:myapplication/T-Hub/Thub_Events.dart';
 import 'package:tale_drawer/tale_drawer.dart';
 
 class thub_home extends StatefulWidget {
@@ -9,10 +12,11 @@ class thub_home extends StatefulWidget {
 }
 
 class _thub_homeState extends State<thub_home> {
+  var lst=[Thub_Home(),Thub_Events(),Certifications(),Team()];
+  int i=0;
   final controller = TaleController();
   @override
   Widget build(BuildContext context) {
-    var drawerController=DrawerState.CLOSED;
     return TaleDrawer(
       controller: controller,
       drawer: Container(
@@ -20,18 +24,38 @@ class _thub_homeState extends State<thub_home> {
         child: ListView(
           children: [
             ListTile(
+              onTap: (){
+                setState(() {
+                  i=0;
+                });
+              },
               leading: Icon(Icons.home),
               title: Text("Home"),
             ),
             ListTile(
+              onTap: (){
+                setState(() {
+                  i=1;
+                });
+              },
               leading: Icon(Icons.event),
               title: Text("Events"),
             ),
             ListTile(
+              onTap: (){
+                setState(() {
+                  i=2;
+                });
+              },
               leading: Icon(Icons.file_copy_outlined),
               title: Text("Certification"),
             ),
             ListTile(
+              onTap: (){
+                setState(() {
+                  i=3;
+                });
+              },
               leading: Icon(Icons.group),
               title: Text("Team"),
             ),
@@ -43,20 +67,31 @@ class _thub_homeState extends State<thub_home> {
         ),
       ),
       type: TaleType.Flip,
-      // type: TaleType.Zoom,
-      //sideState: SideState.RIGHT,
-      body: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("Technical Hub")),
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            controller.open();
-            setState(() {
+      body: lst[i],
+    );
+  }
+}
+class Thub_Home extends StatefulWidget {
+  const Thub_Home({super.key});
 
-            });
-          },),
-        ),
-        body: Center(child: Text("Welcome to T-Hub")),
+  @override
+  State<Thub_Home> createState() => _Thub_HomeState();
+}
+
+class _Thub_HomeState extends State<Thub_Home> {
+  final controller = TaleController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Home")),
+        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
+          controller.open();
+          setState(() {
+          });
+        },),
       ),
+      body: Center(child: Text("Welcome to T-Hub")),
     );
   }
 }

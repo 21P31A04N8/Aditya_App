@@ -89,7 +89,6 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  // List<listItems> draweritems=[
   @override
 
   Widget build(BuildContext context) {
@@ -99,15 +98,7 @@ class _MenuScreenState extends State<MenuScreen> {
           data: ThemeData.dark(),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children:
-              // draweritems.map((e) => ListTile(
-              //   title: e.title,
-              //   leading: e.icon,
-              //   onTap: (){
-              //     onpagechange(e.page);
-              //   },
-              // )).toList()
-              [
+              children: [
                 ListTile(
                   title: Text('Home'),
                   leading: Icon(Icons.home),
