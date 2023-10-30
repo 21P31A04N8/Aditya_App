@@ -182,11 +182,11 @@ class _BranchesState extends State<Branches>
                             radius: 0,
                             onTap: () {
                               selectedIndex = ind;
-                              print('list view : ' + selectedIndex.toString());
+                              //print('list view : ' + selectedIndex.toString());
 
                               setState(() {});
                               _pageController.animateToPage(selectedIndex,
-                                  duration: Duration(milliseconds: 100),
+                                  duration: Duration(milliseconds: 50),
                                   curve: Curves.linear);
                             },
                             child: Container(
@@ -224,7 +224,7 @@ class _BranchesState extends State<Branches>
                         controller: _pageController,
                         onPageChanged: (val) {
                           selectedIndex = val;
-                          print('page view: ' + selectedIndex.toString());
+                         // print('page view: ' + selectedIndex.toString());
                           setState(() {});
                         },
                         itemCount: names.length,
@@ -482,21 +482,30 @@ class _BranchesState extends State<Branches>
 
                   Expanded(
                     flex: 1,
-                    child: ListView.builder(
-                        padding: EdgeInsets.only(left: s.width / 3),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: names.length,
-                        itemBuilder: (context, i) {
-                          return Container(
+                    child: Container(
+                      height: double.maxFinite,
+                        width: double.maxFinite,
+                        padding: EdgeInsets.symmetric(vertical: 3),
+                        child: Container(
+                         // height: 5,
+                          child: ListView.builder(
+                          padding: EdgeInsets.only(left: s.width / 3),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: names.length,
+                          itemBuilder: (context, i) {
+                            return Container(
+                              //height: 5,
 
-                            margin: EdgeInsets.symmetric(horizontal: 7),
-                            width: (selectedIndex == i) ? 30 : 8,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Colors.white,
-                            ),
-                          );
-                        }),
+                              margin: EdgeInsets.symmetric(horizontal: 7),
+                              width: (selectedIndex == i) ? 18 : 10,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(360),
+                                color: Colors.white,
+                              ),
+                            );
+                          }),
+                        ),
+                    ),
                   ),
                   SizedBox(height: 20,)
                 ],

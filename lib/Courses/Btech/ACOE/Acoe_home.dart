@@ -18,69 +18,69 @@ class _Acoe_homeState extends State<Acoe_home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CupertinoColors.activeOrange,
-        title: Text("Aditya College of Engineering"),
-        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
+        title: const Text("Aditya College of Engineering"),
+        leading: IconButton(icon: const Icon(Icons.menu),onPressed: (){
         },),
       ),
       body:
       SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
-            CarouselSlider(
-              items: [Container(
-                child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/banners/popacoe.jpeg"),
-              ),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/204.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/237.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/6.jpg"),
-                ),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/7.jpg"),
-                ),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
-                )
-                ,
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/B.jpg"),
-                )
-              ],
-              options: CarouselOptions(
-                autoPlay: true,
-                enlargeCenterPage: true,
-                viewportFraction: 0.9,
-                aspectRatio: 2.0,
-                initialPage: 2,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
+            const SizedBox(height: 10,),
+            // CarouselSlider(
+            //   items: [Container(
+            //     child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/banners/popacoe.jpeg"),
+            //   ),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/204.jpg"),),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/237.jpg"),),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/6.jpg"),
+            //     ),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/7.jpg"),
+            //     ),
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
+            //     )
+            //     ,
+            //     Container(
+            //       child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/B.jpg"),
+            //     )
+            //   ],
+            //   options: CarouselOptions(
+            //     autoPlay: true,
+            //     enlargeCenterPage: true,
+            //     viewportFraction: 0.9,
+            //     aspectRatio: 2.0,
+            //     initialPage: 2,
+            //   ),
+            // ),
+            const Padding(
+              padding: EdgeInsets.all(15.0),
               child: Text("The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway.  ACOE offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception ACOE has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are two blocks in ACOE, one is Ramanujan Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE, IOT, AIML  and Transport office and the second one is which contains EEE, MECHANICAL, CIVIL."
                 ,style: TextStyle(fontSize: 18),),
             ),
             Container(
               height: 450,
               width: 350,
-              margin: EdgeInsets.symmetric(horizontal: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 5),
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
                   Container(
                     height: 250,
                     width: 300,
-                    margin: EdgeInsets.only(top: 100),
+                    margin: const EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
                         color: Colors.orange
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
@@ -155,7 +155,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                         "Slide to Next Page"
                     ),
@@ -178,7 +178,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                 );
               },
               action: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AcoeBranches()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AcoeBranches()));
               },
             ),
           ],
