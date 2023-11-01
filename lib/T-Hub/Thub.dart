@@ -13,6 +13,8 @@ class thub_home extends StatefulWidget {
 }
 
 class _thub_homeState extends State<thub_home> {
+  var titles=["Home","Events","Certifications","Team"];
+  var appbarColors=[Colors.grey,Colors.blueAccent,Colors.deepPurpleAccent[600],Colors.white];
   var lst=[Thub_Home(),Thub_Events(),Certifications(),Team()];
   int i=0;
   final controller = TaleController();
@@ -21,7 +23,7 @@ class _thub_homeState extends State<thub_home> {
     return TaleDrawer(
       controller: controller,
       drawer: Container(
-        color: Colors.orangeAccent,
+        color: Colors.grey,
         child: ListView(
           children: [
             ListTile(
@@ -74,7 +76,8 @@ class _thub_homeState extends State<thub_home> {
       type: TaleType.Flip,
       body: Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Technical Hub")),
+          backgroundColor: appbarColors[i],
+          title: Center(child: Text(titles[i])),
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
             controller.open();
             setState(() {
