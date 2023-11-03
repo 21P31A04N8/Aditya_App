@@ -8,10 +8,12 @@ class Branches extends StatefulWidget {
 }
 
 class _BranchesState extends State<Branches>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   final PageController _pageController = PageController(initialPage: 0);
   AnimationController? controller;
   Animation? container;
+  AnimationController? blink;
+  Animation? blink_val;
 
   @override
   void initState() {
@@ -21,11 +23,22 @@ class _BranchesState extends State<Branches>
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     container = Tween<double>(begin: 200, end: 1000).animate(controller!);
 
+    blink = AnimationController(vsync: this , duration: Duration(seconds: 2));
+    blink_val = Tween<double>(begin: 0 , end: 1).animate(blink!);
+
     controller!.addListener(() {
       setState(() {
         print(controller);
       });
     });
+
+    blink!.addListener(() {
+      setState(() {
+
+      });
+    });
+
+    blink!.repeat();
 
     controller!.forward();
   }
@@ -171,6 +184,23 @@ class _BranchesState extends State<Branches>
                   SizedBox(
                     height: 20,
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Opacity(
+                        opacity: blink_val!.value,
+                        child: Text('Aditya college of engineering and technology' ,
+                          style: TextStyle(
+                              color: Colors.amber ,
+                              fontSize: 23,
+                              decoration: TextDecoration.underline
+
+                          ),
+                          textAlign: TextAlign.justify,
+                        )
+                    ),
+                  ),
+
+                  SizedBox(height: 20,),
                   Expanded(
                     flex: 4,
                     child: ListView.builder(
@@ -497,7 +527,7 @@ class _BranchesState extends State<Branches>
                               //height: 5,
 
                               margin: EdgeInsets.symmetric(horizontal: 7),
-                              width: (selectedIndex == i) ? 18 : 10,
+                              width: (selectedIndex == i) ? 18 : 8,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(360),
                                 color: Colors.white,
