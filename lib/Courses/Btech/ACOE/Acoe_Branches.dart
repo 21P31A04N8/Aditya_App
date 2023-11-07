@@ -421,7 +421,7 @@ class _AcoeBranchesState extends State<AcoeBranches> {
 
                                                       Positioned(
                                                           bottom: 0,
-                                                          left: 4,
+                                                          left: 50,
                                                           child: Container(
                                                             padding: EdgeInsets.all(10),
                                                             decoration: BoxDecoration(

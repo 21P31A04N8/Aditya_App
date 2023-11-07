@@ -4,6 +4,7 @@ class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
 
+
   @override
   Widget build(BuildContext context) {
     int h=MediaQuery.of(context).size.height.toInt();
@@ -68,7 +69,7 @@ class FirstScreen extends StatelessWidget {
                     child: Container(
                       color: Colors.blue,
                       child: Padding(
-                        padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                         child: Image.network(fit: BoxFit.fill,
                             "https://cdn.pixabay.com/photo/2023/08/26/15/21/mushroom-8215265_1280.jpg"),
                       ),

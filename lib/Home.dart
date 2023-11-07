@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
-import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
-import 'package:myapplication/Courses/Pharmacy/Aditya_pharmacy_college.dart';
-import 'package:myapplication/T-Hub/Thub.dart';
+
+import 'Courses/Btech/ACET/Acet_home.dart';
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
@@ -47,39 +47,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
 
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: ()=>_onBackButtonpressed(context),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("Home")),
-          leading: IconButton(icon:
-          Icon(Icons.menu),onPressed: ()=>ZoomDrawer.of(context)!.toggle(),),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Home")),
+        leading: IconButton(icon:
+        Icon(Icons.menu),onPressed: ()=>ZoomDrawer.of(context)!.toggle(),),
       ),
     );
   }
-}
-Future <bool> _onBackButtonpressed(BuildContext context) async {
-  bool exitApp=await showDialog(context: context, builder: (BuildContext contex){
-    return AlertDialog(
-      icon: Icon(Icons.info,size: 35,color: Colors.orange,),
-      title: Center(child: Text("Are you sure?")),
-      content: Text("Do you really want to close the app?"),
-      actions: <Widget>[
-        ElevatedButton(
-            onPressed: (){
-          Navigator.of(context).pop(false);
-        },
-            child: Text("No")),
-        ElevatedButton(
-            onPressed: (){
-              Navigator.of(context).pop(true);
-            },
-            child: Text("Yes"))
-      ]
-    );
-  });
-  return exitApp?? false;
 }
 class MenuScreen extends StatefulWidget {
   MenuScreen({super.key,required this.onpagechange});
@@ -90,6 +65,7 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+  // List<listItems> draweritems=[
   @override
 
   Widget build(BuildContext context) {
@@ -99,7 +75,15 @@ class _MenuScreenState extends State<MenuScreen> {
           data: ThemeData.dark(),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children:
+              // draweritems.map((e) => ListTile(
+              //   title: e.title,
+              //   leading: e.icon,
+              //   onTap: (){
+              //     onpagechange(e.page);
+              //   },
+              // )).toList()
+              [
                 ListTile(
                   title: Text('Home'),
                   leading: Icon(Icons.home),
@@ -111,39 +95,60 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text('Courses'),
                   childrenPadding: EdgeInsets.symmetric(vertical: 8),
                   children: [
-                    InkWell(
-                      onTap: (){
-                        widget.onpagechange(Btech());
-                      },
-                      child: SizedBox(
-                        height: 30,
-                        width: 160,
-                        child: Card(color: Colors.white,
-                          child: Center(child: Text("Btech",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-                        ),
-                      ),
+                    ListTile(
+                      title: Text('                Btech',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),onTap: (){},
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          PopupMenuButton(color: Colors.white,itemBuilder: (context){
+                            return [
+                              PopupMenuItem(child: InkWell(onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Acet_home()));
+                              },
+                                child: Container(width: double.infinity,
+                                    child: Text('AEC',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                              ),
 
+                              ),
+                              PopupMenuItem(child: Text('ACET',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),
+                                onTap: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Acet_home()));
+                                },),
+                              PopupMenuItem(child: InkWell(onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Acoe_home()));
+                              },
+                                child: Container(width:double.infinity,
+                                    child: Text('ACOE',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                              ))
+                            ];
+                          },
+                            child: Icon(Icons.keyboard_arrow_right,color: Colors.white,size: 30,),
+                          )
+                        ],
+                      ),
                     ),
-                    InkWell(onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>APC()));
-                    },
-                      child: SizedBox(
-                        height: 30,
-                        width: 160,
-                        child: Card(color: Colors.white,
-                          child: Center(child: Text("Pharmacy",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-                        ),
+
+                    ListTile(
+                      title: Text('              Pharmacy',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),onTap: (){},
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          PopupMenuButton(color: Colors.white,itemBuilder: (context){
+                            return [
+                              PopupMenuItem(child: Text('APC',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),),
+                              PopupMenuItem(child: Text('ACP',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
+                            ];
+                          },
+                            child: Icon(Icons.keyboard_arrow_right,color: Colors.white,size: 30,),
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(
                       height: 30,
                       width: 160,
                       child: Card(color: Colors.white,
-                        child: Center(child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Courses()));
-                            },
-                            child: Text("Diploma",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),))),
+                        child: Center(child: Text("Diploma",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
                       ),
                     ),
                     SizedBox(
@@ -191,7 +196,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text('Thub'),
                   leading: Icon(Icons.style_outlined),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>thub_home()));
+                    widget.onpagechange(Thub());
                   },
                 ),
                 ListTile(
@@ -203,6 +208,28 @@ class _MenuScreenState extends State<MenuScreen> {
               ]
           ),
         )
+    );
+  }
+}
+
+
+class Thub extends StatefulWidget {
+  const Thub({super.key});
+
+  @override
+  State<Thub> createState() => _ThubState();
+}
+
+class _ThubState extends State<Thub> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Thub")),
+        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
+          ZoomDrawer.of(context)!.toggle();
+        },),
+      ),
     );
   }
 }
