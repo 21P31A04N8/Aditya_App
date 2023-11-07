@@ -23,7 +23,7 @@ class _BranchesState extends State<Branches>
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     container = Tween<double>(begin: 200, end: 1000).animate(controller!);
 
-    blink = AnimationController(vsync: this , duration: Duration(seconds: 2));
+    blink = AnimationController(vsync: this , duration: Duration(milliseconds: 1500));
     blink_val = Tween<double>(begin: 0 , end: 1).animate(blink!);
 
     controller!.addListener(() {
@@ -38,7 +38,7 @@ class _BranchesState extends State<Branches>
       });
     });
 
-    blink!.repeat();
+    blink!.forward();
 
     controller!.forward();
   }
@@ -190,7 +190,7 @@ class _BranchesState extends State<Branches>
                         opacity: blink_val!.value,
                         child: Text('Aditya college of engineering and technology' ,
                           style: TextStyle(
-                              color: Colors.amber ,
+                              color: Colors.white ,
                               fontSize: 23,
                               decoration: TextDecoration.underline
 

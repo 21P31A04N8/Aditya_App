@@ -1,4 +1,4 @@
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -37,7 +37,7 @@ class _branch_detState extends State<branch_det> {
                 child: Row(
                   children: [
                     Card(
-                      elevation: 20,
+                        elevation: 20,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(360),
                       ),
@@ -46,9 +46,9 @@ class _branch_detState extends State<branch_det> {
                           height: 10.w,
                           width: 10.w,
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: Colors.black)
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(360),
+                            border: Border.all(color: Colors.black)
                           ),
                           child: Center(
                             child: IconButton(onPressed:(){
@@ -64,64 +64,87 @@ class _branch_detState extends State<branch_det> {
             Expanded(
               flex: 17,
               child: PageView(
-                  onPageChanged: (val){
-                    cur_page = val;
-                    setState(() {
+                onPageChanged: (val){
+                  cur_page = val;
+                  setState(() {
 
-                    });
-                  },
-                  // itemCount: 3,
-                  children:
+                  });
+                },
+                // itemCount: 3,
+                 children:
                   [
-                    Container(
+                  Container(
                       height: double.maxFinite,
                       width: double.maxFinite,
                       // color: Colors.white,
-                      child: SingleChildScrollView(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              elevation: 20,
-                              child: Container(
-                                height: 40.h,
-                                width: 60.w,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(40),
-                                    color: Colors.purpleAccent
-                                ),
-                                child: Image.network(widget.branchimg),
-                              ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40),
                             ),
-                            Container(
-                              height: 50.h,
-                              width: 80.w,
+                            elevation: 20,
+                            child: Container(
+                              height: 30.h,
+                              width: 50.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.black.withOpacity(0.4),
+                                color: Colors.purpleAccent
                               ),
-                              child: Column(
-                                children: [
-                                  Text(widget.branch)
-                                ],
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(40),
+                                  child: Image.network(fit:BoxFit.cover,widget.branchimg)
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Container(
+                            height: 30.h,
+                            width: 40.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(widget.branch)
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                  ),
 
                     Container(
                       height: double.maxFinite,
                       width: double.maxFinite,
                       color: Colors.white,
-                      child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-
+                          Transform.rotate(
+                            angle: (-10 * 3.14)/180,
+                            child: Container(
+                              height: 40.h,
+                              width: 40.w,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.greenAccent
+                              ),
+                            ),
+                          ),
+                          Transform.rotate(
+                            angle: (10 * 3.14)/180,
+                            child: Container(
+                              height: 40.h,
+                              width: 40.w,
+                              // color: Colors.red,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.red
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -139,7 +162,7 @@ class _branch_detState extends State<branch_det> {
               ),
             ),
             Expanded(
-                flex: 2,
+              flex: 2,
                 child: Container(
                   height: double.maxFinite,
                   width: double.maxFinite,
