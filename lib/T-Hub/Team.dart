@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class Team extends StatefulWidget {
   const Team({super.key});
@@ -10,7 +11,16 @@ class Team extends StatefulWidget {
 class _TeamState extends State<Team> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Teams")),
+    return Scaffold(
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
+          ),
+          title: Center(child: Text("Team"))),
+      body: Center(child: Text("Teams")),
     );
   }
 }
