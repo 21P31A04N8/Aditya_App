@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
+import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/T-Hub/Thub.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Screen extends StatefulWidget {
   const Screen({super.key});
@@ -212,17 +214,22 @@ class _MenuScreenState extends State<MenuScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "Diploma",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Courses()));
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Card(
+                      color: Colors.white,
+                      child: Center(
+                          child: Text(
+                        "Diploma",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
+                    ),
                   ),
                 ),
                 SizedBox(

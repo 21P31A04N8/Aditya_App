@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -60,7 +59,7 @@ class _branch_detState extends State<branch_det> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Expanded(
               flex: 17,
               child: PageView(
@@ -125,7 +124,7 @@ class _branch_detState extends State<branch_det> {
                           Transform.rotate(
                             angle: (-10 * 3.14)/180,
                             child: Container(
-                              height: 40.h,
+                              height: 70.w,
                               width: 40.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
@@ -136,7 +135,7 @@ class _branch_detState extends State<branch_det> {
                           Transform.rotate(
                             angle: (10 * 3.14)/180,
                             child: Container(
-                              height: 40.h,
+                              height: 70.w,
                               width: 40.w,
                               // color: Colors.red,
                               decoration: BoxDecoration(
@@ -152,7 +151,7 @@ class _branch_detState extends State<branch_det> {
                     Container(
                       height: double.maxFinite,
                       width: double.maxFinite,
-                      child: Column(
+                      child: const Column(
                         children: [
 
                         ],

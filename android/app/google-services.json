@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196384979457",
+    "project_id": "aditya-2k23",
+    "storage_bucket": "aditya-2k23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196384979457:android:5f3408bfa532ea7b6c5e00",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwlyBeBIfsuUbuZ0ktwRCRck349FiJXi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
