@@ -192,7 +192,7 @@ class _BranchesState extends State<Branches>
                           style: TextStyle(
                               color: Colors.white ,
                               fontSize: 23,
-                              decoration: TextDecoration.underline
+                              // decoration: TextDecoration.underline
 
                           ),
                           textAlign: TextAlign.justify,

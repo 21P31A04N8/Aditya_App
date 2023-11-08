@@ -197,11 +197,13 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
   {
     showDialog(context:context , builder: (context){
         return AlertDialog(
+          icon: Icon(Icons.card_travel),
+          iconPadding: EdgeInsets.only(right:4),
           content:Container(
           height: height,
           width: width,
           color: Colors.blue,
-          child: Image.asset(fit:BoxFit.cover , img)
+          child: Image.asset(fit:BoxFit.fill , img)
            )
         );
     });
@@ -238,24 +240,16 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                   itemCount: img.length,
                   itemBuilder: (context  , i ,j){
                     return Container(
-                      height:200,
                       decoration:BoxDecoration(
                         color: Colors.black.withOpacity(0.4),
                       ),
-                      child: Stack(
-                          children:
-                          [
-                            Center(child: CircularProgressIndicator()),
-                            FadeInImage.memoryNetwork(fit: BoxFit.cover , placeholder: kTransparentImage, image: img[i])
-                        ]
-                    ),
-                      margin: EdgeInsets.symmetric(horizontal: 20),
-                      width: double.infinity - 50,
+                      child: FadeInImage.memoryNetwork(fit: BoxFit.fill , placeholder: kTransparentImage, image: img[i]),
+                      margin: EdgeInsets.symmetric(horizontal: 10),
                     );
                   },
                   options: CarouselOptions(
-                    height: 200,
-                    viewportFraction: 0.7,
+                    enlargeCenterPage: true,
+                    viewportFraction: 1,
                     autoPlay: true
 
                   ),
@@ -272,7 +266,6 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
               Text("BRANCHES" , style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.underline,
                   )),
               Container(
                 // margin: EdgeInsets.only(top: 100),
@@ -309,6 +302,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                            shape: RoundedRectangleBorder(
                              borderRadius: BorderRadius.circular(40)
                            ),
+                           elevation:20,
                            child: Container(
                              padding: EdgeInsets.symmetric(horizontal: 12),
                              height: (s.width/2)+100,
@@ -404,8 +398,10 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                          transform: Matrix4.skewY(threed!.value),
                          child: Card(
                            shape: RoundedRectangleBorder(
-                             borderRadius: BorderRadius.circular(40)
+                             borderRadius: BorderRadius.circular(40),
+                             
                            ),
+                           elevation:20,
                            child: Container(
                              padding: EdgeInsets.symmetric(horizontal: 12),
                              height: (s.width/2)+100,
@@ -496,7 +492,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                        child: Transform(
                          transform: Matrix4.skewY(fourd!.value),
                          child: Card(
-                           elevation: 10,
+                           elevation: 20,
                            shape: RoundedRectangleBorder(
                              borderRadius: BorderRadius.circular(40)
                            ),
@@ -518,7 +514,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                                  Row(
                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                    children: [
-                                     Text('CSE',
+                                     Text('CME',
                                        style: TextStyle(
                                          fontSize: 28,
                                          fontWeight: FontWeight.bold,
@@ -542,7 +538,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                                          child: Center(
                                            child: IconButton(
                                              onPressed: (){
-                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>branch_det(bgcol: Colors.blueAccent.shade200, branch: 'CSE', branchimg: 'https://img.freepik.com/free-vector/coding-round-composition_1284-40752.jpg?w=740&t=st=1698204563~exp=1698205163~hmac=441edcadac3d45ea95daf1095daae584b7d1d5460fa664c8398271c5d8e5fc91')));
+                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>branch_det(bgcol: Colors.blueAccent.shade200, branch: 'CME', branchimg: 'https://img.freepik.com/free-vector/coding-round-composition_1284-40752.jpg?w=740&t=st=1698204563~exp=1698205163~hmac=441edcadac3d45ea95daf1095daae584b7d1d5460fa664c8398271c5d8e5fc91')));
                                              },
 
                                              icon: Icon(Icons.arrow_forward , )
@@ -631,7 +627,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                                           shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(360)
                                           ),
-                                          elevation: 10,
+                                          elevation: 20,
                                           child: Container(
 
                                             height: (s.width)/8,
@@ -709,6 +705,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(40)
                               ),
+                              elevation:20,
                               child: Container(
                                 padding: EdgeInsets.symmetric(horizontal: 12),
                                 height: (s.width/2)+100,
@@ -807,6 +804,7 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(40)
                               ),
+                              elevation:20,
                               child: Container(
                                 padding: EdgeInsets.all(8),
                                 height: (s.width/2)+100,
