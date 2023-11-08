@@ -193,6 +193,20 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
 
   }
 
+  Future show(String img , double height , double width) async
+  {
+    showDialog(context:context , builder: (context){
+        return AlertDialog(
+          content:Container(
+          height: height,
+          width: width,
+          color: Colors.blue,
+          child: Image.asset(fit:BoxFit.cover , img)
+           )
+        );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -865,105 +879,45 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin{
                           ),
                         ),
                       ),
-                      // Positioned(
-                      //   right: 180,
-                      //   bottom: four8!.value,
-                      //   child: InkWell(
-                      //     onTap: (){
-                      //       _animationController1!.reset();
-                      //       _animationController2!.reset();
-                      //       _animationController3!.reset();
-                      //       _animationController4!.reset();
-                      //       _animationController5!.reset();
-                      //       _animationController6!.reset();
-                      //       _animationController7!.reset();
-                      //       _animationController8!.forward();
-                      //
-                      //     },
-                      //     child: Transform(
-                      //       transform: Matrix4.skewY(fourd8!.value),
-                      //       child: Card(
-                      //         elevation: 10,
-                      //         shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(40)
-                      //         ),
-                      //         child: Container(
-                      //           padding: EdgeInsets.all(8),
-                      //           height: 300,
-                      //           width: 200,
-                      //           decoration: BoxDecoration(
-                      //               borderRadius: BorderRadius.circular(40),
-                      //
-                      //               border: Border.all(color: Colors.green.shade900,width: 2),
-                      //               color: Colors.greenAccent
-                      //           ),
-                      //           child: Column(
-                      //             crossAxisAlignment: CrossAxisAlignment.start,
-                      //             mainAxisAlignment: MainAxisAlignment.center,
-                      //             children: [
-                      //               SizedBox(height: 20,),
-                      //               Row(
-                      //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //                 children: [
-                      //                   Text('CSE',
-                      //                     style: TextStyle(
-                      //                       fontSize: 28,
-                      //                       fontWeight: FontWeight.bold,
-                      //                     ),),
-                      //                   Card(
-                      //                     shape: RoundedRectangleBorder(
-                      //                         borderRadius: BorderRadius.circular(360)
-                      //                     ),
-                      //                     elevation: 10,
-                      //                     child: Container(
-                      //
-                      //                       height: 60,
-                      //                       width: 60,
-                      //                       decoration: BoxDecoration(
-                      //                           borderRadius: BorderRadius.circular(360),
-                      //                           border: Border.all(
-                      //                               color: Colors.black
-                      //                           ),
-                      //                           color: Colors.white
-                      //                       ),
-                      //                       child: Center(
-                      //                         child: IconButton(
-                      //                           onPressed: (){
-                      //
-                      //                           },
-                      //
-                      //                           icon: Icon(Icons.arrow_forward),
-                      //                         ),
-                      //                       ),
-                      //                     ),
-                      //                   )
-                      //                 ],
-                      //               ),
-                      //               SizedBox(height: 20,),
-                      //               Container(
-                      //                 // margin: EdgeInsets.only(left: 50),
-                      //                 height: 150,
-                      //                 width: 190,
-                      //                 child: Image.network(
-                      //                     fit:BoxFit.cover,
-                      //                     'https://img.freepik.com/free-vector/coding-round-composition_1284-40752.jpg?w=740&t=st=1698204563~exp=1698205163~hmac=441edcadac3d45ea95daf1095daae584b7d1d5460fa664c8398271c5d8e5fc91'),
-                      //               )
-                      //             ],
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // )
+                      
                     ],
                   ),
                 ),
               SizedBox(height:100),
-              Container(
-                height: 100,
-                width: 300,
-                color: Colors.blue,
-              )
+              Text("Latest information:" , style:TextStyle(fontSize:30)),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:20.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20,),
+                    GestureDetector(
+                      onTap:(){
+                            show('assets/dip_img/thought.jpeg' , 200 , double.infinity);
+                      },
+
+                      child: Container(
+                        height:200,
+                        width: double.infinity,
+                        margin:EdgeInsets.symmetric(horizontal:20),
+                        decoration: BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                          color: Colors.blue,
+                          border:Border.all(color: Colors.orange , width: 3)
+                        ),
+                        child:ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            fit: BoxFit.cover,
+                            "assets/dip_img/thought.jpeg"),
+                        ),
+                        
+                      ),
+                    ),
+                    SizedBox(height:20),
+                  ],
+                ),
+              ),
+              
             ],
           ),
         ),

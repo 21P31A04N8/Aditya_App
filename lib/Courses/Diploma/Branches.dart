@@ -13,18 +13,42 @@ class branch_det extends StatefulWidget {
     super.key
   });
 
+  
+
   @override
   State<branch_det> createState() => _branch_detState();
 }
 
 class _branch_detState extends State<branch_det> {
+
+  String branch_key = "s";
+
+  @override
+  void initState(){
+    super.initState();
+    
+    branch_key = widget.branch;
+  }
+  var temp = "CSE";
+
   @override
   int cur_page = 0;
+
+  var des = {
+    "CSE":"Diploma in Computer science is a 1-3 year program that deals with computer programming and coding languages. Since it is a diploma course the depth is kept at the beginner level.",
+    "ECE" : "In this course, students learn engineering discipline electrical components such as semiconductor devices, electron tubes, diodes, transistors, integrated circuits, electronic circuits, devices and systems, and also learn passive components and printed circuit boards." ,
+    "CIV" : "The course of Civil Engineering in Diploma basically focuses on planning, designing, execution and the maintenance of bridges, buildings, roads, etc. ",
+    "MEC" : "Diploma in Mechanical Engineering deals with design, manufacture and maintenance of mechanical equipment by applying the basic principles of mechanics. ",
+    "EEE" : " The course deals with installation, maintenance, troubleshooting, magnetism, control systems, signal processing and telecommunications.",
+    "CSN" : "Computer networking refers to interconnected computing devices that can exchange data and share resources with each other.",
+            
+    
+    };
 
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: widget.bgcol,
+        backgroundColor: Colors.greenAccent,
         body: Column(
           children: [
             //SizedBox(height: 20,),
@@ -76,7 +100,7 @@ class _branch_detState extends State<branch_det> {
                       height: double.maxFinite,
                       width: double.maxFinite,
                       // color: Colors.white,
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Card(
@@ -85,8 +109,8 @@ class _branch_detState extends State<branch_det> {
                             ),
                             elevation: 20,
                             child: Container(
-                              height: 30.h,
-                              width: 50.w,
+                              height: 50.w,
+                              width: 70.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
                                 color: Colors.purpleAccent
@@ -97,17 +121,29 @@ class _branch_detState extends State<branch_det> {
                               ),
                             ),
                           ),
+                          SizedBox(height:20),
                           Container(
-                            height: 30.h,
-                            width: 40.w,
+                            height: 75.w,
+                            width: 80.w,
+                            padding: EdgeInsets.all(20),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(40),
                               color: Colors.black.withOpacity(0.4),
                             ),
-                            child: Column(
-                              children: [
-                                Text(widget.branch)
-                              ],
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(des[branch_key]!, style: TextStyle(
+                                    fontSize: (5.5).w,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold
+                            
+                                  ),
+                                  // textAlign: TextAlign.justify,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
