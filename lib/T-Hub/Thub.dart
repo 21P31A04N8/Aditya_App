@@ -51,7 +51,7 @@ class _MainScreen1State extends State<MainScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Home")),
+        title: Center(child: Text("Home ")),
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () => ZoomDrawer.of(context)!.toggle(),
