@@ -3,7 +3,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
-import 'package:myapplication/T-Hub/Team.dart';
+import 'package:myapplication/T-Hub/Team/Team.dart';
 import 'package:myapplication/T-Hub/Thub.dart';
 import 'package:myapplication/T-Hub/Thub_Events.dart';
 

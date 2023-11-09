@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:myapplication/T-Hub/Team/Team_member.dart';
+import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 class Team extends StatefulWidget {
   const Team({super.key});
@@ -10,7 +12,7 @@ class Team extends StatefulWidget {
 }
 
 class _TeamState extends State<Team> {
-  var Teampics = [
+  final List<String> Teampics = [
     "assets/Thub/Team/ARAVIND.png",
     "assets/Thub/Team/ARJUN.png",
     "assets/Thub/Team/ASHOK-M.png",
@@ -65,6 +67,61 @@ class _TeamState extends State<Team> {
     "assets/Thub/Team/VEERABABU.png",
     "assets/Thub/Team/VIJAY.png",
   ];
+  final List<String> title = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ];
   Widget MyTile(int i) {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -75,36 +132,34 @@ class _TeamState extends State<Team> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> images = Teampics.map((image) {
+      return Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            image:
+                DecorationImage(fit: BoxFit.cover, image: AssetImage(image))),
+      );
+    }).toList();
     return Scaffold(
-        appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {
-                ZoomDrawer.of(context)!.toggle();
-              },
-            ),
-            title: Center(child: Text("Team"))),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              color: Colors.blue,
-              height: 600,
-              child: CarouselSlider.builder(
-                  itemCount: Teampics.length,
-                  itemBuilder:
-                      (BuildContext context, int itemIndex, int pageViewIndex) {
-                    return MyTile(itemIndex);
-                  },
-                  options: CarouselOptions(
-                    enlargeCenterPage: true,
-                    viewportFraction: 0.9,
-                    aspectRatio: 10.0,
-                    initialPage: 2,
-                    scrollDirection: Axis.vertical,
-                  )),
-            ),
-          ],
-        ));
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
+          ),
+          title: Center(child: Text("Team"))),
+      backgroundColor: Colors.black,
+      body: VerticalCardPager(
+        onSelectedItem: (index) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Team_Mem(imagepath: Teampics[index])));
+        },
+        titles: title,
+        images: images,
+      ),
+    );
   }
 }
