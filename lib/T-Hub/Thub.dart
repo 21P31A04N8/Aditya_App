@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:myapplication/Courses/Btech/ACET/Acet_Brancehes.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
 import 'package:myapplication/T-Hub/Team/Team.dart';
+import 'package:myapplication/T-Hub/Technologies.dart';
 import 'package:myapplication/T-Hub/Thub.dart';
 import 'package:myapplication/T-Hub/Thub_Events.dart';
 
@@ -56,6 +58,14 @@ class _MainScreen1State extends State<MainScreen1> {
           icon: Icon(Icons.menu),
           onPressed: () => ZoomDrawer.of(context)!.toggle(),
         ),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Technology()));
+            },
+            child: Text("Technology")),
       ),
     );
   }

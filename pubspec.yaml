@@ -75,6 +75,7 @@ flutter:
   assets:
       - assets/dip_img/
       - assets/Thub/Team/
+      - assets/Thub/Technologies/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
