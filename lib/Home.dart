@@ -10,6 +10,8 @@ import 'package:myapplication/T-Hub/Thub.dart';
 import 'Courses/Btech/ACET/Acet_home.dart';
 import 'package:page_transition/page_transition.dart';
 
+final _zoomDrawerController = ZoomDrawerController();
+
 class Screen extends StatefulWidget {
   const Screen({super.key});
 
@@ -22,6 +24,7 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
+      controller: _zoomDrawerController,
       menuScreen: Builder(builder: (context) {
         return MenuScreen(
           onpagechange: (a) {
@@ -60,6 +63,14 @@ class _MainScreenState extends State<MainScreen> {
           onPressed: () => ZoomDrawer.of(context)!.toggle(),
         ),
       ),
+      body: Center(child: Text("Home")),
+      // body: ElevatedButton(
+      //     onPressed: () {
+      //       setState(() {
+      //         _zoomDrawerController.open?.call();
+      //       });
+      //     },
+      //     child: Text("OPEN")),
     );
   }
 }
@@ -106,7 +117,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text(
                     '                Btech',
                     style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   onTap: () {},
                   trailing: Row(
@@ -146,6 +157,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acet_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  _zoomDrawerController.close;
+                                });
                               },
                             ),
                             PopupMenuItem(
@@ -155,6 +170,9 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acoe_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                });
                               },
                               child: Container(
                                   width: double.infinity,
@@ -180,7 +198,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   title: Text(
                     '              Pharmacy',
                     style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   onTap: () {},
                   trailing: Row(

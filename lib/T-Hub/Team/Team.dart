@@ -122,6 +122,60 @@ class _TeamState extends State<Team> {
     "",
     ""
   ];
+  final Teamname = [
+    "ARAVIND",
+    "ARJUN",
+    "ASHOK-M",
+    "ASHOK-SIRIKI",
+    "BABJI",
+    "BHARATH",
+    "BHUPATHI",
+    "BOBBY-KIRAN",
+    "BOBBY",
+    "DIRGA PRASAD",
+    "DIVYA",
+    "GANAPATHI",
+    "GIRISH",
+    "HANUMANTH",
+    "DP",
+    "KIJSHORE",
+    "KIRAN-KUMAR",
+    "KIRAN",
+    "krishna",
+    "LOVA-RAJU",
+    "A-RAJESH",
+    "MUTYALA-BABU",
+    "NANI",
+    "NARASIMHA",
+    "NAVEEN",
+    "NDP",
+    "PAVAN-TEJA",
+    "PAVAN",
+    "PETER",
+    "PRAKASH",
+    "PRASANTH",
+    "RAJA-CHOWDARI",
+    "RAJESH-B.png RAMBABU",
+    "RENUKA",
+    "SAI-KIRAN",
+    "SAI-KUMAR",
+    "SAI-TEJA",
+    "SAMULE",
+    "SATHISH",
+    "SATISH",
+    "SDP",
+    "SHAIFU",
+    "SIDIK",
+    "SIMHADRI",
+    "SIVA",
+    "SRINU",
+    "SUDHIR",
+    "SUNEEL",
+    "VARDINI",
+    "VASANTH",
+    "VEERABABU",
+    "VIJAY"
+  ];
   Widget MyTile(int i) {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -155,7 +209,10 @@ class _TeamState extends State<Team> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Team_Mem(imagepath: Teampics[index])));
+                  builder: (context) => Team_Mem(
+                        imagepath: Teampics[index],
+                        teamname: Teamname[index],
+                      )));
         },
         titles: title,
         images: images,
