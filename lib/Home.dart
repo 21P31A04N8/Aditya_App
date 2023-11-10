@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
+import 'package:myapplication/Courses/Btech/AEC/Aec_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/Courses/Pharmacy/Aditya_pharmacy_college.dart';
@@ -121,7 +122,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Acet_home()));
+                                          builder: (context) => Aec_home()));
                                 },
                                 child: Container(
                                     width: double.infinity,

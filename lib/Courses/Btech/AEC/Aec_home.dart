@@ -1,56 +1,46 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapplication/Courses/Btech/AEC/Aec_Branches.dart';
+
+//import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:slide_action/slide_action.dart';
 
-import 'Acoe_Branches.dart';
-
-class Acoe_home extends StatefulWidget {
-  const Acoe_home({super.key});
+class Aec_home extends StatefulWidget {
+  const Aec_home({super.key});
 
   @override
-  State<Acoe_home> createState() => _Acoe_homeState();
+  State<Aec_home> createState() => _Aec_homeState();
 }
 
-class _Acoe_homeState extends State<Acoe_home> {
+class _Aec_homeState extends State<Aec_home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CupertinoColors.activeOrange,
-        title: const Text("Aditya College of Engineering"),
-        leading: IconButton(icon: const Icon(Icons.menu),onPressed: (){
+        title: Text("Aditya Engineering College"),
+        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
         },),
       ),
       body:
       SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 10,),
+            SizedBox(height: 10,),
             CarouselSlider(
               items: [Container(
-                child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/banners/popacoe.jpeg"),
+                child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/240.jpg"),
               ),
                 Container(
                   child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/204.jpg"),),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),),
+                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/237.jpg"),),
+                  child: Image.network(fit: BoxFit.fill,"http://acet.ac.in/ACET/banners/Crouse.jpg"),),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/6.jpg"),
-                ),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/7.jpg"),
-                ),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
-                )
-                ,
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/B.jpg"),
-                )
-              ],
+                  child: Image.network(fit: BoxFit.fill,"http://acet.ac.in/ACET/banners/153.jpg"),
+                )],
               options: CarouselOptions(
                 autoPlay: true,
                 enlargeCenterPage: true,
@@ -59,28 +49,29 @@ class _Acoe_homeState extends State<Acoe_home> {
                 initialPage: 2,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text("The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway.  ACOE offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception ACOE has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are two blocks in ACOE, one is Ramanujan Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE, IOT, AIML  and Transport office and the second one is which contains EEE, MECHANICAL, CIVIL."
-                ,style: TextStyle(fontSize: 18),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 30),
+              child: Text("The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway. AEC offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception AEC has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are Four blocks in AEC, one is Cotten Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE,IT and BSE and the second one is KLRao which contains EEE, MECHANICAL, CIVIL and Transport Office.Third one is Billgates Bhavan which contains EEE, MECHANICAL, CIVIL"
+                ,style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,),
             ),
             Container(
               height: 450,
               width: 350,
-              margin: const EdgeInsets.symmetric(horizontal: 5),
+              margin: EdgeInsets.symmetric(horizontal: 5),
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [
                   Container(
                     height: 250,
                     width: 300,
-                    margin: const EdgeInsets.only(top: 100),
+                    margin: EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
                         color: Colors.orange
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: const Column(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
@@ -155,7 +146,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                       ),
                     ],
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
                         "Slide to Next Page"
                     ),
@@ -178,7 +169,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                 );
               },
               action: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AcoeBranches()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Aecbranch()));
               },
             ),
           ],
