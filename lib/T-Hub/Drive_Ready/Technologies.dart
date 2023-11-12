@@ -70,7 +70,7 @@ class _TechnologyState extends State<Technology> {
     "assets/Thub/Team/NDP.png",
     "assets/Thub/Team/KIJSHORE.webp",
     "assets/Thub/Team/VASANTH.webp",
-    "assets/Thub/Team/M-RAJESH.png",
+    "assets/Thub/Team/RAJESH-B.png",
     "assets/Thub/Team/MUTYALA-BABU.png",
     "assets/Thub/Team/VEERABABU.png",
     "assets/Thub/Team/BOBBY-KIRAN.png",
@@ -85,6 +85,7 @@ class _TechnologyState extends State<Technology> {
     "Azure DevOps is a set of practices and tools provided by Microsoft that enable ure developers to build, test, and deploy applications to the cloud. It includes a variety of services such as Azure Boards, Azure Repos, Azure Artifacts, Azure Pipelines, and Azure Test Plans that allow developers to manage the entire software development lifecycle.",
     "CCNA (Cisco Certified Network Associate) is a popular certification program that validates the knowledge and skills needed to install, configure, and troubleshoot network devices. Network security is an essential aspect of CCNA, as it covers topics such as securing network devices, implementing secure network access, and mitigating common network things.",
     "Celonis is a process mining software that uses data analytics and machine learning to visualize visualize and optimize business processes. When combined with Robotic Process Automation (RPA), it can further enhance process efficiency by automating repetitive and time- consuming tasks. The integration of Celonis with RPA enables businesses to identify process bottlenecks, eliminate inefficiencies, and automate workflows, resulting in cost savings and increased productivity.",
+    "Cisco develops, manufactures, and sells networking hardware, software, telecommunications equipment and other high-technology services and products. Cisco specializes in specific tech markets, such as the Internet of Things (IoT), domain security, videoconferencing, and energy management with leading products including Webex, OpenDNS, Jabber, Duo Security, and Jasper. ",
     "Cybersecurity refers to the practices and technologies used to protect digital systems, networks, and sensitive information from unauthorized access, theft, or damage. It involves a range of activities such as threat analysis, risk management, and incident response. Cybersecurity is crucial for individuals, businesses, and governments to safeguard against cyberattacks and protect the privacy and data integrity.",
     "Data analytics converts raw data into actionable insights. It includes a range of tools, technologies, and processes used to find trends and solve problems by using data. Data analytics can shape business processes, improve decision-making, and foster business growth.",
     "Digital marketing refers to the use of digital channels such as social media, email, search engines, and websites to promote products or services and engage with customers. It includes a range of tactics such as content marketing, search engine optimization (SEO), pay-per-click advertising (PPC), and social media marketing.",
@@ -109,124 +110,181 @@ class _TechnologyState extends State<Technology> {
             automaticallyImplyLeading: false,
             backgroundColor: Colors.blue,
             title: Center(child: Text("Technologies"))),
-        body: ListView.builder(
-            itemCount: Techpic.length,
-            itemBuilder: (context, index) {
-              return Padding(
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      child: Image(
+                          image:
+                              AssetImage("assets/Thub/Technologies/DR.png")))),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: InkWell(
-                    onTap: () {
-                      individual_tech(context, Individual_techname[index],
-                          individual_Techdata[index], Technames[index]);
-                    },
-                    child: Container(
-                      child: Row(
-                        children: [
-                          (index % 2 == 0)
-                              ? Padding(
-                                  padding: const EdgeInsets.only(left: 45),
-                                  child: Container(
-                                    width: 350,
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue[100],
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 20),
-                                          child: Container(
-                                            width: 100,
-                                            child: Column(
+                  child: Text(
+                    "Drive Ready is a program designed to help attendees familiarize themselves with a technology and coding language of their choice. This hybrid mode of training ensures that every attendee is ready to ace every interview they attend. The trainings offered in this program are usually job specific and is designed to help the attendee acquire the adequate skills required to efficiently begin their career.",
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: Techpic.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              onTap: () {
+                                individual_tech(
+                                    context,
+                                    Individual_techname[index],
+                                    individual_Techdata[index],
+                                    Technames[index]);
+                              },
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    (index % 2 == 0)
+                                        ? Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 45),
+                                            child: Container(
+                                              width: 350,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.blue[100],
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10))),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 20),
+                                                    child: Container(
+                                                      width: 100,
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            Technames[index],
+                                                            style: TextStyle(
+                                                                fontSize: 18,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Card(
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10)),
+                                                    elevation: 30,
+                                                    shadowColor: Colors.black,
+                                                    child: Container(
+                                                      height: 200,
+                                                      width: 200,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                          image: DecorationImage(
+                                                              image: AssetImage(
+                                                                  Techpic[
+                                                                      index]))),
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        : Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.blue[100],
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            width: 350,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
-                                                Text(
-                                                  Technames[index],
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                Card(
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10)),
+                                                  elevation: 30,
+                                                  shadowColor: Colors.black,
+                                                  child: Container(
+                                                    height: 200,
+                                                    width: 200,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                Techpic[
+                                                                    index]))),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 20),
+                                                  child: Container(
+                                                    width: 100,
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          Technames[index],
+                                                          style: TextStyle(
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),
-                                          ),
-                                        ),
-                                        Card(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                          elevation: 30,
-                                          shadowColor: Colors.black,
-                                          child: Container(
-                                            height: 200,
-                                            width: 200,
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10)),
-                                                image: DecorationImage(
-                                                    image: AssetImage(
-                                                        Techpic[index]))),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                )
-                              : Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.blue[100],
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10))),
-                                  width: 350,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Card(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        elevation: 30,
-                                        shadowColor: Colors.black,
-                                        child: Container(
-                                          height: 200,
-                                          width: 200,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      Techpic[index]))),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 20),
-                                        child: Container(
-                                          width: 100,
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                Technames[index],
-                                                style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                        ],
-                      ),
-                    ),
-                  ));
-            }));
+                                          )
+                                  ],
+                                ),
+                              ),
+                            )),
+                      ],
+                    );
+                  }),
+            ),
+          ],
+        ));
   }
 }
 
