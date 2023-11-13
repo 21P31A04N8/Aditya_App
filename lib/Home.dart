@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:myapplication/Courses/BBA/AGBS.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/AEC/Aec_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_home.dart';
 import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
-
 
 import 'package:myapplication/T-Hub/Thub.dart';
 
@@ -213,39 +213,38 @@ class _MenuScreenState extends State<MenuScreen> {
                           return [
                             PopupMenuItem(
                                 child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Apcs_home()));
-                                  },
-                                  child: Container(
-                                      width: double.infinity,
-                                      child: Text(
-                                        'APCS',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold),
-                                      )),
-                                )
-                            ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Apcs_home()));
+                              },
+                              child: Container(
+                                  width: double.infinity,
+                                  child: Text(
+                                    'APCS',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            )),
                             PopupMenuItem(
                                 child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Acop_home()));
-                                  },
-                                  child: Container(
-                                      width: double.infinity,
-                                      child: Text(
-                                        'ACPS',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold),
-                                      )),
-                                )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Acop_home()));
+                              },
+                              child: Container(
+                                  width: double.infinity,
+                                  child: Text(
+                                    'ACPS',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            )),
                           ];
                         },
                         child: Icon(
@@ -276,17 +275,23 @@ class _MenuScreenState extends State<MenuScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "BBA",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AGBS()));
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Card(
+                      color: Colors.white,
+                      child: Center(
+                          child: Text(
+                        "BBA",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
+                    ),
                   ),
                 ),
                 SizedBox(
