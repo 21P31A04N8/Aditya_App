@@ -117,6 +117,7 @@ class _Project_SpaceState extends State<Project_Space> {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "Drive Ready is a program designed to help attendees familiarize themselves with a technology and coding language of their choice. This hybrid mode of training ensures that every attendee is ready to ace every interview they attend. The trainings offered in this program are usually job specific and is designed to help the attendee acquire the adequate skills required to efficiently begin their career.",
+                    textAlign: TextAlign.justify,
                     style: TextStyle(color: Colors.white, fontSize: 17),
                   ),
                 ),
@@ -147,6 +148,7 @@ class _Project_SpaceState extends State<Project_Space> {
                                           padding:
                                               const EdgeInsets.only(left: 45),
                                           child: Container(
+                                            height: 150,
                                             width: 350,
                                             decoration: BoxDecoration(
                                                 color: Color.fromRGBO(
@@ -165,6 +167,9 @@ class _Project_SpaceState extends State<Project_Space> {
                                                   child: Container(
                                                     width: 100,
                                                     child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           project_name[index],
@@ -209,6 +214,7 @@ class _Project_SpaceState extends State<Project_Space> {
                                                   255, 224, 145, 1),
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(10))),
+                                          height: 150,
                                           width: 350,
                                           child: Row(
                                             mainAxisAlignment:
@@ -240,6 +246,9 @@ class _Project_SpaceState extends State<Project_Space> {
                                                 child: Container(
                                                   width: 100,
                                                   child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Text(
                                                         project_name[index],
@@ -307,6 +316,19 @@ void individual_tech(
                             Techdata,
                             textAlign: TextAlign.justify,
                             style: TextStyle(fontSize: 18),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            color: Color.fromRGBO(255, 223, 0, 1),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "PROJECTS",
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
                           ),
                         ],
                       ),
