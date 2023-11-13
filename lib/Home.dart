@@ -4,7 +4,10 @@ import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/AEC/Aec_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
-import 'package:myapplication/Courses/Pharmacy/Aditya_pharmacy_college.dart';
+import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_home.dart';
+import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
+
+
 import 'package:myapplication/T-Hub/Thub.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
@@ -209,26 +212,40 @@ class _MenuScreenState extends State<MenuScreen> {
                         itemBuilder: (context) {
                           return [
                             PopupMenuItem(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => APC()));
-                              },
-                              child: Text(
-                                'APC',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Apcs_home()));
+                                  },
+                                  child: Container(
+                                      width: double.infinity,
+                                      child: Text(
+                                        'APCS',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                )
                             ),
                             PopupMenuItem(
-                                child: Text(
-                              'ACP',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            )),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Acop_home()));
+                                  },
+                                  child: Container(
+                                      width: double.infinity,
+                                      child: Text(
+                                        'ACPS',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                )),
                           ];
                         },
                         child: Icon(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Aecbranch extends StatefulWidget {
-  const Aecbranch({super.key});
+class Acop_Branch extends StatefulWidget {
+  const Acop_Branch({super.key});
 
   @override
-  State<Aecbranch> createState() => _AecbranchState();
+  State<Acop_Branch> createState() => _Acop_BranchState();
 }
 
-class _AecbranchState extends State<Aecbranch>
+class _Acop_BranchState extends State<Acop_Branch>
     with TickerProviderStateMixin {
   final PageController _pageController = PageController(initialPage: 0);
   AnimationController? controller;
@@ -50,140 +50,48 @@ class _AecbranchState extends State<Aecbranch>
   }
 
   @override
-  List<String> names = ['CSE', 'ECE', 'CIV', 'MEC', 'IT', 'EEE', 'AIML&CSD','Agricultural','Petroleum','Mining'];
+  List<String> names = ["B-Pharmcy","Pharm-D","M-Pharmcy"];
   int selectedIndex = 0;
   //Details? d;
 
   List<Details> det = [
-    //CSE
     Details(
-        'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.Department of CSE has good interactions and MOUs with leading technology domain Training & Development Industries. Department of CSE under AEC, signed pacts in the form of MoUs with Infosys (Campus Connect), Microsoft (Campus Agreement), APSSDC. It organizes Exhibitions, Conferences, Seminars and Workshops for both students and Faculty belonging to various Technical Educational Institutions all over India.\n'
-            'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
-        //'https://img.freepik.com/free-vector/engineers-team-discussing-issues-construction-site_74855-4786.jpg?w=1060&t=st=1697969526~exp=1697970126~hmac=718e23f6dca871bb4f60f8ea0e8b85c23b999dadce55e3b7a951af42b781053a',
-        'https://img.freepik.com/premium-vector/company-employees-take-online-education-courses_155327-84.jpg',
-        '23',
-        '180',
-        '19P31A0513.jpg',
-        '19P31A0513',
-        'P.K. REDDY',
-        '28.95',
-        '2127 to 3192'),
-    //ECE
-    Details(
-        'ECE department was established in the year 2004 with an intake of 60 students and now it has been expanded with an intake of 240 students. ECE plays a vital role in Technology Revolution. Our main aim is to generate new knowledge by engaging in cutting-in research to promote academic growth and to develop human potential to its fullest extent so that intellectually capable & imaginatively gifted leaders can emerge in a range of professions. We have Modern state of the art and well furnished labs like Microwave and Optical Communication Lab, Electronic Devices and Circuits lab, Modern Communication Lab, Research lab etc with excellent laboratory facilities and dedicated faculty.\n\n'
-            'Electronics and Communication Engineering (ECE) is one of the fastest growing field of engineering with wide range of career opportunities considered to be leaders in the field of Technology. The aim of ECE engineer is to produce products that are smaller, smarter and multi-functional.',
-        'https://img.freepik.com/premium-vector/printed-circuit_701961-1674.jpg',
-        '22',
-        '180',
+
+        "A Bachelor of Pharmacy (abbreviated B Pharm or PharmB or BS Pharm) is a graduate academic degree in the field of pharmacy. In many countries, this degree is a prerequisite for registration to practice as a pharmacist. Since both PharmB and PharmD are prerequisites to license in most western countries they're considered equivalent. In many western countries, the foreign graduates with BPharm, PharmB or BS Pharm practice similarly as PharmD graduates. It is analogous to MBBS vs. MD where MBBS is foreign equivalent of MD. It is training to understand the properties and impacts of medicines and developing the skills required to counsel patients about their use."
+            "\nELIGIBILTIY CRITERIA"
+            "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P."
+            "Management Seats"
+            "Register your name with Aditya Pharmacy College, Surampalem, Aditya nagar, East Godavari district, A.P, soon after the announcement of intermediate exam results.",
+        'https://www.sharda.ac.in/blog/attachments/blog_images/Bachelor-in-Pharmacy.jpg',
+        '5',
+        '60',
         '',
-        '19P35A0428',
-        'PULAVARTHI SAMAGNA',
-        '7',
-        'below 16881'),
-    //CIV
-    Details(
-      'The Department of Civil Engineering was established in 2013. It affords the students a solid grounding in better utilization of resources and increased standardization of construction techniques required by means of the construction industry. Students are taught how to use and rent progressive diagram methods and techniques. Exposure to cutting-edge facets planning, development plan and undertaking administration are key factors of the course.\n\n'
-          'Civil engineers create, improve and protect the environment in which we live. They plan, design and oversee construction and maintenance of building structures and infrastructure, such as roads, railways, airports, bridges, harbors, dams, irrigation projects, power plants, and water and sewerage systems.',
-      'https://img.freepik.com/free-vector/engineers-team-discussing-issues-construction-site_74855-4786.jpg',
-      '5',
-      '150',
-      '',
-      '17P31A0114',
-      'INDUGULA GANESH',
-      '2.4',
-      'below 111815',
-    ),
-    //MEC
-    Details(
-        'The Department of Mechanical Engineering is a pioneer department since the establishment of college in 2011. The department has extensive facilities in terms of faculty, infrastructure & equipment. The department is recognised as a research centre by JNTUK, Kakinada for pursuing Ph.D. programme in Mechanical Engineering. The department has spacious laboratories and well equipped with experimental set-ups as per the requirement of the curriculum. The faculty are very active and encourage the students in fabricating real models viz., Go-kart, Robots, Solar based vehicles and other working models, which are very useful in day to day life and teach students with live examples.\n\n'
-            'Mechanical engineers develop state-of-the-art technologies and exhilarating solutions for the mankind. We attempt to provide our students with a cheerful, productive and satisfying experience at all levels of their program of studies to explore the amazing world of mechanical engineering.',
-        'https://img.freepik.com/premium-vector/concept-truck-repair-service-mechanic-with-wrench-truck-tools-gears-vector-illustration_357257-1547.jpg',
+        '163H1R0007',
+        'BHAMIDIPATI MANASWINI	',
         '4',
-        '150',
-        '',
-        '20P3540358',
-        'KALLA TATAJI',
-        '4.5',
-        'below 124147	'),
-    //IT
-    Details(
-        'The main source and strength of the department is its faculty, the department maintains the faculty as per the ratio , the main focus of the faculty members is to provide in-depth knowledge to the students in the respective course. The undergraduate program is emphasized on theoretical and practical aspects, apart from these the students are nurtured to participate in online coding competitions like TCS Hack Quest, Microsoft Imagine Cup, etc., the department has taken an initiation to expose the student towards the online coding platforms like Hackerrank, Code Chef. The department possesses computer labs with high end configuration and also CM Skill Excellence Center and also possesses a good placement record.\n\n'
-            'Today the branch of Information Technology is becoming pervasive as technology is changing rapidly in the field of computer science. So the process of learning should not end with the acquisition of a degree.',
-        'https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=1060&t=st=1698657888~exp=1698658488~hmac=82a822a68b5cceb07e51e496d820384f4884eecc2cfedec415629acdf21d2ba7',
+        'below 30652'),
+    Details("A Doctor of Pharmacy (PharmD; Neo-Latin: Pharmaciae Doctor) is a professional doctorate in pharmacy. In some countries, it is a doctoral degree to practice the profession of pharmacy or to become a clinical pharmacist. In many countries, people with their Doctor of Pharmacy are allowed to practice independently and can prescribe drugs directly to patients. A PharmD program has significant experiential and/or clinical education components in introductory and advanced levels for the safe and effective use of drugs. Experiential education prepares graduates to be practice-ready, as they already have spent a significant amount of time training in areas of direct patient care and research."
+        "\n ELIGIBILTIY CRITERIA"
+        "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P.",
+        'https://cdn.pixabay.com/photo/2020/01/09/17/16/pharmacy-4753340_640.jpg',
         '5',
         '60',
         '',
-        '18P31A1230',
-        'PADALA SATYA PRIYA',
-        '15',
-        'below 19233'),
-    //EEE
-    Details(
-        'The Department was established during the inception of the institute in 2004 as the department of Electrical and Electronics Engineering (EEE). Since its commencement, the primary objective of the department is to impart quality education, training and research at the undergraduate level in various areas of Electrical and Electronics Engineering with broad emphasis on design aspects of electrical systems.. The major areas of faculty expertise of the department include Power Electronics and Drives, Power Systems & Control Systems.The department has adequate teaching faculty having varied fields of specialization in Electrical Engineering. The faculty is engaged in active research in the areas of Power System Optimization, Adaptive Power System Stabilizers, Hybrid Power Systems, Power Electronic Drives, and Large Scale Uncertain Systems.\n\n'
-            'The EEE Department endeavors to stream line the career options and paves ways for recent graduates to explore new career opportunities. EEE is one of the core streams of engineering, and it is required in any case. Hence the demand for this group never decreases, and it is the steadiest stream ever.',
-        'https://img.freepik.com/premium-vector/lighting-electricity-energy-maintenance-service-technician-electrical-work-illustration_2175-8383.jpg',
-        '3',
-        '100',
-        '',
-        '20P35A0207',
-        'KARRI SIVARAM DURGA',
-        '4.2',
-        'below 34026'),
-    //AIML & CSD
-    Details(
-        'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.\n\n'
-            'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
-        'https://img.freepik.com/free-vector/brain-with-digital-circuit-programmer-with-laptop-machine-learning-artificial-intelligence-digital-brain-artificial-thinking-process-concept-vector-isolated-illustration_335657-2246.jpg',
+        '163H1R0007',
+        'DWARAPUDI SAI PAVAN',
+        '7.5',
+        'below 30652'),
+    Details("Master's degrees in pharmacy comprise both postgraduate and integrated master's programs in pharmacy, the latter of which comprises both undergraduate and postgraduate coursework and typically takes four to five years to complete."
+        "\nELIGIBILTIY CRITERIA"
+        "\nThe selection will be on the basis of GPAT Examination (Graduate Pharmacy Aptitude Test) for non-sponsored candidates and entrance test conducted by the University (PGCET) for sponsored and self-supporting candidates. Admission is either through GPAT / PGCET counseling",
+        'https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784_1280.jpg',
         '5',
         '60',
         '',
-        '19P31A0556',
-        'DASI VEERRAJU',
+        '193H1R0007',
+        'DWARAPUDI SAI PAVAN',
         '7.5',
-        'below 19333'),
-    //Agriculture
-    Details(
-        'Agriculture has a lot of scope in terms of career opportunities. With the commercialization of horticulture and agriculture there, are wide-ranging opportunities for paid jobs as well as a private enterprise. State Department of Agriculture employs agricultural engineers as agricultural officers for the improvement of agriculture in a district. There is an increasing demand for B.Tech Agriculture for jobs in Govt. and other agencies. They will help in design and production of farm implements, help in soil and water conservation work, help in maintaining machinery used in the farms, production of value-added products, maintenance of diesel pump, water management in the field, precision farming and train the farmers and other stakeholders on agricultural engineering works. They have ample scope in the financial institution, rural development departments, manufacturing units and research institutes. There are many options as agriculture officers in banks and there are many private companies like Jain irrigation, Mahindra and Mahindra, Teffe.Etc which needs agriculture engineers,'
-
-            'There are also private firms investing money in medicinal crops and plantation crops who normally hire agricultural engineers. Postgraduate students can work as supervisors, distributors and engineers; or they can also start his/her own business. Skilled professionals can opt for research activities. They can join IARI as a junior fellow researcher and become agricultural scientists. Professionals in this career can also opt for teaching jobs in universities and colleges.',
-        'https://cdn.pixabay.com/photo/2021/10/15/00/21/cultivated-field-6710600_1280.jpg',
-        '5',
-        '60',
-        '',
-        '19P31A0556',
-        'DASI VEERRAJU',
-        '7.5',
-        '16591 to 32732'),
-     //Petroleum
-    Details(
-        'Andhra Pradesh is well known for its Petroleum resources as one of the biggest petroliferous basins of the world known as KG basin endows the state. The basin expands all along the coast of AP on the east coast of India and lies merely 30km from ADITYA. Taking this advantage of being in the vicinity of major oil and gas players within the KG basin, ADITYA stands first to introduce B.Tech in Petroleum Technology in the state, actively fed by the experts around us in the KG basin and across.',
-       'The institute has introduced the B.Tech Petroleum Technology course to meet the growing demand for skilled human resources in Petroleum Industry. The course enables students to develop a good foundation of petroleum ventures well in time.'
-        'https://cdn.pixabay.com/photo/2012/04/18/00/25/drilling-36265_1280.png',
-        '5',
-        '60',
-        '',
-        '19P31A0556',
-        'DASI VEERRAJU',
-        '7.5',
-        'below 107324'),
-    //mining
-    Details(
-        'Take the road less travelled for employment at graduation level! It is this recent trend in the choice of courses at B. Tech. level that has led to the initiation of Mining Engineering Department at Aditya.'
-
-        'Here students are trained in sound fundamental theories in engineering backed by state-of-the- art laboratories which include Mineral Engineering lab, Mine Environmental Engineering Lab, Metallurgy Lab, Mining Geology Lab, Mine Surveying Lab and computational facilities.'
-
-    'The Department houses a well-furnished and spacious library with rich collection of books on Mining and other engineering subjects. It also subscribes to various magazines, journals, periodicals etc. for the students.'
-
-    'As mining engineers require an understanding of a number of aspects of other engineering disciplines like Civil, Electrical, Geological, Mechanical and Computer Engineering the department works collaboratively with the other departments. ',
-        'https://cdn.pixabay.com/photo/2021/08/20/15/36/cryptocurrency-6560735_1280.png',
-        '4',
-        '60',
-        '',
-        '19P31A0556',
-        'DASI VEERRAJU',
-        '7.5',
-        'below 94190'),
-
+        'below 30652'),
 
   ];
 
@@ -232,11 +140,11 @@ class _AecbranchState extends State<Aecbranch>
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Opacity(
                         opacity: blink_val!.value,
-                        child: Text('Aditya engineering College' ,
+                        child: Text('Aditya Pharmacy College' ,
                           style: TextStyle(
-                              color: Colors.white ,
-                              fontSize: 23,
-                              decoration: TextDecoration.underline
+                            color: Colors.white ,
+                            fontSize: 23,
+                            // decoration: TextDecoration.underline
 
                           ),
                           textAlign: TextAlign.justify,
