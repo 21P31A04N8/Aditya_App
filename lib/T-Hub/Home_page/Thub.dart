@@ -4,9 +4,10 @@ import 'package:myapplication/Courses/Btech/ACET/Acet_Brancehes.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
+import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
 import 'package:myapplication/T-Hub/Team/Team.dart';
 import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
-import 'package:myapplication/T-Hub/Thub.dart';
+import 'package:myapplication/T-Hub/Home_page/Thub.dart';
 import 'package:myapplication/T-Hub/Thub_Events.dart';
 import 'package:sizer/sizer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -107,7 +108,7 @@ class _MainScreen1State extends State<MainScreen1>
                               image: DecorationImage(
                                   image: AssetImage(
                                       'assets/Thub/THub_home/Cybersec.png'),
-                                  fit: BoxFit.cover),
+                                  fit: BoxFit.fill),
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
@@ -119,7 +120,7 @@ class _MainScreen1State extends State<MainScreen1>
                             image: DecorationImage(
                                 image: AssetImage(
                                     'assets/Thub/THub_home/owl coder 1.png'),
-                                fit: BoxFit.cover),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
@@ -130,7 +131,7 @@ class _MainScreen1State extends State<MainScreen1>
                             image: DecorationImage(
                                 image: AssetImage(
                                     'assets/Thub/THub_home/pega.png'),
-                                fit: BoxFit.cover),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
@@ -141,7 +142,7 @@ class _MainScreen1State extends State<MainScreen1>
                             image: DecorationImage(
                                 image: AssetImage(
                                     'assets/Thub/THub_home/owlcoder3.1.png'),
-                                fit: BoxFit.cover),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
@@ -152,7 +153,7 @@ class _MainScreen1State extends State<MainScreen1>
                             image: DecorationImage(
                                 image: AssetImage(
                                     'assets/Thub/THub_home/skdayselfie.png'),
-                                fit: BoxFit.cover),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
@@ -182,7 +183,7 @@ class _MainScreen1State extends State<MainScreen1>
                           image: DecorationImage(
                               image: AssetImage(
                                   'assets/Thub/THub_home/image1.png'),
-                              fit: BoxFit.cover),
+                              fit: BoxFit.fill),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       )),
@@ -201,7 +202,7 @@ class _MainScreen1State extends State<MainScreen1>
                           image: DecorationImage(
                               image:
                                   AssetImage('assets/Thub/THub_home/TCON.png'),
-                              fit: BoxFit.cover),
+                              fit: BoxFit.fill),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       )),
@@ -227,7 +228,34 @@ class _MainScreen1State extends State<MainScreen1>
                             image: DecorationImage(
                                 image:
                                     AssetImage('assets/Thub/THub_home/DR.png'),
-                                fit: BoxFit.cover),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Project_Space()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('assets/Thub/THub_home/PSD.png'),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
                         )),
@@ -245,27 +273,8 @@ class _MainScreen1State extends State<MainScreen1>
                         width: 90.w,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image:
-                                  AssetImage('assets/Thub/THub_home/PSD.png'),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      )),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      elevation: 30,
-                      shadowColor: Colors.black,
-                      child: Container(
-                        height: 20.h,
-                        width: 90.w,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
                               image: AssetImage('assets/Thub/THub_home/CO.png'),
-                              fit: BoxFit.cover),
+                              fit: BoxFit.fill),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       )),
@@ -284,7 +293,7 @@ class _MainScreen1State extends State<MainScreen1>
                           image: DecorationImage(
                               image:
                                   AssetImage('assets/Thub/THub_home/place.jpg'),
-                              fit: BoxFit.cover),
+                              fit: BoxFit.fill),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       )),

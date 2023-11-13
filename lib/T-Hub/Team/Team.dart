@@ -119,7 +119,6 @@ class _TeamState extends State<Team> {
     "",
     "",
     "",
-    ""
   ];
   final Teamname = [
     "ARAVIND",
