@@ -5,10 +5,12 @@ import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
 import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
+import 'package:myapplication/T-Hub/Home_page/owl_coder.dart';
 import 'package:myapplication/T-Hub/Team/Team.dart';
 import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
 import 'package:myapplication/T-Hub/Home_page/Thub.dart';
 import 'package:myapplication/T-Hub/Thub_Events.dart';
+import 'package:myapplication/T-Hub/Thub_info.dart';
 import 'package:sizer/sizer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -62,7 +64,7 @@ class _MainScreen1State extends State<MainScreen1>
 
     _controller = AnimationController(
       duration: Duration(
-          seconds: 2), // Adjust the duration to decrease or increase the speed
+          seconds: 1), // Adjust the duration to decrease or increase the speed
       vsync: this,
     );
 
@@ -159,10 +161,11 @@ class _MainScreen1State extends State<MainScreen1>
                         ),
                       ],
                       options: CarouselOptions(
+                        height: 30.h,
                         scrollDirection: Axis.vertical,
                         autoPlay: true,
                         enlargeCenterPage: true,
-                        viewportFraction: 0.9,
+                        viewportFraction: 0.8,
                         aspectRatio: 2.0,
                         initialPage: 2,
                       ),
@@ -171,22 +174,28 @@ class _MainScreen1State extends State<MainScreen1>
                   SizedBox(
                     height: 2.5.h,
                   ),
-                  Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      elevation: 30,
-                      shadowColor: Colors.black,
-                      child: Container(
-                        height: 20.h,
-                        width: 90.w,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/Thub/THub_home/image1.png'),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      )),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => owl_coder()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/image1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
                   SizedBox(
                     height: 2.5.h,
                   ),
@@ -299,6 +308,83 @@ class _MainScreen1State extends State<MainScreen1>
                       )),
                   SizedBox(
                     height: 3.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(2.h),
+                    child: CarouselSlider(
+                      items: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Container(
+                            height: 25.h,
+                            width: 90.w,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/Thub/THub_home/Cybersec.png'),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owl coder 1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/pega.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owlcoder3.1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/skdayselfie.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        height: 30.h,
+                        scrollDirection: Axis.vertical,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        aspectRatio: 2.0,
+                        initialPage: 2,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
                   )
                 ],
               ),
@@ -367,7 +453,10 @@ class _MenuScreenState extends State<MenuScreen> {
             ListTile(
               title: Text('Contact Us'),
               leading: Icon(Icons.phone),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Thub_info()));
+              },
             )
           ]),
         ));

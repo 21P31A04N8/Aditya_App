@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
-import 'package:myapplication/T-Hub/Contact.dart';
 import 'package:myapplication/T-Hub/Home_page/Thub.dart';
 import 'package:myapplication/T-Hub/Team/Team.dart';
 import 'package:myapplication/T-Hub/Thub_Events.dart';
 import 'package:lottie/lottie.dart';
+import 'package:myapplication/T-Hub/Thub_info.dart';
 
 class Thub_Home extends StatefulWidget {
   const Thub_Home({super.key});
@@ -44,7 +44,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin{
   @override
 
   bool replace = true;
-  List<Widget> screens = [Thub() , Thub_Events() , Certifications() , Team() , Contact()];
+  List<Widget> screens = [Thub() , Thub_Events() , Certifications() , Team() , Thub_info()];
 
   Widget build(BuildContext context) {
     return Scaffold(
