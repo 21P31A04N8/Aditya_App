@@ -94,9 +94,6 @@ class _Thub_EventsState extends State<Thub_Events> with TickerProviderStateMixin
           Stack(
               children:
               [
-
-
-
                 Container(
                   height: 200,
                   width: double.infinity,
@@ -117,7 +114,6 @@ class _Thub_EventsState extends State<Thub_Events> with TickerProviderStateMixin
                 ),
 
                 Positioned(
-
                     bottom: -25,
                     left: 225,
                     child: Container(
