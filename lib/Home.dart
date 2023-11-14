@@ -8,6 +8,7 @@ import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_home.dart';
 import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
 import 'package:myapplication/T-Hub/Home_page/Thub.dart';
+import 'package:myapplication/T-Hub/Home_page/Thub_Home.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
 import 'package:page_transition/page_transition.dart';
@@ -357,7 +358,7 @@ class _MenuScreenState extends State<MenuScreen> {
               leading: Icon(Icons.style_outlined),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Thub()));
+                    context, MaterialPageRoute(builder: (context) => Thub_Home()));
               },
             ),
             ListTile(

@@ -12,14 +12,6 @@ class _CertificationsState extends State<Certifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              ZoomDrawer.of(context)!.toggle();
-            },
-          ),
-          title: Center(child: Text("Certifications"))),
       body: Center(child: Text("Certificatins")),
     );
   }
