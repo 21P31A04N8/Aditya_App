@@ -107,9 +107,9 @@ class _TechnologyState extends State<Technology> {
     int w = MediaQuery.of(context).size.width.toInt();
     return Scaffold(
         appBar: AppBar(
-            automaticallyImplyLeading: false,
             backgroundColor: Colors.blue,
-            title: Center(child: Text("Technologies"))),
+            centerTitle: true,
+            title: Text("Technologies")),
         body: Column(
           children: [
             Padding(
@@ -166,6 +166,7 @@ class _TechnologyState extends State<Technology> {
                                             padding:
                                                 const EdgeInsets.only(left: 45),
                                             child: Container(
+                                              height: 150,
                                               width: 350,
                                               decoration: BoxDecoration(
                                                   color: Colors.blue[100],
@@ -184,6 +185,9 @@ class _TechnologyState extends State<Technology> {
                                                     child: Container(
                                                       width: 100,
                                                       child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             Technames[index],
@@ -230,6 +234,7 @@ class _TechnologyState extends State<Technology> {
                                                 color: Colors.blue[100],
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(10))),
+                                            height: 150,
                                             width: 350,
                                             child: Row(
                                               mainAxisAlignment:
@@ -263,6 +268,9 @@ class _TechnologyState extends State<Technology> {
                                                   child: Container(
                                                     width: 100,
                                                     child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           Technames[index],

@@ -1,5 +1,8 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:lottie/lottie.dart';
 import 'package:myapplication/Courses/BBA/AGBS.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/AEC/Aec_home.dart';
@@ -7,13 +10,22 @@ import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_home.dart';
 import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
-import 'package:myapplication/T-Hub/Home_page/Thub.dart';
+import 'package:myapplication/T-Hub/Certifications.dart';
+import 'package:myapplication/T-Hub/Codemind/Codemind.dart';
+import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
+import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
+import 'package:myapplication/T-Hub/Home_page/T_Connect.dart';
 import 'package:myapplication/T-Hub/Home_page/Thub_Home.dart';
+import 'package:myapplication/T-Hub/Home_page/owl_coder.dart';
+import 'package:myapplication/T-Hub/Team/Team.dart';
+import 'package:myapplication/T-Hub/Thub_Events.dart';
+import 'package:myapplication/T-Hub/Thub_info.dart';
+import 'package:sizer/sizer.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
 import 'package:page_transition/page_transition.dart';
 
-final _zoomDrawerController = ZoomDrawerController();
+final zoomDrawerController = ZoomDrawerController();
 
 class Screen extends StatefulWidget {
   const Screen({super.key});
@@ -27,7 +39,7 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      controller: _zoomDrawerController,
+      controller: zoomDrawerController,
       menuScreen: Builder(builder: (context) {
         return MenuScreen(
           onpagechange: (a) {
@@ -162,7 +174,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                         builder: (context) => Acet_home()));
                                 setState(() {
                                   _expansionTileController.collapse();
-                                  _zoomDrawerController.close;
+                                  zoomDrawerController.close;
                                 });
                               },
                             ),
@@ -357,8 +369,7 @@ class _MenuScreenState extends State<MenuScreen> {
               title: Text('Thub'),
               leading: Icon(Icons.style_outlined),
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Thub_Home()));
+                widget.onpagechange(Thub_Home());
               },
             ),
             ListTile(
@@ -368,6 +379,368 @@ class _MenuScreenState extends State<MenuScreen> {
             )
           ]),
         ));
+  }
+}
+
+class Thub extends StatefulWidget {
+  const Thub({super.key});
+
+  @override
+  State<Thub> createState() => _ThubState();
+}
+
+class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: Duration(
+          seconds: 1), // Adjust the duration to decrease or increase the speed
+      vsync: this,
+    );
+
+    _animation = Tween<double>(begin: -1.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut, // You can experiment with different curves
+      ),
+    );
+
+    _controller.forward();
+  }
+
+  var img = [];
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Home"),
+        leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
+      ),
+      body: AnimatedBuilder(
+        animation: _animation,
+        builder: (context, child) {
+          return Transform(
+            transform: Matrix4.translationValues(
+                _animation.value * MediaQuery.of(context).size.width, 0.0, 0.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(2.h),
+                    child: CarouselSlider(
+                      items: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Container(
+                            height: 25.h,
+                            width: 90.w,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/Thub/THub_home/Cybersec.png'),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owl coder 1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/pega.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owlcoder3.1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/skdayselfie.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        height: 30.h,
+                        scrollDirection: Axis.vertical,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        aspectRatio: 2.0,
+                        initialPage: 2,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => owl_coder()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/image1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => T_Connect()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/TCON.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Technology()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('assets/Thub/THub_home/DR.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Project_Space()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('assets/Thub/THub_home/PSD.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => codemind()));
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('assets/Thub/THub_home/CO.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 30,
+                      shadowColor: Colors.black,
+                      child: Container(
+                        height: 20.h,
+                        width: 90.w,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  AssetImage('assets/Thub/THub_home/place.jpg'),
+                              fit: BoxFit.fill),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                      )),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(2.h),
+                    child: CarouselSlider(
+                      items: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Container(
+                            height: 25.h,
+                            width: 90.w,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/Thub/THub_home/Cybersec.png'),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owl coder 1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/pega.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/owlcoder3.1.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        Container(
+                          height: 25.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/Thub/THub_home/skdayselfie.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        height: 30.h,
+                        scrollDirection: Axis.vertical,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        aspectRatio: 2.0,
+                        initialPage: 2,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
 

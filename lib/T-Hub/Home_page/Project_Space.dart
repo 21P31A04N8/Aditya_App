@@ -45,9 +45,9 @@ class _Project_SpaceState extends State<Project_Space> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        centerTitle: true,
         backgroundColor: Colors.yellow[600],
-        title: Center(child: Text("Project Space")),
+        title: Text("Project Space"),
       ),
       body: Column(
         children: [

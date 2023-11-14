@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapplication/Home.dart';
+import 'package:myapplication/T-Hub/Home_page/T_Connect.dart';
 import 'package:sizer/sizer.dart';
 
 void main() async {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Flutter Demo",
         theme: ThemeData(primarySwatch: Colors.orange),
+        //home: T_Connect(),
         home: Screen(),
         // home: Acoe_home(),
       );
