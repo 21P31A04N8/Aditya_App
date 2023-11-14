@@ -76,6 +76,7 @@ flutter:
   assets:
       - assets/dip_img/
       - assets/Thub/Team/
+      - assets/Thub/Codemind/
       - assets/Thub/Technologies/
       - assets/BBA_img/
       - assets/Thub/THub_home/

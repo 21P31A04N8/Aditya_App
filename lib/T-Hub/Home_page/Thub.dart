@@ -4,6 +4,7 @@ import 'package:myapplication/Courses/Btech/ACET/Acet_Brancehes.dart';
 import 'package:myapplication/Courses/Btech/ACOE/Acoe_home.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
+import 'package:myapplication/T-Hub/Codemind/Codemind.dart';
 import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
 import 'package:myapplication/T-Hub/Home_page/owl_coder.dart';
 import 'package:myapplication/T-Hub/Team/Team.dart';
@@ -272,21 +273,25 @@ class _MainScreen1State extends State<MainScreen1>
                   SizedBox(
                     height: 2.5.h,
                   ),
-                  Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      elevation: 30,
-                      shadowColor: Colors.black,
-                      child: Container(
-                        height: 20.h,
-                        width: 90.w,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/Thub/THub_home/CO.png'),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      )),
+                  InkWell(onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>codemind()));
+                  },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 30,
+                        shadowColor: Colors.black,
+                        child: Container(
+                          height: 20.h,
+                          width: 90.w,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/Thub/THub_home/CO.png'),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                        )),
+                  ),
                   SizedBox(
                     height: 2.5.h,
                   ),
