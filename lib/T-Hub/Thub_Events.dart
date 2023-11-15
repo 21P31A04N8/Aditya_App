@@ -162,14 +162,23 @@ class _Thub_EventsState extends State<Thub_Events> with TickerProviderStateMixin
                   child: Container(
                     height: 200,
                     margin: EdgeInsets.only(left: 30 , right: 30 , top: _top2  ),
-                    width: double.infinity ,
+                    width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.blue.shade200,
                         borderRadius: BorderRadius.circular(30)
                     ),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Image.asset(fit:BoxFit.cover ,"assets/Thub/events/skday.png")),
+                    child: Card(
+                      elevation: 10,
+                      // shadowColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          30
+                        )
+                      ),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(fit:BoxFit.cover ,"assets/Thub/events/skday.png")),
+                    ),
                   ),
                 ),
 
