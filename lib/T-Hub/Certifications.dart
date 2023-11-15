@@ -84,7 +84,8 @@ class _CertificationsState extends State<Certifications> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
+        extendBody: true,
+        resizeToAvoidBottomInset: false,
         body: GridView.builder(
           itemCount: list.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 import 'package:myapplication/Courses/BBA/AGBS.dart';
@@ -453,19 +452,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomLeft,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w , top:5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        color: Colors.lightBlue.shade300,
-                          borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
-                          border: Border.all(color:Colors.blue.shade900 , width:2,
-                      )
+                      InkWell(
+                        onTap:(){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => owl_coder()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w , top:5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          color: Colors.lightBlue.shade300,
+                            borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
+                            border: Border.all(color:Colors.blue.shade900 , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('OWL CODER' , style:TextStyle(fontSize: 2.2.h , fontWeight: FontWeight.bold))),
                         ),
-                        child: Text('OWL CODER' , style:TextStyle(fontSize: 20.sp , fontWeight: FontWeight.bold)),
                       ),
 
                       InkWell(
@@ -502,19 +507,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomRight,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w , left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        color: Colors.green.shade200,
-                          borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
-                          border: Border.all(color:Colors.green.shade700 , width:2,
-                      )
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => T_Connect()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w , left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          color: Colors.green.shade200,
+                            borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
+                            border: Border.all(color:Colors.green.shade700 , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('T CONNECT' , style:TextStyle(fontSize: 2.2.h , fontWeight: FontWeight.bold))),
                         ),
-                        child: Center(child: Text('T CONNECT' , style:TextStyle(fontSize: 18.sp , fontWeight: FontWeight.bold))),
                       ),
 
                       InkWell(
@@ -551,19 +562,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomLeft,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w , top:5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        color: Colors.grey.shade400,
-                          borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
-                          border: Border.all(color:Colors.grey.shade700 , width:2,
-                      )
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Technology()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w , top:5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          color: Colors.grey.shade400,
+                            borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
+                            border: Border.all(color:Colors.grey.shade700 , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('DRIVE READY' , style:TextStyle(fontSize: 2.2.h , fontWeight: FontWeight.bold))),
                         ),
-                        child: Text('DRIVE READY' , style:TextStyle(fontSize: 20.sp , fontWeight: FontWeight.bold)),
                       ),
 
                       InkWell(
@@ -600,19 +617,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomRight,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w , left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        color: Colors.amber.shade300,
-                          borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
-                          border: Border.all(color:Colors.orange.shade700 , width:2,
-                      )
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Project_Space()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w , left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          color: Colors.amber.shade300,
+                            borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
+                            border: Border.all(color:Colors.orange.shade700 , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('PROJECT SPACE' , style:TextStyle(fontSize: 2.2.h , fontWeight: FontWeight.bold))),
                         ),
-                        child: Center(child: Text('PROJECT SPACE' , style:TextStyle(fontSize: 18.sp , fontWeight: FontWeight.bold))),
                       ),
 
                       InkWell(
@@ -649,19 +672,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomLeft,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w , top:5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        color: const Color.fromARGB(255, 232, 147, 176),
-                          borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
-                          border: Border.all(color:Colors.pink.shade700 , width:2,
-                      )
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => codemind()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w , top:5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          color: const Color.fromARGB(255, 232, 147, 176),
+                            borderRadius: BorderRadius.only(topRight:Radius.circular(30) , bottomLeft: Radius.circular(30)),
+                            border: Border.all(color:Colors.pink.shade700 , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('CODEMIND' , style:TextStyle(fontSize: 2.2.h, fontWeight: FontWeight.bold))),
                         ),
-                        child: Center(child: Text('CODEMIND' , style:TextStyle(fontSize: 18.sp , fontWeight: FontWeight.bold))),
                       ),
 
                       InkWell(
@@ -698,19 +727,25 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     alignment: Alignment.bottomRight,
                     children: [
 
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w , left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h ),
-                        decoration: BoxDecoration(
-                          
-                        // color: Colors.white.shade300,
-                          borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
-                          border: Border.all(color:Colors.black , width:2,
-                      )
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => owl_coder()));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w , left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h ),
+                          decoration: BoxDecoration(
+                            
+                          // color: Colors.white.shade300,
+                            borderRadius: BorderRadius.only(topLeft:Radius.circular(30) , bottomRight: Radius.circular(30)),
+                            border: Border.all(color:Colors.black , width:2,
+                        )
+                          ),
+                          child: Center(child: Text('PLACEMENTS' , style:TextStyle(fontSize: 2.2.h , fontWeight: FontWeight.bold))),
                         ),
-                        child: Center(child: Text('PLACEMENTS' , style:TextStyle(fontSize: 18.sp , fontWeight: FontWeight.bold))),
                       ),
 
                       InkWell(
@@ -813,8 +848,7 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                         ),
                       ],
                       options: CarouselOptions(
-                        height: 35.h,
-                        scrollDirection: Axis.vertical,
+                        height: 24.h,
                         autoPlay: true,
                         enlargeCenterPage: true,
                         viewportFraction: 0.8,
@@ -824,7 +858,7 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     ),
                   ),
                   SizedBox(
-                    height: 3.h,
+                    height: 9.h,
                   )
                 ],
               ),
