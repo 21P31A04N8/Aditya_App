@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Team_Mem extends StatefulWidget {
-  Team_Mem({super.key, required this.imagepath, required this.teamname});
+  Team_Mem({super.key, required this.imagepath, required this.teamname, required this.title1});
   final String imagepath;
   final String teamname;
+  final String title1;
 
   @override
   State<Team_Mem> createState() => _Team_MemState();
@@ -22,9 +23,12 @@ class _Team_MemState extends State<Team_Mem> {
               children: [
                 Column(
                   children: [
-                    Text(
-                      widget.teamname,
-                      style: TextStyle(fontSize: 32),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        widget.teamname,
+                        style: TextStyle(fontSize: 32),
+                      ),
                     ),
                   ],
                 ),
@@ -33,9 +37,12 @@ class _Team_MemState extends State<Team_Mem> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  "Profession",
-                  style: TextStyle(color: Colors.black54, fontSize: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                  child: Text(
+                    widget.title1,
+                    style: TextStyle(color: Colors.black54, fontSize: 20),
+                  ),
                 ),
               ],
             )
