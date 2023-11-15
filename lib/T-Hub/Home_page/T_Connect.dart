@@ -36,42 +36,44 @@ class _T_ConnectState extends State<T_Connect> {
           backgroundColor: Colors.teal,
           title: Center(child: Text("T-Connect")),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      child: Image(
-                          image:
-                              AssetImage("assets/Thub/THub_home/TCON.png")))),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.teal,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        child: Image(
+                            image:
+                                AssetImage("assets/Thub/THub_home/TCON.png")))),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    "T-Connect is a technical hub dedicated to providing students with up-to-date knowledge and skills in the field of new technologies. Its main goal is to bridge the gap between the rapidly evolving technological landscape and the knowledge base of students. Showing a brief note about those technologies by stalls. Some of the growing technologies are presnted below.",
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.teal,
+                        borderRadius: BorderRadius.circular(10)),
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "T-Connect is a technical hub dedicated to providing students with up-to-date knowledge and skills in the field of new technologies. Its main goal is to bridge the gap between the rapidly evolving technological landscape and the knowledge base of students. Showing a brief note about those technologies by stalls. Some of the growing technologies are presnted below.",
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: GridView.builder(
+              GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: 18,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3, crossAxisSpacing: 8, mainAxisSpacing: 8),
@@ -83,8 +85,8 @@ class _T_ConnectState extends State<T_Connect> {
                               image: AssetImage(t_con_tech[index]))),
                     )),
               ),
-            ),
-          ],
+            ],
+          ),
         ));
   }
 }

@@ -61,55 +61,57 @@ class _codemindState extends State<codemind> {
         title: Text("Codemind"),
         centerTitle: true,
       ),
-      body: Container(
-        child: Column(
-          children: [
-            CarouselSlider(
-              items: codeImg
-                  .map((item) => Center(
-                        child: Image.asset(item),
-                      ))
-                  .toList(),
-              options: CarouselOptions(
-                autoPlay: true,
-                enlargeCenterPage: true,
-                viewportFraction: 0.9,
-                aspectRatio: 2.0,
-                initialPage: 2,
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              CarouselSlider(
+                items: codeImg
+                    .map((item) => Center(
+                          child: Image.asset(item),
+                        ))
+                    .toList(),
+                options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.9,
+                  aspectRatio: 2.0,
+                  initialPage: 2,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                  width: double.infinity,
-                  height: 28.h,
-                  decoration: BoxDecoration(
-                      color: Colors.pink[200],
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Codemind',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 5),
-                        child: Text(
-                          "Code Mind is a platform that focuses on crafting a skilled individual. Our unique and interactive secenario based learning modules are designed to help a student look at a problem in a life like perspective. We stongly believe that every mind isn't alike, and therefore we give the student a chace to express their opinion rather than trying to abide by a generalized one.",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                          textAlign: TextAlign.justify,
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                    width: double.infinity,
+                    height: 28.h,
+                    decoration: BoxDecoration(
+                        color: Colors.pink[200],
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Codemind',
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
                         ),
-                      )
-                    ],
-                  )
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 5),
+                          child: Text(
+                            "Code Mind is a platform that focuses on crafting a skilled individual. Our unique and interactive secenario based learning modules are designed to help a student look at a problem in a life like perspective. We stongly believe that every mind isn't alike, and therefore we give the student a chace to express their opinion rather than trying to abide by a generalized one.",
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                        )
+                      ],
+                    )
 
-                  //""),
-                  ),
-            ),
-            Expanded(
-              child: ListView.builder(
+                    //""),
+                    ),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: coverImg.length,
                   itemBuilder: (context, index) {
                     return Column(
@@ -249,9 +251,9 @@ class _codemindState extends State<codemind> {
                             )),
                       ],
                     );
-                  }),
-            )
-          ],
+                  })
+            ],
+          ),
         ),
       ),
     );
