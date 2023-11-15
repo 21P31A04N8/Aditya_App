@@ -13,6 +13,7 @@ import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
 import 'package:myapplication/T-Hub/Codemind/Codemind.dart';
 import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
+import 'package:myapplication/T-Hub/Home_page/Placements.dart';
 import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
 import 'package:myapplication/T-Hub/Home_page/T_Connect.dart';
 import 'package:myapplication/T-Hub/Home_page/Thub_Home.dart';
@@ -751,7 +752,7 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                       InkWell(
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => owl_coder()));
+                              MaterialPageRoute(builder: (context) => place()));
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
