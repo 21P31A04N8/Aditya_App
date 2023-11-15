@@ -19,36 +19,58 @@ class _Acoe_homeState extends State<Acoe_home> {
       appBar: AppBar(
         backgroundColor: CupertinoColors.activeOrange,
         title: const Text("Aditya College of Engineering"),
-        leading: IconButton(icon: const Icon(Icons.menu),onPressed: (){
-        },),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {},
+        ),
       ),
-      body:
-      SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             CarouselSlider(
-              items: [Container(
-                child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/banners/popacoe.jpeg"),
-              ),
+              items: [
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/204.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/237.jpg"),),
-                Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/6.jpg"),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/banners/popacoe.jpeg"),
                 ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/7.jpg"),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/204.jpg"),
                 ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
-                )
-                ,
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),
+                ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/B.jpg"),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/237.jpg"),
+                ),
+                Container(
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/6.jpg"),
+                ),
+                Container(
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/7.jpg"),
+                ),
+                Container(
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
+                ),
+                Container(
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://www.acoe.edu.in/acoe/banners/B.jpg"),
                 )
               ],
               options: CarouselOptions(
@@ -61,8 +83,11 @@ class _Acoe_homeState extends State<Acoe_home> {
             ),
             const Padding(
               padding: EdgeInsets.all(15.0),
-              child: Text("The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway.  ACOE offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception ACOE has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are two blocks in ACOE, one is Ramanujan Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE, IOT, AIML  and Transport office and the second one is which contains EEE, MECHANICAL, CIVIL."
-                ,style: TextStyle(fontSize: 18),),
+              child: Text(
+                "The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway.  ACOE offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception ACOE has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are two blocks in ACOE, one is Ramanujan Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE, IOT, AIML  and Transport office and the second one is which contains EEE, MECHANICAL, CIVIL.",
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,
+              ),
             ),
             Container(
               height: 450,
@@ -77,8 +102,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                     margin: const EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.orange
-                    ),
+                        color: Colors.orange),
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,59 +110,58 @@ class _Acoe_homeState extends State<Acoe_home> {
                         SizedBox(
                           height: 110,
                         ),
-                        Text("Tevit" , style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10,),
-                        Text("31.31",
+                        Text(
+                          "Tevit",
                           style: TextStyle(
-                              fontSize: 25
-                          ),
+                              fontSize: 30, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("AWS",style: TextStyle(
-                            fontSize: 30,
-                            fontStyle: FontStyle.italic
-                        ),)
+                        Text(
+                          "31.31",
+                          style: TextStyle(fontSize: 25),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "AWS",
+                          style: TextStyle(
+                              fontSize: 30, fontStyle: FontStyle.italic),
+                        )
                       ],
                     ),
                   ),
-
                   Card(
                     elevation: 40,
                     shadowColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(360)
-                    ),
+                        borderRadius: BorderRadius.circular(360)),
                     child: Container(
                       height: 180,
                       width: 180,
-
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(360),
-                          color: Colors.transparent
-                      ),
-
+                          color: Colors.transparent),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular((360)),
                         child: Image.network(
-                            fit:BoxFit.cover,
-                            "http://acet.ac.in/ACET/banners/153.jpg"
-                        ),
+                            fit: BoxFit.cover,
+                            "http://acet.ac.in/ACET/banners/153.jpg"),
                       ),
                     ),
                   ),
                   Positioned(
                       bottom: 110,
                       right: 40,
-                      child: Text(1.toString() ,
+                      child: Text(
+                        1.toString(),
                         style: TextStyle(
                             color: Colors.black.withOpacity(0.3),
                             fontSize: 150,
-                            fontWeight: FontWeight.bold
-                        ),
-                      )
-                  )
+                            fontWeight: FontWeight.bold),
+                      ))
                 ],
               ),
             ),
@@ -156,9 +179,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                     ],
                   ),
                   child: const Center(
-                    child: Text(
-                        "Slide to Next Page"
-                    ),
+                    child: Text("Slide to Next Page"),
                   ),
                 );
               },
@@ -178,7 +199,10 @@ class _Acoe_homeState extends State<Acoe_home> {
                 );
               },
               action: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AcoeBranches()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AcoeBranches()));
               },
             ),
           ],

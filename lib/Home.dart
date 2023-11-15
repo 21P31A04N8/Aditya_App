@@ -232,6 +232,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Apcs_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
                               },
                               child: Container(
                                   width: double.infinity,
@@ -249,6 +253,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acop_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
                               },
                               child: Container(
                                   width: double.infinity,
@@ -274,6 +282,10 @@ class _MenuScreenState extends State<MenuScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Courses()));
+                    setState(() {
+                      _expansionTileController.collapse();
+                      zoomDrawerController.close;
+                    });
                   },
                   child: SizedBox(
                     height: 30,
@@ -293,6 +305,10 @@ class _MenuScreenState extends State<MenuScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AGBS()));
+                    setState(() {
+                      _expansionTileController.collapse();
+                      zoomDrawerController.close;
+                    });
                   },
                   child: SizedBox(
                     height: 30,
@@ -308,19 +324,6 @@ class _MenuScreenState extends State<MenuScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "MBA",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
               ],
             ),
             ExpansionTile(
@@ -330,6 +333,10 @@ class _MenuScreenState extends State<MenuScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Veda()));
+                    setState(() {
+                      _expansionTileController.collapse();
+                      zoomDrawerController.close;
+                    });
                   },
                   child: SizedBox(
                     height: 30,

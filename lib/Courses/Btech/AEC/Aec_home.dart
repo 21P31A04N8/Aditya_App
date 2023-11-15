@@ -18,7 +18,7 @@ class _Aec_homeState extends State<Aec_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CupertinoColors.activeOrange,
+        backgroundColor: const Color.fromARGB(255, 255, 149, 0),
         title: Text("Aditya Engineering College"),
         leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
         },),
