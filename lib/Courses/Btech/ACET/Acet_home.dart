@@ -68,6 +68,7 @@ class _Acet_homeState extends State<Acet_home> {
               child: Text(
                 "The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway.  ACET offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception ACET has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are two blocks in ACET, one is Visweswarayya Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE,IT and BSE and the second one is which contains EEE, MECHANICAL, CIVIL and Transport Office.",
                 style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,
               ),
             ),
             Container(
