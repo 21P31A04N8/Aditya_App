@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 import 'package:myapplication/Courses/BBA/AGBS.dart';
@@ -11,6 +12,10 @@ import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Diploma/Diploma_home.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_home.dart';
 import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_home.dart';
+import 'package:myapplication/Events/Veda.dart';
+import 'package:myapplication/Events/prokabaddi.dart';
+import 'package:myapplication/Reviews/Profile.dart';
+import 'package:myapplication/Reviews/Review_viewpage.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
 import 'package:myapplication/T-Hub/Codemind/Codemind.dart';
 import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
@@ -27,7 +32,6 @@ import 'package:transparent_image/transparent_image.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:flutter/rendering.dart';
 
 final zoomDrawerController = ZoomDrawerController();
 
@@ -76,7 +80,62 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Home")),
+          actions: [
+            PopupMenuButton(
+                position: PopupMenuPosition.values[1],
+                tooltip: "More options,",
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                color: Colors.black,
+                itemBuilder: (context) => [
+                      PopupMenuItem(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => About_Me()));
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Profile",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 55),
+                                child: Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          )),
+                      PopupMenuItem(
+                          onTap: () {
+                            FirebaseAuth.instance.signOut();
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Log out",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 55),
+                                child: Icon(
+                                  Icons.logout,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ))
+                    ]),
+          ],
+          title: Text(
+            "ADITYA",
+            style: TextStyle(letterSpacing: 2),
+          ),
+          centerTitle: true,
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () => ZoomDrawer.of(context)!.toggle(),
@@ -91,23 +150,74 @@ class _MainScreenState extends State<MainScreen> {
               CarouselSlider(
                 items: [
                   Container(
-                    
-                      child: FadeInImage.memoryNetwork(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
                           placeholder: kTransparentImage,
                           image:
-                              "https://ik.imagekit.io/lhb4hvprkpz/3_1jjXabAtm.jpg?updatedAt=1627468901511")),
+                              "https://ik.imagekit.io/lhb4hvprkpz/3_1jjXabAtm.jpg?updatedAt=1627468901511",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.black,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/wifi_2tU1IcdcN.jpg?updatedAt=1627469037857",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.orange,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/zym_ZoidnRVOV.jpg?updatedAt=1627469080425",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.yellow,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image: "https://aditya.ac.in/assets/img/race.jpg",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.green,
-                  )
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/2_9gpdW7NrJ.jpg?updatedAt=1627468900702",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                 ],
                 options: CarouselOptions(
                   autoPlay: true,
@@ -126,8 +236,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Aditya Educational Institutions started the journey in 1984 as a small sapling to provide quality education to the students in the district of East Godavari by visionary and prominent educationist Shri N. Sesha Reddy and being spread under young and dynamic leadership of Shri N. Satish Reddy. In this journey, Aditya has now attained an outcome of number of branches with strong roots in the field of education with 50+ Educational Institutions, 5000+ faculty and 50000+ students. Growing concern about the technical front, Aditya has established a group of Engineering Colleges, Polytechnic Colleges, Pharmacy Colleges at Surampalem to enrich quality technical education in the district level as well as at global level.",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
               ),
               Row(
@@ -187,8 +298,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Sri Nallamilli Sesha Reddy as a founder cum chairman, promoted an educational society in the name and style of Aditya Academy at Kakinada in the year 1984, with a vision and mission to create a platform for holistic growth and success to students at all levels (i.e. from KG to PG).",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
               ),
               Row(
@@ -243,9 +355,13 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Sri Satish Reddy as a  cum vice chairman,  is typically responsible for assisting the Chairman in overseeing the institution's strategic direction and decision-making. This role often involves participating in board meetings, contributing to policy development, and representing the institute in various capacities.",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: EdgeInsets.only(right: 40.w),
@@ -329,791 +445,18 @@ class _MainScreenState extends State<MainScreen> {
                   country: "ACES"),
             ],
           ),
-        ));
+        )
+
+        // body: ElevatedButton(
+        //     onPressed: () {
+        //       setState(() {
+        //         _zoomDrawerController.open?.call();
+        //       });
+        //     },
+        //     child: Text("OPEN")),
+        );
   }
 }
-
-class MenuScreen extends StatefulWidget {
-  MenuScreen({super.key, required this.onpagechange});
-  final Function(Widget) onpagechange;
-
-  @override
-  State<MenuScreen> createState() => _MenuScreenState();
-}
-
-class _MenuScreenState extends State<MenuScreen> {
-  ExpansionTileController _expansionTileController = ExpansionTileController();
-  // List<listItems> draweritems=[
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.deepPurple[300],
-        body: Theme(
-          data: ThemeData.dark(),
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children:
-              // draweritems.map((e) => ListTile(
-              //   title: e.title,
-              //   leading: e.icon,
-              //   onTap: (){
-              //     onpagechange(e.page);
-              //   },
-              // )).toList()
-              [
-            ListTile(
-              title: Text('Home'),
-              leading: Icon(Icons.home),
-              onTap: () {
-                widget.onpagechange(MainScreen());
-              },
-            ),
-            ExpansionTile(
-              controller: _expansionTileController,
-              title: Text('Courses'),
-              childrenPadding: EdgeInsets.symmetric(vertical: 8),
-              children: [
-                ListTile(
-                  title: Text(
-                    '                Btech',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  onTap: () {},
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      PopupMenuButton(
-                        color: Colors.white,
-                        itemBuilder: (context) {
-                          return [
-                            PopupMenuItem(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Acet_home()));
-                                },
-                                child: Container(
-                                    width: double.infinity,
-                                    child: Text(
-                                      'AEC',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                              ),
-                            ),
-                            PopupMenuItem(
-                              child: Text(
-                                'ACET',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acet_home()));
-                                // setState(() {
-                                //   _expansionTileController.collapse();
-                                //   zoomDrawerController.close;
-                                // });
-                              },
-                            ),
-                            PopupMenuItem(
-                                child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acoe_home()));
-                                setState(() {
-                                  _expansionTileController.collapse();
-                                });
-                              },
-                              child: Container(
-                                  width: double.infinity,
-                                  child: Text(
-                                    'ACOE',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                            ))
-                          ];
-                        },
-                        child: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                ListTile(
-                  title: Text(
-                    '              Pharmacy',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  onTap: () {},
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      PopupMenuButton(
-                        color: Colors.white,
-                        itemBuilder: (context) {
-                          return [
-                            PopupMenuItem(
-                                child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Apcs_home()));
-                              },
-                              child: Container(
-                                  width: double.infinity,
-                                  child: Text(
-                                    'APCS',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                            )),
-                            PopupMenuItem(
-                                child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acop_home()));
-                              },
-                              child: Container(
-                                  width: double.infinity,
-                                  child: Text(
-                                    'ACPS',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                            )),
-                          ];
-                        },
-                        child: Icon(
-                          Icons.keyboard_arrow_right,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Courses()));
-                  },
-                  child: SizedBox(
-                    height: 30,
-                    width: 160,
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                          child: Text(
-                        "Diploma",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AGBS()));
-                  },
-                  child: SizedBox(
-                    height: 30,
-                    width: 160,
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                          child: Text(
-                        "BBA",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "MBA",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
-              ],
-            ),
-            ExpansionTile(
-              title: Text("Events"),
-              children: [
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "VEDA",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "COLORS",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "Acheivers day",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
-              ],
-            ),
-            ListTile(
-              title: Text('Thub'),
-              leading: Icon(Icons.style_outlined),
-              onTap: () {
-                widget.onpagechange(Thub_Home());
-              },
-            ),
-            ListTile(
-              title: Text('Contact Us'),
-              leading: Icon(Icons.phone),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Contact_us()));
-              },
-            )
-          ]),
-        ));
-  }
-}
-
-class Thub extends StatefulWidget {
-  const Thub({super.key});
-
-  @override
-  State<Thub> createState() => _ThubState();
-}
-
-class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller = AnimationController(
-      duration: Duration(
-          seconds: 1), // Adjust the duration to decrease or increase the speed
-      vsync: this,
-    );
-
-    _animation = Tween<double>(begin: -1.0, end: 0.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut, // You can experiment with different curves
-      ),
-    );
-
-    _controller.forward();
-  }
-
-  var img = [];
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.green,
-        title: Text("TECHNICAL HUB"),
-        leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () => ZoomDrawer.of(context)!.toggle()),
-      ),
-      body: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) {
-          return Transform(
-            transform: Matrix4.translationValues(
-                _animation.value * MediaQuery.of(context).size.width, 0.0, 0.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.all(2.h),
-                      child: Container(
-                        height: 20.h,
-                        width: 80.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.grey.shade400,
-                        ),
-                      )),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomLeft,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.lightBlue.shade300,
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.blue.shade900,
-                              width: 2,
-                            )),
-                        child: Text('OWL CODER',
-                            style: TextStyle(
-                                fontSize: 20.sp, fontWeight: FontWeight.bold)),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => owl_coder()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/Owl-Coder.png'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomRight,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.green.shade200,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.green.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('T CONNECT',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => T_Connect()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/tconnect.png'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomLeft,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade400,
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.grey.shade700,
-                              width: 2,
-                            )),
-                        child: Text('DRIVE READY',
-                            style: TextStyle(
-                                fontSize: 20.sp, fontWeight: FontWeight.bold)),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Technology()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/Drive-Ready.png'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomRight,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.amber.shade300,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.orange.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('PROJECT SPACE',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Project_Space()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/projectspace.png'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomLeft,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 232, 147, 176),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.pink.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('CODEMIND',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => codemind()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/codemind.png'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 2.5.h,
-                  ),
-                  Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.end,
-                    alignment: Alignment.bottomRight,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-
-                            // color: Colors.white.shade300,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('PLACEMENTS',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => owl_coder()));
-                        },
-                        child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25)),
-                            elevation: 30,
-                            shadowColor: Colors.black,
-                            child: Container(
-                              height: 30.w,
-                              width: 30.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/Thub/THub_home/placements.jpg'),
-                                    fit: BoxFit.fill),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                              ),
-                            )),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
-                  Divider(
-                      indent: 3.w,
-                      endIndent: 3.w,
-                      thickness: 2,
-                      color: Colors.black45),
-                  SizedBox(height: 2.h),
-                  Padding(
-                    padding: EdgeInsets.all(2.h),
-                    child: CarouselSlider(
-                      items: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Container(
-                            height: 25.h,
-                            width: 90.w,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/Thub/THub_home/Cybersec.png'),
-                                  fit: BoxFit.fill),
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 25.h,
-                          width: 90.w,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/Thub/THub_home/owl coder 1.png'),
-                                fit: BoxFit.fill),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        Container(
-                          height: 25.h,
-                          width: 90.w,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/Thub/THub_home/pega.png'),
-                                fit: BoxFit.fill),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        Container(
-                          height: 25.h,
-                          width: 90.w,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/Thub/THub_home/owlcoder3.1.png'),
-                                fit: BoxFit.fill),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        Container(
-                          height: 25.h,
-                          width: 90.w,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/Thub/THub_home/skdayselfie.png'),
-                                fit: BoxFit.fill),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                      ],
-                      options: CarouselOptions(
-                        height: 35.h,
-                        scrollDirection: Axis.vertical,
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.8,
-                        aspectRatio: 2.0,
-                        initialPage: 2,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
-                  
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class listItems {
-  final Icon icon;
-  final Text title;
-  final Widget page;
-  listItems(this.icon, this.title, this.page);
-}
-
 //home screen animation
 
 class LocationListItem extends StatelessWidget {
@@ -1396,40 +739,343 @@ class Location {
   final String imageUrl;
 }
 
-const locations = [
-  Location(
-    name: 'Mount Rushmore',
-    place: 'U.S.A',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Gardens By The Bay',
-    place: 'Singapore',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Machu Picchu',
-    place: 'Peru',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Vitznau',
-    place: 'Switzerland',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Bali',
-    place: 'Indonesia',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Mexico City',
-    place: 'Mexico',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-];
+class MenuScreen extends StatefulWidget {
+  MenuScreen({super.key, required this.onpagechange});
+  final Function(Widget) onpagechange;
+
+  @override
+  State<MenuScreen> createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
+  final _expansionTileController = ExpansionTileController();
+  final _expansionTileController1 = ExpansionTileController();
+  _onExpansion(bool expanding) {
+    setState(() {
+      if (expanding) {
+        _expansionTileController.collapse();
+      }
+    });
+  }
+
+  // List<listItems> draweritems=[
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.deepPurple[300],
+        body: Theme(
+          data: ThemeData.dark(),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children:
+              // draweritems.map((e) => ListTile(
+              //   title: e.title,
+              //   leading: e.icon,
+              //   onTap: (){
+              //     onpagechange(e.page);
+              //   },
+              // )).toList()
+              [
+            ListTile(
+              title: Text('Home'),
+              leading: Icon(Icons.home),
+              onTap: () {
+                widget.onpagechange(MainScreen());
+              },
+            ),
+            ExpansionTile(
+              textColor: Colors.white,
+              collapsedTextColor: Colors.white,
+              controller: _expansionTileController,
+              title: Text(
+                'Courses',
+              ),
+              childrenPadding: EdgeInsets.symmetric(vertical: 8),
+              children: [
+                ListTile(
+                  title: Text(
+                    '                Btech',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  onTap: () {},
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      PopupMenuButton(
+                        color: Colors.white,
+                        itemBuilder: (context) {
+                          return [
+                            PopupMenuItem(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Aec_home()));
+                                  setState(() {
+                                    _expansionTileController.collapse();
+                                    zoomDrawerController.close;
+                                  });
+                                },
+                                child: Container(
+                                    width: double.infinity,
+                                    child: Text(
+                                      'AEC',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                    )),
+                              ),
+                            ),
+                            PopupMenuItem(
+                              child: Text(
+                                'ACET',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Acet_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
+                              },
+                            ),
+                            PopupMenuItem(
+                                child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Acoe_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
+                              },
+                              child: Container(
+                                  width: double.infinity,
+                                  child: Text(
+                                    'ACOE',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ))
+                          ];
+                        },
+                        child: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                ListTile(
+                  title: Text(
+                    '              Pharmacy',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  onTap: () {},
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      PopupMenuButton(
+                        color: Colors.white,
+                        itemBuilder: (context) {
+                          return [
+                            PopupMenuItem(
+                                child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Apcs_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
+                              },
+                              child: Container(
+                                  width: double.infinity,
+                                  child: Text(
+                                    'APCS',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            )),
+                            PopupMenuItem(
+                                child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Acop_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
+                              },
+                              child: Container(
+                                  width: double.infinity,
+                                  child: Text(
+                                    'ACPS',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            )),
+                          ];
+                        },
+                        child: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Courses()));
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Center(
+                        child: Text(
+                      "Diploma",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          letterSpacing: 1),
+                    )),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AGBS()));
+                    setState(() {
+                      _expansionTileController.collapse();
+                      zoomDrawerController.close;
+                    });
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Center(
+                        child: Text(
+                      "BBA",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    )),
+                  ),
+                ),
+              ],
+            ),
+            ExpansionTile(
+              onExpansionChanged: _onExpansion,
+              controller: _expansionTileController1,
+              title: Text("Events"),
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Veda()));
+                    setState(() {
+                      _expansionTileController1.collapse();
+                      zoomDrawerController.close;
+                    });
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Card(
+                      color: Colors.white,
+                      child: Center(
+                          child: Text(
+                        "VEDA",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Prokabaddi()));
+                    setState(() {
+                      _expansionTileController1.collapse();
+                      zoomDrawerController.close;
+                    });
+                  },
+                  child: SizedBox(
+                    height: 30,
+                    width: 160,
+                    child: Card(
+                      color: Colors.white,
+                      child: Center(
+                          child: Text(
+                        "PRO KABADDI",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ListTile(
+              title: Text('Thub'),
+              leading: Icon(Icons.style_outlined),
+              onTap: () {
+                widget.onpagechange(Thub_Home());
+              },
+            ),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Reviews'),
+                leading: Icon(Icons.reviews_outlined),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Mytodo()));
+                },
+              ),
+            ),
+            ListTile(
+              title: Text('Contact Us'),
+              leading: Icon(Icons.phone),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Contact_us()));
+              },
+            ),
+          ]),
+        ));
+  }
+}
+
+class listItems {
+  final Icon icon;
+  final Text title;
+  final Widget page;
+  listItems(this.icon, this.title, this.page);
+}

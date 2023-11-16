@@ -68,7 +68,6 @@ class _TeamState extends State<Team> {
     "assets/Thub/Team/VASANTH.webp",
 //9
     "assets/Thub/Team/VEERABABU.png",
-
   ];
   final List<String> title1 = [
     "AWS Trainer",
@@ -109,7 +108,7 @@ class _TeamState extends State<Team> {
 //6
     "3D Graphics Designer",
     "Support Executive",
-   // "Automation trainer",
+    // "Automation trainer",
     "Network Administrator",
     "Web developer",
 //7
@@ -126,7 +125,6 @@ class _TeamState extends State<Team> {
     "Flutter trainer ",
 //9
     "Program Manager Operation",
-
   ];
   final Teamname = [
     "ARAVIND",
@@ -184,14 +182,54 @@ class _TeamState extends State<Team> {
     "VASANTH",
 
     "VEERABABU",
-
-
   ];
-  var title=["","","","","","","","","","",
-    "","","","","","","","","","",
-    "","","","","","","","","","",
-    "","","","","","","","","","",
-    "","","","","",];
+  var title = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
   Widget MyTile(int i) {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -207,18 +245,10 @@ class _TeamState extends State<Team> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image:
-            DecorationImage(fit: BoxFit.cover, image: AssetImage(image))),
+                DecorationImage(fit: BoxFit.cover, image: AssetImage(image))),
       );
     }).toList();
     return Scaffold(
-      appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              ZoomDrawer.of(context)!.toggle();
-            },
-          ),
-          title: Center(child: Text("Team"))),
       backgroundColor: Colors.white,
       body: VerticalCardPager(
         onSelectedItem: (index) {
@@ -226,10 +256,10 @@ class _TeamState extends State<Team> {
               context,
               MaterialPageRoute(
                   builder: (context) => Team_Mem(
-                    imagepath: Teampics[index],
-                    teamname: Teamname[index],
-                    title1: title1[index],
-                  )));
+                        imagepath: Teampics[index],
+                        teamname: Teamname[index],
+                        title1: title1[index],
+                      )));
         },
         titles: title,
         images: images,
