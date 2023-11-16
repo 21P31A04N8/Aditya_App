@@ -1055,8 +1055,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 title: Text('Reviews'),
                 leading: Icon(Icons.reviews_outlined),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Mytodo()));
+                  widget.onpagechange(Mytodo());
                 },
               ),
             ),

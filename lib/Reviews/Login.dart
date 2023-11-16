@@ -18,11 +18,15 @@ class _Login_pageState extends State<Login_page> {
     int w = MediaQuery.of(context).size.width.toInt();
     return Container(
       decoration: BoxDecoration(
-          color: Colors.deepPurple[500],
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  "https://img.freepik.com/free-photo/purple-flame-black-background_53876-111365.jpg?size=626&ext=jpg&ga=GA1.1.1872723664.1697794858&semt=ais"))),
+          gradient: LinearGradient(
+              begin: AlignmentDirectional.topStart,
+              end: AlignmentDirectional.bottomCenter,
+              colors: [
+            Colors.deepPurple.shade200,
+            Colors.deepPurple.shade400,
+            Colors.deepPurple.shade200,
+            Colors.blue.shade400
+          ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
@@ -30,24 +34,70 @@ class _Login_pageState extends State<Login_page> {
             child: Container(
               height: h.toDouble(),
               width: w.toDouble(),
-              color: Colors.white.withOpacity(0.5),
+              //color: Colors.white.withOpacity(0.2),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Login",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: 'Courier New',
-                        fontWeight: FontWeight.bold),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(150),
+                              topLeft: Radius.circular(150),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10))),
+                      child: Image.asset(
+                          "assets/aditya/Aditya_logo-removebg-preview.png")),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Welcome,",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontFamily: 'Courier New',
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Aditya Educational Institutions",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: TextFormField(
                       controller: _email1,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Phone Number , user name or email",
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 1.0),
+                        ),
+                        hintStyle: TextStyle(color: Colors.white),
+                        filled: true,
+                        fillColor: Colors.deepPurple.shade200,
+                        enabledBorder: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          borderSide:
+                              const BorderSide(color: Colors.white, width: 1.0),
+                        ),
+                        hintText: "Email Id",
                       ),
                       validator: (val) => val!.isEmpty ? "Enter Email" : null,
                     ),
@@ -58,8 +108,20 @@ class _Login_pageState extends State<Login_page> {
                     child: TextFormField(
                       controller: _pass1,
                       decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          borderSide: const BorderSide(
+                              color: Colors.deepPurple, width: 1.0),
+                        ),
+                        hintStyle: TextStyle(color: Colors.white),
+                        filled: true,
+                        fillColor: Colors.deepPurple.shade200,
                         //icon: Icon(Icons.remove_red_eye),
-                        border: OutlineInputBorder(),
+                        enabledBorder: const OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Colors.white, width: 1.0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15))),
                         hintText: "Password",
                       ),
                       validator: (val) =>
@@ -67,169 +129,126 @@ class _Login_pageState extends State<Login_page> {
                       obscureText: true,
                     ),
                   ),
-
                   Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ForgetPass()));
-                          },
-                          child: Text("Forgot password?",
-                              style: TextStyle(
-                                  color: Colors.lightBlueAccent.shade700,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 0.5)),
+                      padding:
+                          const EdgeInsets.only(top: 20, left: 20, right: 20),
+                      child: SizedBox(
+                        width: 450,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15))),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: TextButton(
+                              child: Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Text(
+                                  "Log In",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
+                              ),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Future<void> login() async {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) => Center(
+                                            child: CircularProgressIndicator(),
+                                          ));
+                                  try {
+                                    await FirebaseAuth.instance
+                                        .signInWithEmailAndPassword(
+                                            email: "${_email1.text}",
+                                            password: "${_pass1.text}");
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) => Screen()));
+                                    if (context.mounted) Navigator.pop(context);
+                                  } on FirebaseException catch (e) {
+                                    Navigator.pop(context);
+                                    print(e.code);
+                                  }
+                                }
+
+                                login();
+                              },
+                            ),
+                          ),
                         ),
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                            width: 160,
+                            child: Divider(
+                                color: Colors.black45,
+                                thickness: 2,
+                                height: 100)),
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: 16.0, right: 16.0),
+                          child: Text("OR"),
+                        ),
+                        SizedBox(
+                            width: 180,
+                            child: Divider(
+                              color: Colors.black45,
+                              thickness: 2,
+                              height: 100,
+                            )),
                       ],
                     ),
-                  ),
-
-                  Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: SizedBox(
-                        width: 500,
-                        height: 40,
-                        child: TextButton(
-                          child: Text(
-                            "Log In",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          style: TextButton.styleFrom(
-                            backgroundColor: Colors.lightBlueAccent,
-                          ),
-                          onPressed: () {
-                            Future<void> login() async {
-                              await FirebaseAuth.instance
-                                  .signInWithEmailAndPassword(
-                                      email: "${_email1.text}",
-                                      password: "${_pass1.text}")
-                                  .then((value) {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Screen()));
-                              }).onError((error, stackTrace) {
-                                print("Wrong password");
-                              });
-                            }
-
-                            login();
-                            _email1.clear();
-                            _pass1.clear();
-                          },
-                        ),
-                      )),
-                  Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: SizedBox(
-                        width: 500,
-                        height: 40,
-                        child: TextButton(
-                          child: Text(
-                            "Log In 1",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          style: TextButton.styleFrom(
-                            backgroundColor: Colors.lightBlueAccent,
-                          ),
-                          onPressed: () {
-                            Future<void> Anonym() async {
-                              await FirebaseAuth.instance
-                                  .signInAnonymously()
-                                  .then((value) {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Screen()));
-                              }).onError((error, stackTrace) {});
-                            }
-
-                            Anonym();
-                          },
-                        ),
-                      )),
-
-                  Row(
-                    children: [
-                      SizedBox(width: 160, child: Divider(height: 100)),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                        child: Text("OR"),
-                      ),
-                      SizedBox(
-                          width: 180,
-                          child: Divider(
-                            height: 100,
-                          )),
-                    ],
                   ), //Divider(height: 180,color: Colors.black,),
+                  Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: SizedBox(
+                        width: 500,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: TextButton(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(
+                                "Login as a Guest",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18),
+                              ),
+                            ),
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.white,
+                            ),
+                            onPressed: () {
+                              Future<void> Anonym() async {
+                                await FirebaseAuth.instance
+                                    .signInAnonymously()
+                                    .then((value) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Screen()));
+                                }).onError((error, stackTrace) {});
+                              }
+
+                              Anonym();
+                            },
+                          ),
+                        ),
+                      )),
                 ],
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class ForgetPass extends StatefulWidget {
-  const ForgetPass({super.key});
-
-  @override
-  State<ForgetPass> createState() => _ForgetPassState();
-}
-
-class _ForgetPassState extends State<ForgetPass> {
-  final _email1 = TextEditingController();
-  Future<void> forgetpass() async {
-    await FirebaseAuth.instance.sendPasswordResetEmail(email: _email1.text);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  "https://cdn.pixabay.com/photo/2023/09/13/07/29/ghost-8250317_640.png"))),
-      child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: TextFormField(
-                controller: _email1,
-                decoration: InputDecoration(
-                  //icon: Icon(Icons.remove_red_eye),
-                  border: OutlineInputBorder(),
-                  hintText: "Email",
-                ),
-                validator: (val) => val!.isEmpty ? "Enter Email" : null,
-                obscureText: true,
-              ),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  ForgetPass();
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Send"),
-                ))
-          ],
         ),
       ),
     );
