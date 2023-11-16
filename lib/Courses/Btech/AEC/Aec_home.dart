@@ -5,6 +5,7 @@ import 'package:myapplication/Courses/Btech/AEC/Aec_Branches.dart';
 
 //import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:slide_action/slide_action.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Aec_home extends StatefulWidget {
   const Aec_home({super.key});
@@ -20,27 +21,86 @@ class _Aec_homeState extends State<Aec_home> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 255, 149, 0),
         title: Text("Aditya Engineering College"),
-        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
-        },),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
       ),
-      body:
-      SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             CarouselSlider(
-              items: [Container(
-                child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/240.jpg"),
-              ),
+              items: [
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/204.jpg"),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "https://www.acoe.edu.in/acoe/banners/240.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "https://www.acoe.edu.in/acoe/banners/204.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://acet.ac.in/ACET/banners/Crouse.jpg"),),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image:
+                            "https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://acet.ac.in/ACET/banners/153.jpg"),
-                )],
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "http://acet.ac.in/ACET/banners/Crouse.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
+                Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "http://acet.ac.in/ACET/banners/153.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
+              ],
               options: CarouselOptions(
                 autoPlay: true,
                 enlargeCenterPage: true,
@@ -50,10 +110,12 @@ class _Aec_homeState extends State<Aec_home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 30),
-              child: Text("The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway. AEC offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception AEC has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are Four blocks in AEC, one is Cotten Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE,IT and BSE and the second one is KLRao which contains EEE, MECHANICAL, CIVIL and Transport Office.Third one is Billgates Bhavan which contains EEE, MECHANICAL, CIVIL"
-                ,style: TextStyle(fontSize: 18),
-                textAlign: TextAlign.justify,),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              child: Text(
+                "The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway. AEC offers various under graduate and post graduate courses in engineering, science and management and has state of laboratories and well stocked library and one of the best computing facilities. With an ideal teacher-taught ratio we strive for academic excellence through personalized attention. Since its inception AEC has achieved national standing in terms of academic performance, co-curricular and extra curricular activities. Known for its creative dynamism and flexibility the college offers varied programs blending skill development and value orientation to shape the carreer of students.There are Four blocks in AEC, one is Cotten Bhavan which contains Administrative Office, Examination Cell, Admission Office, CSE, ECE,IT and BSE and the second one is KLRao which contains EEE, MECHANICAL, CIVIL and Transport Office.Third one is Billgates Bhavan which contains EEE, MECHANICAL, CIVIL",
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,
+              ),
             ),
             Container(
               height: 450,
@@ -68,8 +130,7 @@ class _Aec_homeState extends State<Aec_home> {
                     margin: EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.orange
-                    ),
+                        color: Colors.orange),
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,59 +138,58 @@ class _Aec_homeState extends State<Aec_home> {
                         SizedBox(
                           height: 110,
                         ),
-                        Text("Tevit" , style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10,),
-                        Text("31.31",
+                        Text(
+                          "Tevit",
                           style: TextStyle(
-                              fontSize: 25
-                          ),
+                              fontSize: 30, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("AWS",style: TextStyle(
-                            fontSize: 30,
-                            fontStyle: FontStyle.italic
-                        ),)
+                        Text(
+                          "31.31",
+                          style: TextStyle(fontSize: 25),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "AWS",
+                          style: TextStyle(
+                              fontSize: 30, fontStyle: FontStyle.italic),
+                        )
                       ],
                     ),
                   ),
-
                   Card(
                     elevation: 40,
                     shadowColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(360)
-                    ),
+                        borderRadius: BorderRadius.circular(360)),
                     child: Container(
                       height: 180,
                       width: 180,
-
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(360),
-                          color: Colors.transparent
-                      ),
-
+                          color: Colors.transparent),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular((360)),
                         child: Image.network(
-                            fit:BoxFit.cover,
-                            "http://acet.ac.in/ACET/banners/153.jpg"
-                        ),
+                            fit: BoxFit.cover,
+                            "http://acet.ac.in/ACET/banners/153.jpg"),
                       ),
                     ),
                   ),
                   Positioned(
                       bottom: 110,
                       right: 40,
-                      child: Text(1.toString() ,
+                      child: Text(
+                        1.toString(),
                         style: TextStyle(
                             color: Colors.black.withOpacity(0.3),
                             fontSize: 150,
-                            fontWeight: FontWeight.bold
-                        ),
-                      )
-                  )
+                            fontWeight: FontWeight.bold),
+                      ))
                 ],
               ),
             ),
@@ -147,9 +207,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ],
                   ),
                   child: Center(
-                    child: Text(
-                        "Slide to Next Page"
-                    ),
+                    child: Text("Slide to Next Page"),
                   ),
                 );
               },
@@ -169,7 +227,8 @@ class _Aec_homeState extends State<Aec_home> {
                 );
               },
               action: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Aecbranch()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Aecbranch()));
               },
             ),
           ],
