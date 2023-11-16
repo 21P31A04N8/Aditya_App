@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Branches extends StatefulWidget {
   const Branches({super.key});
@@ -364,78 +366,71 @@ class _BranchesState extends State<Branches>
                                                 borderRadius:
                                                 BorderRadius.circular(60),
                                                 color: Colors.white),
-                                            //padding: EdgeInsets.symmetric(horizontal: 30),
-                                            child: Stack(children: [
-                                              Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'PIN: ' +
-                                                        det[selectedIndex]
-                                                            .stuid
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    'NAME: ' +
-                                                        det[selectedIndex]
-                                                            .stuname
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    det[selectedIndex]
-                                                        .pack
-                                                        .toString() +
-                                                        ' LPA',
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 25),
-                                                  )
-                                                ],
-                                              ),
-                                              Positioned(
-                                                  bottom: 0,
-                                                  left: 4,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(10),
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.only(
-                                                            topRight: Radius
-                                                                .circular(
-                                                                60),
-                                                            bottomLeft: Radius
-                                                                .circular(
-                                                                60)),
-                                                        color: Colors.orange),
-                                                    child: Center(
-                                                      child: Text(
-                                                        'LPA: ' +
-                                                            det[selectedIndex]
-                                                                .pack
-                                                                .toString(),
-                                                        style: TextStyle(
-                                                          fontSize: 18,
-                                                        ),
-                                                      ),
+                                            // padding: EdgeInsets.symmetric(horizontal: 30),
+                                            child: Center(
+                                              child: Stack(children: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'PIN: ' +
+                                                          det[selectedIndex]
+                                                              .stuid
+                                                              .toString(),
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.deepPurple,
+                                                          fontSize: 20.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                          textAlign: TextAlign.justify,
                                                     ),
-                                                  ))
-                                            ]),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Text('NAME: ' ,style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),),
+                                                        Text(
+                                                              det[selectedIndex]
+                                                                  .stuname
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Text(
+                                                      det[selectedIndex]
+                                                          .pack
+                                                          .toString() +
+                                                          ' LPA',
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.orange.shade900,
+                                                          fontSize: 23.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                    )
+                                                  ],
+                                                ),
+                                                // 
+                                              ]),
+                                            ),
                                           ),
                                         ),
                                         Positioned(
@@ -453,17 +448,13 @@ class _BranchesState extends State<Branches>
                                                   borderRadius:
                                                   BorderRadius.circular(
                                                       360),
-                                                  color: Colors.red),
-                                              // child: ClipRRect(
-                                              //   borderRadius:
-                                              //       BorderRadius.circular(
-                                              //           (360)),
-                                              //   child: Image.asset(
-                                              //       fit: BoxFit.cover,
-                                              //       det[selectedIndex]
-                                              //           .stuimg
-                                              //           .toString()),
-                                              // ),
+                                                  color: Colors.grey.shade400),
+                                              child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(360),
+                                                child: Image.asset(fit: BoxFit.fill,'assets/Btech/ACET/'+det[selectedIndex]
+                                                                .stuid
+                                                                .toString()+'.jpg'),
+                                              )
                                             ),
                                           ),
                                         ),
@@ -519,7 +510,7 @@ class _BranchesState extends State<Branches>
                         child: Container(
                          // height: 5,
                           child: ListView.builder(
-                          padding: EdgeInsets.only(left: s.width / 3),
+                          padding: EdgeInsets.only(left: s.width / 3.3),
                           scrollDirection: Axis.horizontal,
                           itemCount: names.length,
                           itemBuilder: (context, i) {

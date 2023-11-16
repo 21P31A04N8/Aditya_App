@@ -29,7 +29,7 @@ class _branch_detState extends State<branch_det>
     branch_key = widget.branch;
     controller =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
-    zum = Tween<double>(begin: 0, end: 42.w).animate(controller!);
+    zum = Tween<double>(begin: 0, end: 30.w).animate(controller!);
 
     controller!.addListener(() {
       setState(() {});
@@ -77,30 +77,25 @@ class _branch_detState extends State<branch_det>
                   width: double.maxFinite,
                   child: Row(
                     children: [
-                      Card(
-                        // elevation: 20,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(360),
-                        ),
-                        child: Container(
-                            //margin: EdgeInsets.only(left: 0),
-                            height: 10.w,
-                            width: 10.w,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(360),
-                                border: Border.all(color: Colors.black)),
-                            child: Center(
-                              child: IconButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  icon: Icon(
-                                    Icons.arrow_back,
-                                    size: 6.w,
-                                  )),
+                      Center(
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.arrow_back,
+                              size: 6.w,
                             )),
                       ),
+                      Padding(
+                                    padding: EdgeInsets.only(left: zum!.value , top:2.h),
+                                    child: Text(
+                                      widget.branch,
+                                      style: TextStyle(
+                                          fontSize: 10.w,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
                     ],
                   ),
                 ),
@@ -127,15 +122,7 @@ class _branch_detState extends State<branch_det>
                             children: [
                               Row(
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: zum!.value),
-                                    child: Text(
-                                      widget.branch,
-                                      style: TextStyle(
-                                          fontSize: 10.w,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
+                                  
                                 ],
                               ),
                               SizedBox(
@@ -190,33 +177,49 @@ class _branch_detState extends State<branch_det>
                       Container(
                         height: double.maxFinite,
                         width: double.maxFinite,
-                        color: Colors.white,
-                        child: Row(
+                        // color: Colors.white,
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Transform.rotate(
-                              angle: (-10 * 3.14) / 180,
-                              child: Container(
-                                height: 70.w,
-                                width: 40.w,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    color: Colors.greenAccent),
-                              ),
-                            ),
-                            Transform.rotate(
-                              angle: (10 * 3.14) / 180,
-                              child: Container(
-                                height: 70.w,
-                                width: 40.w,
-                                // color: Colors.red,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    color: Colors.red),
-                              ),
-                            )
+                            Text('ECET RANKS - 2K23' , style: TextStyle(
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.bold
+                            ),),
+                            SizedBox(height: 3.h,),
+                            Container(
+                              
+                              height: 30.h,
+                              width: 80.w,
+                              // color: Colors.green,
+                              child: Image.asset('assets/dip_img/ECET/'+widget.branch+'.png')),
                           ],
                         ),
+                        // child: Row(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Transform.rotate(
+                        //       angle: (-10 * 3.14) / 180,
+                        //       child: Container(
+                        //         height: 70.w,
+                        //         width: 40.w,
+                        //         decoration: BoxDecoration(
+                        //             borderRadius: BorderRadius.circular(30),
+                        //             color: Colors.greenAccent),
+                        //       ),
+                        //     ),
+                        //     Transform.rotate(
+                        //       angle: (10 * 3.14) / 180,
+                        //       child: Container(
+                        //         height: 70.w,
+                        //         width: 40.w,
+                        //         // color: Colors.red,
+                        //         decoration: BoxDecoration(
+                        //             borderRadius: BorderRadius.circular(30),
+                        //             color: Colors.red),
+                        //       ),
+                        //     )
+                        //   ],
+                        // ),
                       ),
                       Container(
                         height: double.maxFinite,

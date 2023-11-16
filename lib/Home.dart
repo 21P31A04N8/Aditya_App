@@ -391,7 +391,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Aec_home()));
+                                          builder: (context) => Acet_home()));
                                 },
                                 child: Container(
                                     width: double.infinity,
@@ -415,10 +415,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acet_home()));
-                                setState(() {
-                                  _expansionTileController.collapse();
-                                  zoomDrawerController.close;
-                                });
+                                // setState(() {
+                                //   _expansionTileController.collapse();
+                                //   zoomDrawerController.close;
+                                // });
                               },
                             ),
                             PopupMenuItem(
@@ -1096,12 +1096,7 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                   SizedBox(
                     height: 3.h,
                   ),
-                  for (final location in locations)
-                    LocationListItem(
-                      imageUrl: location.imageUrl,
-                      name: location.name,
-                      country: location.place,
-                    ),
+                  
                 ],
               ),
             ),
