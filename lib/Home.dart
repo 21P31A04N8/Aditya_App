@@ -23,6 +23,7 @@ import 'package:myapplication/T-Hub/Thub_Events.dart';
 import 'package:myapplication/T-Hub/Thub_info.dart';
 import 'package:myapplication/contact_us.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import 'Courses/Btech/ACET/Acet_home.dart';
 import 'package:page_transition/page_transition.dart';
@@ -90,8 +91,11 @@ class _MainScreenState extends State<MainScreen> {
               CarouselSlider(
                 items: [
                   Container(
-                    color: Colors.red,
-                  ),
+                    
+                      child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/3_1jjXabAtm.jpg?updatedAt=1627468901511")),
                   Container(
                     color: Colors.black,
                   ),
