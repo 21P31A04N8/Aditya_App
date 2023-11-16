@@ -181,8 +181,6 @@ class _Thub_EventsState extends State<Thub_Events> with TickerProviderStateMixin
                     ),
                   ),
                 ),
-
-
               ]
           ),
 

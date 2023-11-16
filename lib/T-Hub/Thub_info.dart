@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
 class Thub_info extends StatefulWidget {
@@ -16,260 +17,296 @@ class _Thub_infoState extends State<Thub_info> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(children: [
-              Card(
-                shape: RoundedRectangleBorder(
+        child: Column(children: [
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
+            ),
+            elevation: 40,
+            shadowColor: Colors.black,
+            child: Container(
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
-                ),
-                elevation: 40,
+                 ),
+              height: 35.h,
+              width: double.infinity,
+              child: Image.asset('assets/Thub/ceo.png',fit: BoxFit.fill,),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(
+              onTap: () {
+                     final u1 = Uri.parse("tel://8343818181");
+                    launchUrl(u1);
+                  },
+              child: Card(
+                elevation: 30,
                 shadowColor: Colors.black,
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(30),
-                          bottomRight: Radius.circular(30)),
-                      color: Colors.amber),
-                  height: 35.h,
-                  width: double.infinity,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'Contact us on',
-                              style: TextStyle(
-                                  fontSize: 15.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 10.h,
-                        width: 20.w,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
                         child: Center(
-                          child: Icon(
-                            Icons.call_sharp,
-                            color: Colors.black,
+                          child: Text(
+                            'Contact us on',
+                            style: TextStyle(
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
                           ),
+                        )),
+                    Container(
+                      height: 8.h,
+                      width: 20.w,
+                      child: Center(
+                        child: Icon(
+                          Icons.call_sharp,
+                          color: Colors.black,
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'Email',
-                              style: TextStyle(
-                                  fontSize: 15.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 10.h,
-                        width: 20.w,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(
+              onTap: () {
+                     final u2 = Uri.parse('mailto:support@technicalhub.io.org?subject=Greetings&body=Hello%20World');
+                    launchUrl(u2);
+                  },
+              child: Card(
+                elevation: 30,
+                shadowColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
                         child: Center(
-                          child: Icon(
-                            Icons.email_outlined,
-                            color: Colors.black,
+                          child: Text(
+                            'Email',
+                            style: TextStyle(
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
                           ),
+                        )),
+                    Container(
+                      height: 8.h,
+                      width: 20.w,
+                      child: Center(
+                        child: Icon(
+                          Icons.email_outlined,
+                          color: Colors.black,
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'Checkout us on',
-                              style: TextStyle(
-                                  fontSize: 13.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 5.h,
-                        width: 15.w,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(
+              onTap: () {
+                    final u3 = Uri.parse('https://technicalhub.io/index.php');
+                    launchUrl(u3);
+                  },
+              child: Card(
+                elevation: 30,
+                shadowColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
                         child: Center(
-                          child: Icon(
-                            Icons.laptop_windows_outlined,
-                            color: Colors.black,
+                          child: Text(
+                            'Checkout us on',
+                            style: TextStyle(
+                                fontSize: 13.sp, fontWeight: FontWeight.bold),
                           ),
+                        )),
+                    Container(
+                      height: 5.h,
+                      width: 15.w,
+                      child: Center(
+                        child: Icon(
+                          Icons.laptop_windows_outlined,
+                          color: Colors.black,
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'Follow us on',
-                              style: TextStyle(
-                                  fontSize: 15.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 10.h,
-                        width: 20.w,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(
+              onTap: () {
+                    final u4 = Uri.parse('https://www.linkedin.com/company/technicalhub/');
+                    launchUrl(u4);
+                  },
+              child: Card(
+                elevation: 30,
+                shadowColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
+                        child: Center(
+                          child: Text(
+                            'Follow us on',
+                            style: TextStyle(
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
+                          ),
+                        )),
+                    Container(
+                      height: 8.h,
+                      width: 20.w,
+                      child: Center(
+                          child:
+                              Image.asset('assets/Thub/THub_home/linkedin.png')),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(onTap: () {
+                    final u5 = Uri.parse('https://www.instagram.com/technicalhubio/');
+                    launchUrl(u5);
+                  },
+              child: Card(
+                elevation: 30,
+                shadowColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
+                        child: Center(
+                          child: Text(
+                            'Follow us on',
+                            style: TextStyle(
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
+                          ),
+                        )),
+                    Container(
+                      height: 8.h,
+                      width: 20.w,
+                      child: Center(
+                          child:
+                              Image.asset('assets/Thub/THub_home/instagram.png')),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h),
+            child: InkWell(
+              onTap: () {
+                    final u6 = Uri.parse('https://www.youtube.com/@technicalhub8786');
+                    launchUrl(u6);
+                  },
+              child: Card(
+                elevation: 30,
+                shadowColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90))),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(90),
+                                bottomRight: Radius.circular(90))),
+                        height: 8.h,
+                        width: 75.w,
+                        child: Center(
+                          child: Text(
+                            'watch us on',
+                            style: TextStyle(
+                                fontSize: 13.sp, fontWeight: FontWeight.bold),
+                          ),
+                        )),
+                    Container(
+                      height: 5.h,
+                      width: 15.w,
+                      child: Center(
                         child: Center(
                             child:
-                            Image.asset('assets/Thub/THub_home/linkedin.png')),
-                      )
-                    ],
-                  ),
+                                Image.asset('assets/Thub/THub_home/youtube.png')),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'Follow us on',
-                              style: TextStyle(
-                                  fontSize: 15.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 10.h,
-                        width: 20.w,
-                        child: Center(
-                            child:
-                            Image.asset('assets/Thub/THub_home/instagram.png')),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 2.h),
-                child: Card(
-                  elevation: 30,
-                  shadowColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Row(
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(90),
-                                  bottomRight: Radius.circular(90))),
-                          height: 10.h,
-                          width: 75.w,
-                          child: Center(
-                            child: Text(
-                              'watch us on',
-                              style: TextStyle(
-                                  fontSize: 13.sp, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                      Container(
-                        height: 5.h,
-                        width: 15.w,
-                        child: Center(
-                          child: Center(
-                              child:
-                              Image.asset('assets/Thub/THub_home/youtube.png')),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ]),
-          )),
+            ),
+          ),
+        ]),
+      )),
     );
   }
 }
