@@ -76,7 +76,12 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Home")),
+          title: Text(
+            "ADITYA",
+            style: TextStyle(
+                fontSize: 25, fontWeight: FontWeight.bold, letterSpacing: 2),
+          ),
+          centerTitle: true,
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () => ZoomDrawer.of(context)!.toggle(),
@@ -91,23 +96,74 @@ class _MainScreenState extends State<MainScreen> {
               CarouselSlider(
                 items: [
                   Container(
-                    
-                      child: FadeInImage.memoryNetwork(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
                           placeholder: kTransparentImage,
                           image:
-                              "https://ik.imagekit.io/lhb4hvprkpz/3_1jjXabAtm.jpg?updatedAt=1627468901511")),
+                              "https://ik.imagekit.io/lhb4hvprkpz/3_1jjXabAtm.jpg?updatedAt=1627468901511",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.black,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/wifi_2tU1IcdcN.jpg?updatedAt=1627469037857",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.orange,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/zym_ZoidnRVOV.jpg?updatedAt=1627469080425",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.yellow,
-                  ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image: "https://aditya.ac.in/assets/img/race.jpg",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                   Container(
-                    color: Colors.green,
-                  )
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.shade300,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: FadeInImage.memoryNetwork(
+                          placeholder: kTransparentImage,
+                          image:
+                              "https://ik.imagekit.io/lhb4hvprkpz/2_9gpdW7NrJ.jpg?updatedAt=1627468900702",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
                 ],
                 options: CarouselOptions(
                   autoPlay: true,
@@ -126,8 +182,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Aditya Educational Institutions started the journey in 1984 as a small sapling to provide quality education to the students in the district of East Godavari by visionary and prominent educationist Shri N. Sesha Reddy and being spread under young and dynamic leadership of Shri N. Satish Reddy. In this journey, Aditya has now attained an outcome of number of branches with strong roots in the field of education with 50+ Educational Institutions, 5000+ faculty and 50000+ students. Growing concern about the technical front, Aditya has established a group of Engineering Colleges, Polytechnic Colleges, Pharmacy Colleges at Surampalem to enrich quality technical education in the district level as well as at global level.",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
               ),
               Row(
@@ -187,8 +244,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Sri Nallamilli Sesha Reddy as a founder cum chairman, promoted an educational society in the name and style of Aditya Academy at Kakinada in the year 1984, with a vision and mission to create a platform for holistic growth and success to students at all levels (i.e. from KG to PG).",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
               ),
               Row(
@@ -243,8 +301,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   "Sri Satish Reddy as a  cum vice chairman,  is typically responsible for assisting the Chairman in overseeing the institution's strategic direction and decision-making. This role often involves participating in board meetings, contributing to policy development, and representing the institute in various capacities.",
                   textAlign: TextAlign.justify,
-                  style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
                 ),
               ),
               Padding(
@@ -391,7 +450,11 @@ class _MenuScreenState extends State<MenuScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Acet_home()));
+                                          builder: (context) => Aec_home()));
+                                  setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                  });
                                 },
                                 child: Container(
                                     width: double.infinity,
@@ -415,10 +478,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acet_home()));
-                                // setState(() {
-                                //   _expansionTileController.collapse();
-                                //   zoomDrawerController.close;
-                                // });
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
                               },
                             ),
                             PopupMenuItem(
@@ -430,6 +493,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                         builder: (context) => Acoe_home()));
                                 setState(() {
                                   _expansionTileController.collapse();
+                                  zoomDrawerController.close;
                                 });
                               },
                               child: Container(
@@ -473,6 +537,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Apcs_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
                               },
                               child: Container(
                                   width: double.infinity,
@@ -490,6 +558,10 @@ class _MenuScreenState extends State<MenuScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Acop_home()));
+                                setState(() {
+                                  _expansionTileController.collapse();
+                                  zoomDrawerController.close;
+                                });
                               },
                               child: Container(
                                   width: double.infinity,
@@ -534,6 +606,10 @@ class _MenuScreenState extends State<MenuScreen> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AGBS()));
+                    setState(() {
+                      _expansionTileController.collapse();
+                      zoomDrawerController.close;
+                    });
                   },
                   child: SizedBox(
                     height: 30,
@@ -549,19 +625,19 @@ class _MenuScreenState extends State<MenuScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: 160,
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                        child: Text(
-                      "MBA",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ),
+                // SizedBox(
+                //   height: 30,
+                //   width: 160,
+                //   child: Card(
+                //     color: Colors.white,
+                //     child: Center(
+                //         child: Text(
+                //       "MBA",
+                //       style: TextStyle(
+                //           color: Colors.black, fontWeight: FontWeight.bold),
+                //     )),
+                //   ),
+                // ),
               ],
             ),
             ExpansionTile(
@@ -1096,7 +1172,6 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                   SizedBox(
                     height: 3.h,
                   ),
-                  
                 ],
               ),
             ),
@@ -1395,41 +1470,3 @@ class Location {
   final String place;
   final String imageUrl;
 }
-
-const locations = [
-  Location(
-    name: 'Mount Rushmore',
-    place: 'U.S.A',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Gardens By The Bay',
-    place: 'Singapore',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Machu Picchu',
-    place: 'Peru',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Vitznau',
-    place: 'Switzerland',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Bali',
-    place: 'Indonesia',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Mexico City',
-    place: 'Mexico',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: 'assets/aditya/acoe.jpeg',
-  ),
-];

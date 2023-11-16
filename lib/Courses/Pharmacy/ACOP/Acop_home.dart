@@ -55,84 +55,84 @@ class _Acop_homeState extends State<Acop_home> {
                   " The silver-jubilee educational group with 50,000+ students in 50+ institutions with 5000+ staff across three districts in Andhra Pradesh has become the standard bearer for quality education. In every stream, Aditya has become a spring-board for success through its powered vision, constant innovation and professional excellence."
                 ,style: TextStyle(fontSize: 18),),
             ),
-            Container(
-              height: 450,
-              width: 350,
-              margin: EdgeInsets.symmetric(horizontal: 5),
-              child: Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Container(
-                    height: 250,
-                    width: 300,
-                    margin: EdgeInsets.only(top: 100),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
-                        color: Colors.orange
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 110,
-                        ),
-                        Text("Tevit" , style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10,),
-                        Text("31.31",
-                          style: TextStyle(
-                              fontSize: 25
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("AWS",style: TextStyle(
-                            fontSize: 30,
-                            fontStyle: FontStyle.italic
-                        ),)
-                      ],
-                    ),
-                  ),
-
-                  Card(
-                    elevation: 40,
-                    shadowColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(360)
-                    ),
-                    child: Container(
-                      height: 180,
-                      width: 180,
-
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(360),
-                          color: Colors.transparent
-                      ),
-
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular((360)),
-                        child: Image.network(
-                            fit:BoxFit.cover,
-                            "http://acet.ac.in/ACET/banners/153.jpg"
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                      bottom: 110,
-                      right: 40,
-                      child: Text(1.toString() ,
-                        style: TextStyle(
-                            color: Colors.black.withOpacity(0.3),
-                            fontSize: 150,
-                            fontWeight: FontWeight.bold
-                        ),
-                      )
-                  )
-                ],
-              ),
-            ),
+            // Container(
+            //   height: 450,
+            //   width: 350,
+            //   margin: EdgeInsets.symmetric(horizontal: 5),
+            //   child: Stack(
+            //     alignment: Alignment.topCenter,
+            //     children: [
+            //       Container(
+            //         height: 250,
+            //         width: 300,
+            //         margin: EdgeInsets.only(top: 100),
+            //         decoration: BoxDecoration(
+            //             borderRadius: BorderRadius.circular(60),
+            //             color: Colors.orange
+            //         ),
+            //         padding: EdgeInsets.symmetric(horizontal: 30),
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             SizedBox(
+            //               height: 110,
+            //             ),
+            //             Text("Tevit" , style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+            //             SizedBox(height: 10,),
+            //             Text("31.31",
+            //               style: TextStyle(
+            //                   fontSize: 25
+            //               ),
+            //             ),
+            //             SizedBox(
+            //               height: 10,
+            //             ),
+            //             Text("AWS",style: TextStyle(
+            //                 fontSize: 30,
+            //                 fontStyle: FontStyle.italic
+            //             ),)
+            //           ],
+            //         ),
+            //       ),
+            //
+            //       Card(
+            //         elevation: 40,
+            //         shadowColor: Colors.black,
+            //         shape: RoundedRectangleBorder(
+            //             borderRadius: BorderRadius.circular(360)
+            //         ),
+            //         child: Container(
+            //           height: 180,
+            //           width: 180,
+            //
+            //           decoration: BoxDecoration(
+            //               borderRadius: BorderRadius.circular(360),
+            //               color: Colors.transparent
+            //           ),
+            //
+            //           child: ClipRRect(
+            //             borderRadius: BorderRadius.circular((360)),
+            //             child: Image.network(
+            //                 fit:BoxFit.cover,
+            //                 "http://acet.ac.in/ACET/banners/153.jpg"
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //       Positioned(
+            //           bottom: 110,
+            //           right: 40,
+            //           child: Text(1.toString() ,
+            //             style: TextStyle(
+            //                 color: Colors.black.withOpacity(0.3),
+            //                 fontSize: 150,
+            //                 fontWeight: FontWeight.bold
+            //             ),
+            //           )
+            //       )
+            //     ],
+            //   ),
+            // ),
             SlideAction(
               trackBuilder: (context, state) {
                 return Container(

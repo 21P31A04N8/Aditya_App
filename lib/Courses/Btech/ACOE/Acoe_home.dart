@@ -33,45 +33,24 @@ class _Acoe_homeState extends State<Acoe_home> {
             CarouselSlider(
               items: [
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/banners/popacoe.jpeg"),
+                  child: Image.asset("assets/ADITYA/aditya1.jpg",fit: BoxFit.fill,)
                 ),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/204.jpg"),
+                  child: Image.asset("assets/ADITYA/aditya4.jpg",fit: BoxFit.fill,)
                 ),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/Acoe%20Rankings%202023.jpg"),
+                  child: Image.asset("assets/ADITYA/aditya3.jpg",fit: BoxFit.fill,)
                 ),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/237.jpg"),
+                  child:Image.asset("assets/ADITYA/aditya8.jpg",fit: BoxFit.fill,)
                 ),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/6.jpg"),
+                  child: Image.asset("assets/ADITYA/adity7.jpg",fit: BoxFit.fill,),
                 ),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/7.jpg"),
+                  child: Image.asset("assets/ADITYA/aditya13.jpg",fit: BoxFit.fill,)
                 ),
-                Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg"),
-                ),
-                Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "https://www.acoe.edu.in/acoe/banners/B.jpg"),
-                )
+
               ],
               options: CarouselOptions(
                 autoPlay: true,

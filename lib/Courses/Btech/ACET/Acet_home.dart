@@ -5,6 +5,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/ACET/Acet_Brancehes.dart';
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:slide_action/slide_action.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Acet_home extends StatefulWidget {
   const Acet_home({super.key});
@@ -30,30 +31,72 @@ class _Acet_homeState extends State<Acet_home> {
             CarouselSlider(
               items: [
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "http://acet.ac.in/ACET/banners/09E6F923-6FFB-4A23-9DDA-8273E88E74F9.jpeg"),
-                ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image:
+                            "http://acet.ac.in/ACET/banners/09E6F923-6FFB-4A23-9DDA-8273E88E74F9.jpeg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "http://acet.ac.in/ACET/banners/044D5DF2-0CF2-4F1D-A588-62345C347843.jpeg"),
-                ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image:
+                            "http://acet.ac.in/ACET/banners/044D5DF2-0CF2-4F1D-A588-62345C347843.jpeg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "http://acet.ac.in/ACET/banners/Campus.jpg"),
-                ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "http://acet.ac.in/ACET/banners/Campus.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "http://acet.ac.in/ACET/banners/Crouse.jpg"),
-                ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "http://acet.ac.in/ACET/banners/Crouse.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
                 Container(
-                  child: Image.network(
-                      fit: BoxFit.fill,
-                      "http://acet.ac.in/ACET/banners/153.jpg"),
-                )
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade300,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: "http://acet.ac.in/ACET/banners/153.jpg",
+                        fit: BoxFit.fill,
+                      ),
+                    )),
               ],
               options: CarouselOptions(
                 autoPlay: true,

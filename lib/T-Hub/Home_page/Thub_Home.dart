@@ -69,7 +69,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
               // margin: EdgeInsets.symmetric(vertical:8 , horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(360),
                   border: Border.all(color: Colors.green.shade900, width: 2)),
 
@@ -94,7 +94,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                           Container(
                             padding: EdgeInsets.all(3),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 0) ? Colors.white : Colors.transparent,
+                              color: (selectedIndex == 0) ? Colors.green : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(
@@ -126,7 +126,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                           Container(
                             padding: EdgeInsets.all(3),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 1) ? Colors.white : Colors.transparent,
+                              color: (selectedIndex == 1) ? Colors.teal : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(

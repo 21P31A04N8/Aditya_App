@@ -71,7 +71,8 @@ class _Apcs_branchState extends State<Apcs_branch>
         '19P31A0556',
         'DASI VEERRAJU',
         '4.2',
-        'below 20240'),
+        'below 20240',
+        "assets/ADITYA/pharm.jpg"),
     Details("A Doctor of Pharmacy (PharmD; Neo-Latin: Pharmaciae Doctor) is a professional doctorate in pharmacy. In some countries, it is a doctoral degree to practice the profession of pharmacy or to become a clinical pharmacist. In many countries, people with their Doctor of Pharmacy are allowed to practice independently and can prescribe drugs directly to patients. A PharmD program has significant experiential and/or clinical education components in introductory and advanced levels for the safe and effective use of drugs. Experiential education prepares graduates to be practice-ready, as they already have spent a significant amount of time training in areas of direct patient care and research."
         "\n ELIGIBILTIY CRITERIA"
   "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P.",
@@ -82,7 +83,8 @@ class _Apcs_branchState extends State<Apcs_branch>
         '19P31A0556',
         'DASI VEERRAJU',
         '7.5',
-        'below 22240'),
+        'below 22240',
+        "assets/ADITYA/pharm.jpg"),
     Details("Master's degrees in pharmacy comprise both postgraduate and integrated master's programs in pharmacy, the latter of which comprises both undergraduate and postgraduate coursework and typically takes four to five years to complete."
         "\nELIGIBILTIY CRITERIA"
         "\nThe selection will be on the basis of GPAT Examination (Graduate Pharmacy Aptitude Test) for non-sponsored candidates and entrance test conducted by the University (PGCET) for sponsored and self-supporting candidates. Admission is either through GPAT / PGCET counseling",
@@ -93,7 +95,8 @@ class _Apcs_branchState extends State<Apcs_branch>
         '19P31A0556',
         'DASI VEERRAJU',
         '7.5',
-        'below 24240'),
+        'below 24240',
+        "assets/ADITYA/pharm.jpg"),
 
   ];
 
@@ -512,9 +515,10 @@ class Details {
   String? stuname;
   String? pack;
   String? cutoff;
+  String? Img1;
 
   Details(String des, String img, String mcost, String seats, String stuimg,
-      String stuid, String stuname, String pack, String cutoff) {
+      String stuid, String stuname, String pack, String cutoff,String Img2) {
     this.description = des;
     this.img = img;
     this.mcost = mcost;
@@ -524,5 +528,6 @@ class Details {
     this.stuname = stuname;
     this.pack = pack;
     this.cutoff = cutoff;
+    this.Img1=Img1;
   }
 }
