@@ -23,8 +23,9 @@ class _Apcs_branchState extends State<Apcs_branch>
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     container = Tween<double>(begin: 200, end: 1000).animate(controller!);
 
-    blink = AnimationController(vsync: this , duration: Duration(milliseconds: 1500));
-    blink_val = Tween<double>(begin: 0 , end: 1).animate(blink!);
+    blink = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1500));
+    blink_val = Tween<double>(begin: 0, end: 1).animate(blink!);
 
     controller!.addListener(() {
       setState(() {
@@ -33,9 +34,7 @@ class _Apcs_branchState extends State<Apcs_branch>
     });
 
     blink!.addListener(() {
-      setState(() {
-
-      });
+      setState(() {});
     });
 
     blink!.forward();
@@ -50,7 +49,7 @@ class _Apcs_branchState extends State<Apcs_branch>
   }
 
   @override
-  List<String> names = ["B-Pharmcy","Pharm-D","M-Pharmcy"];
+  List<String> names = ["B-Pharmcy", "Pharm-D", "M-Pharmcy"];
   int selectedIndex = 0;
   //Details? d;
 
@@ -58,12 +57,11 @@ class _Apcs_branchState extends State<Apcs_branch>
     //CSE
 
     Details(
-
         "A Bachelor of Pharmacy (abbreviated B Pharm or PharmB or BS Pharm) is a graduate academic degree in the field of pharmacy. In many countries, this degree is a prerequisite for registration to practice as a pharmacist. Since both PharmB and PharmD are prerequisites to license in most western countries they're considered equivalent. In many western countries, the foreign graduates with BPharm, PharmB or BS Pharm practice similarly as PharmD graduates. It is analogous to MBBS vs. MD where MBBS is foreign equivalent of MD. It is training to understand the properties and impacts of medicines and developing the skills required to counsel patients about their use."
             "\nELIGIBILTIY CRITERIA"
-         "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P."
+            "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P."
             "Management Seats"
-        "Register your name with Aditya Pharmacy College, Surampalem, Aditya nagar, East Godavari district, A.P, soon after the announcement of intermediate exam results.",
+            "Register your name with Aditya Pharmacy College, Surampalem, Aditya nagar, East Godavari district, A.P, soon after the announcement of intermediate exam results.",
         'https://www.sharda.ac.in/blog/attachments/blog_images/Bachelor-in-Pharmacy.jpg',
         '5',
         '60',
@@ -73,9 +71,10 @@ class _Apcs_branchState extends State<Apcs_branch>
         '4.2',
         'below 20240',
         "assets/ADITYA/pharm.jpg"),
-    Details("A Doctor of Pharmacy (PharmD; Neo-Latin: Pharmaciae Doctor) is a professional doctorate in pharmacy. In some countries, it is a doctoral degree to practice the profession of pharmacy or to become a clinical pharmacist. In many countries, people with their Doctor of Pharmacy are allowed to practice independently and can prescribe drugs directly to patients. A PharmD program has significant experiential and/or clinical education components in introductory and advanced levels for the safe and effective use of drugs. Experiential education prepares graduates to be practice-ready, as they already have spent a significant amount of time training in areas of direct patient care and research."
-        "\n ELIGIBILTIY CRITERIA"
-  "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P.",
+    Details(
+        "A Doctor of Pharmacy (PharmD; Neo-Latin: Pharmaciae Doctor) is a professional doctorate in pharmacy. In some countries, it is a doctoral degree to practice the profession of pharmacy or to become a clinical pharmacist. In many countries, people with their Doctor of Pharmacy are allowed to practice independently and can prescribe drugs directly to patients. A PharmD program has significant experiential and/or clinical education components in introductory and advanced levels for the safe and effective use of drugs. Experiential education prepares graduates to be practice-ready, as they already have spent a significant amount of time training in areas of direct patient care and research."
+            "\n ELIGIBILTIY CRITERIA"
+            "\nIntermediate (10+2) with Bi.P.C/ M.P.C or its equivalent, with maths or biology, physics and chemistry as major subjects and with minimum 50% of marks and qualifying the entrance exam EAPCET conducted by Board of Technical Education, A.P.",
         'https://cdn.pixabay.com/photo/2020/01/09/17/16/pharmacy-4753340_640.jpg',
         '5',
         '60',
@@ -85,9 +84,10 @@ class _Apcs_branchState extends State<Apcs_branch>
         '7.5',
         'below 22240',
         "assets/ADITYA/pharm.jpg"),
-    Details("Master's degrees in pharmacy comprise both postgraduate and integrated master's programs in pharmacy, the latter of which comprises both undergraduate and postgraduate coursework and typically takes four to five years to complete."
-        "\nELIGIBILTIY CRITERIA"
-        "\nThe selection will be on the basis of GPAT Examination (Graduate Pharmacy Aptitude Test) for non-sponsored candidates and entrance test conducted by the University (PGCET) for sponsored and self-supporting candidates. Admission is either through GPAT / PGCET counseling",
+    Details(
+        "Master's degrees in pharmacy comprise both postgraduate and integrated master's programs in pharmacy, the latter of which comprises both undergraduate and postgraduate coursework and typically takes four to five years to complete."
+            "\nELIGIBILTIY CRITERIA"
+            "\nThe selection will be on the basis of GPAT Examination (Graduate Pharmacy Aptitude Test) for non-sponsored candidates and entrance test conducted by the University (PGCET) for sponsored and self-supporting candidates. Admission is either through GPAT / PGCET counseling",
         'https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784_1280.jpg',
         '5',
         '60',
@@ -97,7 +97,6 @@ class _Apcs_branchState extends State<Apcs_branch>
         '7.5',
         'below 24240',
         "assets/ADITYA/pharm.jpg"),
-
   ];
 
   Container con(String txt) {
@@ -145,19 +144,20 @@ class _Apcs_branchState extends State<Apcs_branch>
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Opacity(
                         opacity: blink_val!.value,
-                        child: Text('Aditya Pharmacy College' ,
+                        child: Text(
+                          'Aditya Pharmacy College',
                           style: TextStyle(
-                            color: Colors.white ,
+                            color: Colors.white,
                             fontSize: 23,
                             // decoration: TextDecoration.underline
-
                           ),
                           textAlign: TextAlign.justify,
-                        )
-                    ),
+                        )),
                   ),
 
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Expanded(
                     flex: 4,
                     child: ListView.builder(
@@ -206,7 +206,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                     flex: 40,
                     child: PageView.builder(
 
-                      // pageSnapping: true,
+                        // pageSnapping: true,
                         padEnds: false,
                         controller: _pageController,
                         onPageChanged: (val) {
@@ -238,7 +238,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                                   ),
                                   Container(
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     height: 250,
                                     width: s.width,
                                     decoration: BoxDecoration(
@@ -260,9 +260,9 @@ class _Apcs_branchState extends State<Apcs_branch>
                                     decoration: BoxDecoration(
                                         color: Colors.black.withOpacity(0.4),
                                         borderRadius:
-                                        BorderRadius.circular(30)),
+                                            BorderRadius.circular(30)),
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     child: Column(
                                       children: [
                                         Text(
@@ -286,11 +286,11 @@ class _Apcs_branchState extends State<Apcs_branch>
                                     height: 450,
                                     width: double.infinity,
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     decoration: BoxDecoration(
                                         color: Colors.black.withOpacity(0.4),
                                         borderRadius:
-                                        BorderRadius.circular(30)),
+                                            BorderRadius.circular(30)),
                                     child: Stack(
                                       alignment: Alignment.topCenter,
                                       children: [
@@ -319,13 +319,13 @@ class _Apcs_branchState extends State<Apcs_branch>
                                             margin: EdgeInsets.only(top: 80),
                                             decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(60),
+                                                    BorderRadius.circular(60),
                                                 color: Colors.white),
                                             //padding: EdgeInsets.symmetric(horizontal: 30),
                                             child: Stack(children: [
                                               Column(
                                                 mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     'PIN: ' +
@@ -334,7 +334,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                                                             .toString(),
                                                     style: TextStyle(
                                                         color:
-                                                        Colors.deepPurple,
+                                                            Colors.deepPurple,
                                                         fontSize: 20),
                                                   ),
                                                   SizedBox(
@@ -347,7 +347,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                                                             .toString(),
                                                     style: TextStyle(
                                                         color:
-                                                        Colors.deepPurple,
+                                                            Colors.deepPurple,
                                                         fontSize: 20),
                                                   ),
                                                   SizedBox(
@@ -355,12 +355,12 @@ class _Apcs_branchState extends State<Apcs_branch>
                                                   ),
                                                   Text(
                                                     det[selectedIndex]
-                                                        .pack
-                                                        .toString() +
+                                                            .pack
+                                                            .toString() +
                                                         ' LPA',
                                                     style: TextStyle(
                                                         color:
-                                                        Colors.deepPurple,
+                                                            Colors.deepPurple,
                                                         fontSize: 25),
                                                   )
                                                 ],
@@ -372,13 +372,13 @@ class _Apcs_branchState extends State<Apcs_branch>
                                                     padding: EdgeInsets.all(10),
                                                     decoration: BoxDecoration(
                                                         borderRadius:
-                                                        BorderRadius.only(
-                                                            topRight: Radius
-                                                                .circular(
-                                                                60),
-                                                            bottomLeft: Radius
-                                                                .circular(
-                                                                60)),
+                                                            BorderRadius.only(
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        60),
+                                                                bottomLeft: Radius
+                                                                    .circular(
+                                                                        60)),
                                                         color: Colors.orange),
                                                     child: Center(
                                                       child: Text(
@@ -402,14 +402,14 @@ class _Apcs_branchState extends State<Apcs_branch>
                                             shadowColor: Colors.black,
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                BorderRadius.circular(360)),
+                                                    BorderRadius.circular(360)),
                                             child: Container(
                                               height: 130,
                                               width: 130,
                                               decoration: BoxDecoration(
                                                   borderRadius:
-                                                  BorderRadius.circular(
-                                                      360),
+                                                      BorderRadius.circular(
+                                                          360),
                                                   color: Colors.red),
                                               // child: ClipRRect(
                                               //   borderRadius:
@@ -433,7 +433,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                                   Container(
                                     width: s.width,
                                     margin:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     padding: EdgeInsets.symmetric(vertical: 20),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
@@ -476,7 +476,7 @@ class _Apcs_branchState extends State<Apcs_branch>
                       child: Container(
                         // height: 5,
                         child: ListView.builder(
-                            padding: EdgeInsets.only(left: s.width / 3),
+                            padding: EdgeInsets.only(left: s.width / 2.5),
                             scrollDirection: Axis.horizontal,
                             itemCount: names.length,
                             itemBuilder: (context, i) {
@@ -494,7 +494,9 @@ class _Apcs_branchState extends State<Apcs_branch>
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,)
+                  SizedBox(
+                    height: 20,
+                  )
                 ],
               ),
             ),
@@ -518,7 +520,7 @@ class Details {
   String? Img1;
 
   Details(String des, String img, String mcost, String seats, String stuimg,
-      String stuid, String stuname, String pack, String cutoff,String Img2) {
+      String stuid, String stuname, String pack, String cutoff, String Img2) {
     this.description = des;
     this.img = img;
     this.mcost = mcost;
@@ -528,6 +530,6 @@ class Details {
     this.stuname = stuname;
     this.pack = pack;
     this.cutoff = cutoff;
-    this.Img1=Img1;
+    this.Img1 = Img1;
   }
 }

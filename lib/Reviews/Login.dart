@@ -183,30 +183,30 @@ class _Login_pageState extends State<Login_page> {
                           ),
                         ),
                       )),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                            width: 160,
-                            child: Divider(
-                                color: Colors.black45,
-                                thickness: 2,
-                                height: 100)),
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 16.0, right: 16.0),
-                          child: Text("OR"),
-                        ),
-                        SizedBox(
-                            width: 180,
-                            child: Divider(
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 5,
+                      ),
+                      SizedBox(
+                          width: 160,
+                          child: Divider(
+                              indent: 5,
                               color: Colors.black45,
                               thickness: 2,
-                              height: 100,
-                            )),
-                      ],
-                    ),
+                              height: 100)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                        child: Text("OR"),
+                      ),
+                      SizedBox(
+                          width: 180,
+                          child: Divider(
+                            color: Colors.black45,
+                            thickness: 2,
+                            height: 100,
+                          )),
+                    ],
                   ), //Divider(height: 180,color: Colors.black,),
                   Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),
@@ -230,14 +230,23 @@ class _Login_pageState extends State<Login_page> {
                             ),
                             onPressed: () {
                               Future<void> Anonym() async {
-                                await FirebaseAuth.instance
-                                    .signInAnonymously()
-                                    .then((value) {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Screen()));
-                                }).onError((error, stackTrace) {});
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => Center(
+                                          child: CircularProgressIndicator(),
+                                        ));
+                                try {
+                                  await FirebaseAuth.instance
+                                      .signInAnonymously();
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => Screen()));
+                                  if (context.mounted) Navigator.pop(context);
+                                } on FirebaseException catch (e) {
+                                  Navigator.pop(context);
+                                  print(e.code);
+                                }
                               }
 
                               Anonym();

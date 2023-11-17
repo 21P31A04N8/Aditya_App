@@ -81,55 +81,60 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
         appBar: AppBar(
           actions: [
-            PopupMenuButton(
-                position: PopupMenuPosition.values[1],
-                tooltip: "More options,",
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.black,
-                itemBuilder: (context) => [
-                      PopupMenuItem(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => About_Me()));
-                          },
-                          child: Row(
-                            children: [
-                              Text(
-                                "Profile",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 55),
-                                child: Icon(
-                                  Icons.person,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          )),
-                      PopupMenuItem(
-                          onTap: () {
-                            FirebaseAuth.instance.signOut();
-                          },
-                          child: Row(
-                            children: [
-                              Text(
-                                "Log out",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 55),
-                                child: Icon(
-                                  Icons.logout,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          ))
-                    ]),
+            IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                icon: Icon(Icons.logout))
+            // PopupMenuButton(
+            //     position: PopupMenuPosition.values[1],
+            //     tooltip: "More options,",
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(30)),
+            //     color: Colors.black,
+            //     itemBuilder: (context) => [
+            //           PopupMenuItem(
+            //               onTap: () {
+            //                 Navigator.push(
+            //                     context,
+            //                     MaterialPageRoute(
+            //                         builder: (context) => About_Me()));
+            //               },
+            //               child: Row(
+            //                 children: [
+            //                   Text(
+            //                     "Profile",
+            //                     style: TextStyle(color: Colors.white),
+            //                   ),
+            //                   Padding(
+            //                     padding: const EdgeInsets.only(left: 55),
+            //                     child: Icon(
+            //                       Icons.person,
+            //                       color: Colors.white,
+            //                     ),
+            //                   )
+            //                 ],
+            //               )),
+            //           PopupMenuItem(
+            //               onTap: () {
+            //                 FirebaseAuth.instance.signOut();
+            //               },
+            //               child: Row(
+            //                 children: [
+            //                   Text(
+            //                     "Log out",
+            //                     style: TextStyle(color: Colors.white),
+            //                   ),
+            //                   Padding(
+            //                     padding: const EdgeInsets.only(left: 55),
+            //                     child: Icon(
+            //                       Icons.logout,
+            //                       color: Colors.white,
+            //                     ),
+            //                   )
+            //                 ],
+            //               ))
+            //         ]),
           ],
           title: Text(
             "ADITYA",

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_branches.dart';
 import 'package:slide_action/slide_action.dart';
+
 class Acop_home extends StatefulWidget {
   const Acop_home({super.key});
 
@@ -15,29 +16,53 @@ class _Acop_homeState extends State<Acop_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CupertinoColors.activeOrange,
-        title: Text("Aditya college of Pharmacy"),
-        leading: IconButton(icon: Icon(Icons.menu),onPressed: (){
-        },),
+        backgroundColor: const Color.fromARGB(255, 255, 219, 59),
+        title: Text(
+          "Aditya college of Pharmacy",
+          style: TextStyle(color: Colors.black),
+        ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+          onPressed: () {},
+        ),
       ),
-      body:
-      SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             CarouselSlider(
-              items: [Container(
-                child: Image.network(fit: BoxFit.fill,"https://mymathews.com/media/gallery/Adithya_College_of_Phramacy_3.JPG"),
-              ),
+              items: [
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://adityapharmacy.edu.in/APC/banners/PharmacyNaac%20Banner.jpg"),),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "https://mymathews.com/media/gallery/Adithya_College_of_Phramacy_3.JPG"),
+                ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://adityapharmacy.edu.in/APC/banners/Hostel_aditya.jpg"),),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "http://adityapharmacy.edu.in/APC/banners/PharmacyNaac%20Banner.jpg"),
+                ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://adityapharmacy.edu.in/APC/banners/Web%20Banner%20Apc.jpg"),),
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "http://adityapharmacy.edu.in/APC/banners/Hostel_aditya.jpg"),
+                ),
                 Container(
-                  child: Image.network(fit: BoxFit.fill,"http://acet.ac.in/ACET/banners/153.jpg"),
-                )],
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "http://adityapharmacy.edu.in/APC/banners/Web%20Banner%20Apc.jpg"),
+                ),
+                Container(
+                  child: Image.network(
+                      fit: BoxFit.fill,
+                      "http://acet.ac.in/ACET/banners/153.jpg"),
+                )
+              ],
               options: CarouselOptions(
                 autoPlay: true,
                 enlargeCenterPage: true,
@@ -48,12 +73,12 @@ class _Acop_homeState extends State<Acop_home> {
             ),
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: Text("Aditya, the premier promoter of quality education in the coastal districts of Andhra Pradesh for the past two decades, leads various institutions ranging from K.G to P.G besides professional colleges like Engineering, Pharmacy and Nursing. Sri Nallamilli Seshareddy as a founder chairman, promoted the educational society in the name and style of Aditya Academy at Kakinada in the year 1984, with a vision and mission to create a platform for holistic growth and success to students at all levels."
-
-                  "Aditya has made its entry into the educational arena with a public school to meet the needs of primary and secondary education. In succession and with rapid strides, the academy established a number of Junior Colleges, Degree Colleges, PG Colleges, Engineering Colleges, Pharmacy Colleges, Nursing Colleges, Teacher Training Institutions"
-
-                  " The silver-jubilee educational group with 50,000+ students in 50+ institutions with 5000+ staff across three districts in Andhra Pradesh has become the standard bearer for quality education. In every stream, Aditya has become a spring-board for success through its powered vision, constant innovation and professional excellence."
-                ,style: TextStyle(fontSize: 18),),
+              child: Text(
+                "Aditya, the premier promoter of quality education in the coastal districts of Andhra Pradesh for the past two decades, leads various institutions ranging from K.G to P.G besides professional colleges like Engineering, Pharmacy and Nursing. Sri Nallamilli Seshareddy as a founder chairman, promoted the educational society in the name and style of Aditya Academy at Kakinada in the year 1984, with a vision and mission to create a platform for holistic growth and success to students at all levels."
+                "Aditya has made its entry into the educational arena with a public school to meet the needs of primary and secondary education. In succession and with rapid strides, the academy established a number of Junior Colleges, Degree Colleges, PG Colleges, Engineering Colleges, Pharmacy Colleges, Nursing Colleges, Teacher Training Institutions"
+                " The silver-jubilee educational group with 50,000+ students in 50+ institutions with 5000+ staff across three districts in Andhra Pradesh has become the standard bearer for quality education. In every stream, Aditya has become a spring-board for success through its powered vision, constant innovation and professional excellence.",
+                style: TextStyle(fontSize: 18),
+              ),
             ),
             // Container(
             //   height: 450,
@@ -133,44 +158,46 @@ class _Acop_homeState extends State<Acop_home> {
             //     ],
             //   ),
             // ),
-            SlideAction(
-              trackBuilder: (context, state) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 8,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                        "Slide to Next Page"
-                    ),
-                  ),
-                );
-              },
-              thumbBuilder: (context, state) {
-                return Container(
-                  margin: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.chevron_right,
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: SlideAction(
+                trackBuilder: (context, state) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 8,
+                        ),
+                      ],
                     ),
-                  ),
-                );
-              },
-              action: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Acop_Branch()));
-              },
+                    child: Center(
+                      child: Text("Slide to Next Page"),
+                    ),
+                  );
+                },
+                thumbBuilder: (context, state) {
+                  return Container(
+                    margin: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 255, 219, 59),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.chevron_right,
+                        color: Colors.black,
+                      ),
+                    ),
+                  );
+                },
+                action: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Acop_Branch()));
+                },
+              ),
             ),
           ],
         ),

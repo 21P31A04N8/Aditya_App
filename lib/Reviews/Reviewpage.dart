@@ -73,7 +73,6 @@ class _PostReviewState extends State<PostReview> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(widget.user.substring(0, widget.user.length - 10)),
-              Text("sample"),
               SizedBox(
                 height: 3,
               )

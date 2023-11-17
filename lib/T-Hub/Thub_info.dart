@@ -155,7 +155,7 @@ class _Thub_infoState extends State<Thub_info> {
                         width: 75.w,
                         child: Center(
                           child: Text(
-                            'Checkout us on',
+                            'Checkout our website',
                             style: TextStyle(
                                 fontSize: 13.sp, fontWeight: FontWeight.bold),
                           ),
