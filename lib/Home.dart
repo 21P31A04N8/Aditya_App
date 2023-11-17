@@ -907,10 +907,7 @@ class _MenuScreenState extends State<MenuScreen> {
                             PopupMenuItem(
                                 child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Apcs_home()));
+                                widget.onpagechange(Apcs_home());
                                 setState(() {
                                   _expansionTileController.collapse();
                                   zoomDrawerController.close;

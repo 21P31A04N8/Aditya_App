@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Pharmacy/ACOP/Acop_branches.dart';
 import 'package:slide_action/slide_action.dart';
 
@@ -16,18 +17,12 @@ class _Acop_homeState extends State<Acop_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 219, 59),
-        title: Text(
-          "Aditya college of Pharmacy",
-          style: TextStyle(color: Colors.black),
-        ),
+        centerTitle: true,
+        backgroundColor:Color.fromARGB(255, 255, 219, 59),
+        title: Text("Aditya Engineering College"),
         leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
       ),
       body: SingleChildScrollView(
         child: Column(
