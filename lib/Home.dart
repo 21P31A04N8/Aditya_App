@@ -816,11 +816,12 @@ class _MenuScreenState extends State<MenuScreen> {
                                   //     context,
                                   //     MaterialPageRoute(
                                   //         builder: (context) => Aec_home()));
-                                  widget.onpagechange(Acet_home());
                                   setState(() {
-                                    // _expansionTileController.collapse();
+                                    _expansionTileController.collapse();
                                     zoomDrawerController.close;
                                   });
+                                  widget.onpagechange(Aec_home());
+                                  
                                 },
                                 child: Container(
                                     width: double.infinity,
@@ -839,11 +840,12 @@ class _MenuScreenState extends State<MenuScreen> {
                                   //     context,
                                   //     MaterialPageRoute(
                                   //         builder: (context) => Acet_home()));
-                                  widget.onpagechange(Acet_home());
                                   setState(() {
-                                    // _expansionTileController.collapse();
+                                    _expansionTileController.collapse();
                                     zoomDrawerController.close;
                                   });
+                                  widget.onpagechange(Acet_home());
+                                  
                                 },
                                 child: Container(
                                     width: double.infinity,
@@ -957,8 +959,13 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Courses()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => Courses()));
+                    setState(() {
+                                    _expansionTileController.collapse();
+                                    zoomDrawerController.close;
+                                  });
+                                  widget.onpagechange(Courses());
                   },
                   child: SizedBox(
                     height: 30,
@@ -979,12 +986,11 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AGBS()));
                     setState(() {
-                      _expansionTileController.collapse();
-                      zoomDrawerController.close;
-                    });
+                                    _expansionTileController.collapse();
+                                    zoomDrawerController.close;
+                                  });
+                                  widget.onpagechange(AGBS());
                   },
                   child: SizedBox(
                     height: 30,

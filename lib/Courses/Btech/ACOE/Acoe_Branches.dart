@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class AcoeBranches extends StatefulWidget {
   const AcoeBranches({super.key});
@@ -56,39 +57,35 @@ class _AcoeBranchesState extends State<AcoeBranches>
 
   List<Details> det = [
     //CSE
-    Details('With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-        'With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-        'Well-equipped class rooms, well networked Lab setups with latest software, Industry- Integrated projects, creative teaching-learning process, research based activities in the emerging areas, impressive placements, certification courses make the department well advanced on the professional front.\n'
-        'Flagging the reputation of Aditya at national and international levels, the faculty of the department have been conferred with numerous prestigious awards and accolades. Several faculty members review technical articles for journals, serve on the editorial boards of national and international journals, deliver guest lectures and organize workshops and symposia.',
-        'https://img.freepik.com/premium-vector/developers-team-flat-design-concept-illustration-people-characters_9209-5416.jpg',
+    Details(
+        'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.Department of CSE has good interactions and MOUs with leading technology domain Training & Development Industries. Department of CSE under ACET, signed pacts in the form of MoUs with Infosys (Campus Connect), Microsoft (Campus Agreement), APSSDC. It organizes Exhibitions, Conferences, Seminars and Workshops for both students and Faculty belonging to various Technical Educational Institutions all over India.\n'
+            'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
+        //'https://img.freepik.com/free-vector/engineers-team-discussing-issues-construction-site_74855-4786.jpg?w=1060&t=st=1697969526~exp=1697970126~hmac=718e23f6dca871bb4f60f8ea0e8b85c23b999dadce55e3b7a951af42b781053a',
+        'https://img.freepik.com/premium-vector/company-employees-take-online-education-courses_155327-84.jpg',
         '23',
         '180',
-        'img/19P31A0513.jpg',
-        '20MH1A0540',
-        'NALLABILLI JYOTHI',
-        '14',
+        '19P31A0513.jpg',
+        '19P31A0513',
+        'DASI NYISHITHA',
+        '6.5',
         '2127 to 3192'),
     //ECE
     Details(
-      'With new ideas emerging relentlessly, both the graduation and post-graduation programs of Electronics and Communication Engineering Department try to excel by focussing on the needs of industry and society through student centric methodologies which is reflected in placements every year.\n'
-      'The department is well-equipped with the state-of-art laboratories which encompass the wide area of applied and fundamental aspects of the prescribed curriculum. In addition, the department enables training on advanced technologies through Texas Instruments Innovation lab, E-Yantra Robotics Lab, Intel Intelligent Systems Lab etc.\n'
-      'The department has signed MOUs with various industries for internship like BHEL, ONGC, Hindustan Shipyard Ltd, BSNL, Airports authorities of India, DLRL – Hyderabad, Rashtriya Inspat Nigam Limited etc.\n'
-      'The faculty of the department persistently carry out research and are specialists from the fields of device electronics, signal and image processing, antennas, microwave & optical engineering, wireless communication, embedded systems and VLSI design.',
-       'https://img.freepik.com/premium-vector/electronic-manufacturing-design-components-circuit-board-engineering-coordinate-symbols-concept_255805-396.jpg',
+        'ECE department was established in the year 2004 with an intake of 60 students and now it has been expanded with an intake of 240 students. ECE plays a vital role in Technology Revolution. Our main aim is to generate new knowledge by engaging in cutting-in research to promote academic growth and to develop human potential to its fullest extent so that intellectually capable & imaginatively gifted leaders can emerge in a range of professions. We have Modern state of the art and well furnished labs like Microwave and Optical Communication Lab, Electronic Devices and Circuits lab, Modern Communication Lab, Research lab etc with excellent laboratory facilities and dedicated faculty.\n\n'
+            'Electronics and Communication Engineering (ECE) is one of the fastest growing field of engineering with wide range of career opportunities considered to be leaders in the field of Technology. The aim of ECE engineer is to produce products that are smaller, smarter and multi-functional.',
+        'https://img.freepik.com/premium-vector/printed-circuit_701961-1674.jpg',
         '22',
         '180',
         '',
-        '21MH5A0416',
-        'M.GANGADHAR',
+        '19P35A0428',
+        'PULAVARTHI SAMAGNA',
         '7',
         '32934 to 39218'),
     //CIV
     Details(
-      '‘Apara Bhageeratha’- Sir Arthur Cotton remains revered and enjoys the pride of place in the hearts of the people in coastal Andhra Pradesh for being the genius architect behind the projects that made the delta region the ‘Rice Bowl’ for the state. With this inspiration taken form the genius architect, the department of Civil Engineering at Aditya College of Engineering transfers innovative applications to improve Civil Engineering practices which fulfil the requirements of civil construction industry.\n'
-      'To face the challenges in the field, the department associates itself in different consultancy activities like quality control, design, detailing, soil testing and concrete testing to the construction sites in the close vicinity. To shore up transition of knowledge, eminent personnel from industry and academia are invited to deliver technical talks on emerging areas to keep the students abreast with the latest advancements.\n'
-      'The department has state-of-the-art facilities, latest software like STAAD.Pro, AUTOCAD, Revit Structures, Robot Structure analysis etc. and well-equipped laboratories with costly equipment such as Total Station, Universal Testing Machine, Tri-axle Shear Testing Machine, Kaplan turbine, Francis turbine, Pelton wheel testing rig, Compression testing machine, Ultrasonic pulse velocity equipment etc.\n'
-      'The department offers unique internship opportunities to students in companies like L&T Construction, Reliance Industries Limited, OIL, Irrigation Department, Govt. of A.P., Soma Constructions, APCO Infra tech, Vizag Steel Plant etc.',
-      'https://img.freepik.com/free-vector/organic-engineers-working-construction_23-2148887080.jpg',
+      'The Department of Civil Engineering was established in 2013. It affords the students a solid grounding in better utilization of resources and increased standardization of construction techniques required by means of the construction industry. Students are taught how to use and rent progressive diagram methods and techniques. Exposure to cutting-edge facets planning, development plan and undertaking administration are key factors of the course.\n\n'
+          'Civil engineers create, improve and protect the environment in which we live. They plan, design and oversee construction and maintenance of building structures and infrastructure, such as roads, railways, airports, bridges, harbors, dams, irrigation projects, power plants, and water and sewerage systems.',
+      'https://img.freepik.com/free-vector/engineers-team-discussing-issues-construction-site_74855-4786.jpg',
       '5',
       '150',
       '',
@@ -98,98 +95,53 @@ class _AcoeBranchesState extends State<AcoeBranches>
       '47962 to 49866',
     ),
     //MEC
-    Details('The department offers unique internship opportunities to students in companies like L&T Construction, Reliance Industries Limited, OIL, Irrigation Department, Govt. of A.P., Soma Constructions, APCO Infra tech, Vizag Steel Plant etc.\n'
-        'The department lays impetus on hands-on training with the support of simulation packages such as CATIA, ANSYS, I-DEAS, PRO-E, UNIGRAPHICS and SOLID WORDS.\n'
-    'The professional activities include guest lectures, industrial visits, workshops, seminars, technical festivals VEDA and programs under Mechanical Engineering Students Association (MESA), collegiate club of the Society of Automotive Engineers (SAE) and Auto gear club.\n'
-    'The projects that received appreciation in various events organized at state and national level are Go-Kart, Quad bike, E-Bike, Reaping Machine and many more such highly relevant contraptions.\n'
-    'Students are encouraged to do internships in reputed industries like TATA Motors PVT. LTD., Hindustan Shipyard, BHEL PVT. LTD., Bhilai Steel Plant, Bokaro Thermal Power Station, Nalco Mining Division etc.',
-        'https://img.freepik.com/free-vector/team-engineers-workers-controlling-oil-gas-pipeline_74855-20378.jpg',
+    Details(
+        'The Department of Mechanical Engineering is a pioneer department since the establishment of college in 2011. The department has extensive facilities in terms of faculty, infrastructure & equipment. The department is recognised as a research centre by JNTUK, Kakinada for pursuing Ph.D. programme in Mechanical Engineering. The department has spacious laboratories and well equipped with experimental set-ups as per the requirement of the curriculum. The faculty are very active and encourage the students in fabricating real models viz., Go-kart, Robots, Solar based vehicles and other working models, which are very useful in day to day life and teach students with live examples.\n\n'
+            'Mechanical engineers develop state-of-the-art technologies and exhilarating solutions for the mankind. We attempt to provide our students with a cheerful, productive and satisfying experience at all levels of their program of studies to explore the amazing world of mechanical engineering.',
+        'https://img.freepik.com/premium-vector/concept-truck-repair-service-mechanic-with-wrench-truck-tools-gears-vector-illustration_357257-1547.jpg',
         '4',
         '150',
         '',
         '20P3540358',
         'KALLA TATAJI',
         '4.5',
-        '61039 to 101347'
-    ),
+        '61039 to 101347'),
     //IT
     Details(
-      'With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-      'The department has been consistently fulfilling its role by transforming students into technically competent, socially responsible and ethically professional graduates. Remarkably, two students of the department received gold medals for being the toppers at the university level.\n'
-      'Well-equipped class rooms, well networked Lab setups with latest software, Industry- Integrated projects, creative teaching-learning process, research based activities in the emerging areas, impressive placements, certification courses make the department well advanced on the professional front.\n'
-      'Flagging the reputation of Aditya at national and international levels, the faculty of the department have been conferred with numerous prestigious awards and accolades. Several faculty members review technical articles for journals, serve on the editorial boards of national and international journals, deliver guest lectures and organize workshops and symposia.',
-        'https://img.freepik.com/premium-vector/web-development-programming-languages-css-html-it-ui-programmer-cartoon-character-developing-website-coding-flat-illustration-banner_128772-862.jpg',
+        'The main source and strength of the department is its faculty, the department maintains the faculty as per the ratio , the main focus of the faculty members is to provide in-depth knowledge to the students in the respective course. The undergraduate program is emphasized on theoretical and practical aspects, apart from these the students are nurtured to participate in online coding competitions like TCS Hack Quest, Microsoft Imagine Cup, etc., the department has taken an initiation to expose the student towards the online coding platforms like Hackerrank, Code Chef. The department possesses computer labs with high end configuration and also CM Skill Excellence Center and also possesses a good placement record.\n\n'
+            'Today the branch of Information Technology is becoming pervasive as technology is changing rapidly in the field of computer science. So the process of learning should not end with the acquisition of a degree.',
+        'https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=1060&t=st=1698657888~exp=1698658488~hmac=82a822a68b5cceb07e51e496d820384f4884eecc2cfedec415629acdf21d2ba7',
         '5',
         '60',
         '',
         '18P31A1230',
         'PADALA SATYA PRIYA',
         '15',
-        '24581 to 29581'
-    ),
+        '24581 to 29581'),
     //EEE
     Details(
-      'Established as one of the major departments of the Institute, the Department of Electrical and Electronics Engineering at Aditya strives to produce highly competent engineers equipped with advanced professional knowledge, entrepreneurial thinking, professional and ethical attitude, critical problem solving and analytical skills through effective teaching learning process, research and industrial collaboration.\n'
-      'The faculty of the department, a rich blend with academic and industrial experience, have been constantly carrying out research on many cutting edge technologies with regular publications in ELSEVIER and other top international journals. The academic quality of the department is reflected by the laurels won by the students and the distinguished positions in industry and academia occupied by alumni.\n'
-      'The department strives to upgrade the knowledge of faculty and students by organizing various Workshops, Industry-Institute Interactions, Continuous Improvement Programs inviting eminent personalities from Industry and academic Institutions, Seminars and Research activities. Students are provided internship programs in various power plants and industries like Reliance, SAIL, HPCL, GMR, GVK, VTPS, Vizag steel plant, ONGC, APGPCL, APEPDCL etc.\n'
-      'The department spares no expense to equip the labs with latest equipment like Three phase AC Integrated Machine, DC Integrated Machine, Wireless Transmission of Electric Power using Tesla Coil and technical software like MATLAB & P-Spice.',
-        'https://img.freepik.com/free-vector/electricity-lighting-composition-with-characters-electricians-with-power-line-gear-lamp_1284-54213.jpg',
+        'The Department was established during the inception of the institute in 2004 as the department of Electrical and Electronics Engineering (EEE). Since its commencement, the primary objective of the department is to impart quality education, training and research at the undergraduate level in various areas of Electrical and Electronics Engineering with broad emphasis on design aspects of electrical systems.. The major areas of faculty expertise of the department include Power Electronics and Drives, Power Systems & Control Systems.The department has adequate teaching faculty having varied fields of specialization in Electrical Engineering. The faculty is engaged in active research in the areas of Power System Optimization, Adaptive Power System Stabilizers, Hybrid Power Systems, Power Electronic Drives, and Large Scale Uncertain Systems.\n\n'
+            'The EEE Department endeavors to stream line the career options and paves ways for recent graduates to explore new career opportunities. EEE is one of the core streams of engineering, and it is required in any case. Hence the demand for this group never decreases, and it is the steadiest stream ever.',
+        'https://img.freepik.com/premium-vector/lighting-electricity-energy-maintenance-service-technician-electrical-work-illustration_2175-8383.jpg',
         '3',
         '100',
         '',
         '20P35A0207',
         'KARRI SIVARAM DURGA',
         '4.2',
-        '26532 to 72696'
-    ),
-    //AIML
+        '26532 to 72696'),
+    //AIML & CSD
     Details(
-      'With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-      'The department has been consistently fulfilling its role by transforming students into technically competent, socially responsible and ethically professional graduates. Remarkably, two students of the department received gold medals for being the toppers at the university level.\n'
-      'Well-equipped class rooms, well networked Lab setups with latest software, Industry- Integrated projects, creative teaching-learning process, research based activities in the emerging areas, impressive placements, certification courses make the department well advanced on the professional front.\n'
-      'Flagging the reputation of Aditya at national and international levels, the faculty of the department have been conferred with numerous prestigious awards and accolades. Several faculty members review technical articles for journals, serve on the editorial boards of national and international journals, deliver guest lectures and organize workshops and symposia.',
-       'https://img.freepik.com/free-vector/ai-powered-content-creation-isometric-concept-with-chatbot-laptop-screen-3d-vector-illustration_1284-82523.jpg',
+        'Department of Computer Science and Engineering has been successfully functioning since 2004. It offers B.Tech (Computer Science and Engineering) with an intake of 240 students, B.Tech (Computer Science and Engineering) with specialization AI&ML intake of 180,B.Tech (Computer Science and Engineering) with specialization Data Science intake of 120 and M.Tech (Computer Science and Engineering) with 30 students.\n\n'
+            'The scope of computer science is endless. The students of the computer science and engineering are highly demanded by the recruiters of the top companies. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.',
+        'https://img.freepik.com/free-vector/brain-with-digital-circuit-programmer-with-laptop-machine-learning-artificial-intelligence-digital-brain-artificial-thinking-process-concept-vector-isolated-illustration_335657-2246.jpg',
         '5',
         '60',
         '',
         '19P31A0556',
         'DASI VEERRAJU',
         '7.5',
-        '16591 to 32732'
-
-    ),
-    //IOT
-    Details(
-        'With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-            'The department has been consistently fulfilling its role by transforming students into technically competent, socially responsible and ethically professional graduates. Remarkably, two students of the department received gold medals for being the toppers at the university level.\n'
-            'Well-equipped class rooms, well networked Lab setups with latest software, Industry- Integrated projects, creative teaching-learning process, research based activities in the emerging areas, impressive placements, certification courses make the department well advanced on the professional front.\n'
-            'Flagging the reputation of Aditya at national and international levels, the faculty of the department have been conferred with numerous prestigious awards and accolades. Several faculty members review technical articles for journals, serve on the editorial boards of national and international journals, deliver guest lectures and organize workshops and symposia.',
-        'https://img.freepik.com/premium-vector/printed-circuit_701961-1674.jpg',
-        '5',
-        '60',
-        '',
-        '18P31A1230',
-        'PADALA SATYA PRIYA',
-        '15',
-        '24581 to 29581'
-    ),
-    //CSD
-    Details(
-        'With Global Excellence, National Relevance and Industry preference as prime motto, the Department of Computer Science and Engineering fosters greater learning experience by providing a broader scientific and practical approach to computation and its applications.\n'
-            'The department has been consistently fulfilling its role by transforming students into technically competent, socially responsible and ethically professional graduates. Remarkably, two students of the department received gold medals for being the toppers at the university level.\n'
-            'Well-equipped class rooms, well networked Lab setups with latest software, Industry- Integrated projects, creative teaching-learning process, research based activities in the emerging areas, impressive placements, certification courses make the department well advanced on the professional front.\n'
-            'Flagging the reputation of Aditya at national and international levels, the faculty of the department have been conferred with numerous prestigious awards and accolades. Several faculty members review technical articles for journals, serve on the editorial boards of national and international journals, deliver guest lectures and organize workshops and symposia.',
-        'https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg',
-        '5',
-        '60',
-        '',
-        '19P31A0556',
-        'DASI VEERRAJU',
-        '7.5',
-        '16591 to 32732'
-
-    ),
-
+        '16591 to 32732'),
   ];
 
   Container con(String txt) {
@@ -237,14 +189,30 @@ class _AcoeBranchesState extends State<AcoeBranches>
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Opacity(
                         opacity: blink_val!.value,
-                        child: Text('Aditya college of engineering' ,
-                          style: TextStyle(
-                              color: Colors.white ,
-                              fontSize: 23,
-                              // decoration: TextDecoration.underline
+                        child:  Column(
+                          children: [
+                            Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                IconButton(onPressed: (){
+                                    Navigator.pop(context);
+                                    
+                                  },
+                                  icon: Icon(Icons.arrow_back , color: Colors.white,)
+                                  ),
+                              
+                            Text('Aditya engineering College' ,
+                              style: TextStyle(
+                                  color: Colors.white ,
+                                  fontSize: 23,
+                                  // decoration: TextDecoration.underline
 
-                          ),
-                          textAlign: TextAlign.justify,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                            ],
+                            ),
+                          ],
                         )
                     ),
                   ),
@@ -413,78 +381,72 @@ class _AcoeBranchesState extends State<AcoeBranches>
                                                 borderRadius:
                                                 BorderRadius.circular(60),
                                                 color: Colors.white),
-                                            //padding: EdgeInsets.symmetric(horizontal: 30),
-                                            child: Stack(children: [
-                                              Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'PIN: ' +
-                                                        det[selectedIndex]
-                                                            .stuid
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    'NAME: ' +
-                                                        det[selectedIndex]
-                                                            .stuname
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    det[selectedIndex]
-                                                        .pack
-                                                        .toString() +
-                                                        ' LPA',
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 25),
-                                                  )
-                                                ],
-                                              ),
-                                              Positioned(
-                                                  bottom: 0,
-                                                  left: 4,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(10),
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.only(
-                                                            topRight: Radius
-                                                                .circular(
-                                                                60),
-                                                            bottomLeft: Radius
-                                                                .circular(
-                                                                60)),
-                                                        color: Colors.orange),
-                                                    child: Center(
-                                                      child: Text(
-                                                        'LPA: ' +
-                                                            det[selectedIndex]
-                                                                .pack
-                                                                .toString(),
-                                                        style: TextStyle(
-                                                          fontSize: 18,
-                                                        ),
-                                                      ),
+                                            // padding: EdgeInsets.symmetric(horizontal: 30),
+                                            child: Center(
+                                              child: Stack(children: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'PIN: ' +
+                                                          det[selectedIndex]
+                                                              .stuid
+                                                              .toString(),
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.deepPurple,
+                                                          fontSize: 20.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                          textAlign: TextAlign.justify,
                                                     ),
-                                                  ))
-                                            ]),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+                                                        Text('NAME: ' ,style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),),
+                                                        Text(
+                                                              det[selectedIndex]
+                                                                  .stuname
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Text(
+                                                      det[selectedIndex]
+                                                          .pack
+                                                          .toString() +
+                                                          ' LPA',
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.orange.shade900,
+                                                          fontSize: 23.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                    )
+                                                  ],
+                                                ),
+                                                // 
+                                              ]),
+                                            ),
                                           ),
                                         ),
                                         Positioned(
@@ -502,17 +464,13 @@ class _AcoeBranchesState extends State<AcoeBranches>
                                                   borderRadius:
                                                   BorderRadius.circular(
                                                       360),
-                                                  color: Colors.red),
-                                              // child: ClipRRect(
-                                              //   borderRadius:
-                                              //       BorderRadius.circular(
-                                              //           (360)),
-                                              //   child: Image.asset(
-                                              //       fit: BoxFit.cover,
-                                              //       det[selectedIndex]
-                                              //           .stuimg
-                                              //           .toString()),
-                                              // ),
+                                                  color: Colors.grey.shade400),
+                                              child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(360),
+                                                child: (selectedIndex == 3 || selectedIndex == 6) ? Icon(Icons.account_circle) : Image.asset(fit: BoxFit.fill,'assets/btech/ACET/'+det[selectedIndex]
+                                                                .stuid
+                                                                .toString()+'.jpg'),
+                                              )
                                             ),
                                           ),
                                         ),
@@ -568,7 +526,7 @@ class _AcoeBranchesState extends State<AcoeBranches>
                         child: Container(
                          // height: 5,
                           child: ListView.builder(
-                          padding: EdgeInsets.only(left: s.width / 3),
+                          padding: EdgeInsets.only(left: s.width / 4),
                           scrollDirection: Axis.horizontal,
                           itemCount: names.length,
                           itemBuilder: (context, i) {

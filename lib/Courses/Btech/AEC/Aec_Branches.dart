@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Aecbranch extends StatefulWidget {
   const Aecbranch({super.key});
@@ -63,8 +64,8 @@ class _AecbranchState extends State<Aecbranch>
         'https://img.freepik.com/premium-vector/company-employees-take-online-education-courses_155327-84.jpg',
         '23',
         '180',
-        '19P31A0513.jpg',
-        '19P31A0513',
+        '20A91A0518.jpeg',
+        '20A91A0518',
         'P.K. REDDY',
         '28.95',
         '2127 to 3192'),
@@ -76,9 +77,9 @@ class _AecbranchState extends State<Aecbranch>
         '22',
         '180',
         '',
-        '19P35A0428',
-        'PULAVARTHI SAMAGNA',
-        '7',
+        '20A91A0325',
+        'HARSHIT SINGH',
+        '10',
         'below 16881'),
     //CIV
     Details(
@@ -88,9 +89,9 @@ class _AecbranchState extends State<Aecbranch>
       '5',
       '150',
       '',
-      '17P31A0114',
-      'INDUGULA GANESH',
-      '2.4',
+      '20A91A0407',
+      'LUCKY SRI',
+      '4',
       'below 111815',
     ),
     //MEC
@@ -101,9 +102,9 @@ class _AecbranchState extends State<Aecbranch>
         '4',
         '150',
         '',
-        '20P3540358',
-        'KALLA TATAJI',
-        '4.5',
+        '20A91A0316',
+        'HARSHA',
+        '6',
         'below 124147	'),
     //IT
     Details(
@@ -113,9 +114,9 @@ class _AecbranchState extends State<Aecbranch>
         '5',
         '60',
         '',
-        '18P31A1230',
-        'PADALA SATYA PRIYA',
-        '15',
+        '20A91A0256',
+        'SURYA KIRAN',
+        '5',
         'below 19233'),
     //EEE
     Details(
@@ -125,8 +126,8 @@ class _AecbranchState extends State<Aecbranch>
         '3',
         '100',
         '',
-        '20P35A0207',
-        'KARRI SIVARAM DURGA',
+        '20A91A0218',
+        'G VAMSI PRIYANKA',
         '4.2',
         'below 34026'),
     //AIML & CSD
@@ -137,8 +138,8 @@ class _AecbranchState extends State<Aecbranch>
         '5',
         '60',
         '',
-        '19P31A0556',
-        'DASI VEERRAJU',
+        '20A91A0316',
+        'SIDHU',
         '7.5',
         'below 19333'),
     //Agriculture
@@ -204,6 +205,7 @@ class _AecbranchState extends State<Aecbranch>
   }
   //Details  = new Details();
 
+  @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
 
@@ -232,14 +234,30 @@ class _AecbranchState extends State<Aecbranch>
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Opacity(
                         opacity: blink_val!.value,
-                        child: Text('Aditya engineering College' ,
-                          style: TextStyle(
-                              color: Colors.white ,
-                              fontSize: 23,
-                              decoration: TextDecoration.underline
+                        child: Column(
+                          children: [
+                            Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                IconButton(onPressed: (){
+                                    Navigator.pop(context);
+                                    
+                                  },
+                                  icon: Icon(Icons.arrow_back , color: Colors.white,)
+                                  ),
+                              
+                            Text('Aditya engineering College' ,
+                              style: TextStyle(
+                                  color: Colors.white ,
+                                  fontSize: 23,
+                                  // decoration: TextDecoration.underline
 
-                          ),
-                          textAlign: TextAlign.justify,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                            ],
+                            ),
+                          ],
                         )
                     ),
                   ),
@@ -369,7 +387,154 @@ class _AecbranchState extends State<Aecbranch>
                                   SizedBox(
                                     height: 20,
                                   ),
-                                  Container(
+                                  // Container(
+                                  //   height: 450,
+                                  //   width: double.infinity,
+                                  //   margin:
+                                  //   EdgeInsets.symmetric(horizontal: 20),
+                                  //   decoration: BoxDecoration(
+                                  //       color: Colors.black.withOpacity(0.4),
+                                  //       borderRadius:
+                                  //       BorderRadius.circular(30)),
+                                  //   child: Stack(
+                                  //     alignment: Alignment.topCenter,
+                                  //     children: [
+                                  //       Positioned(
+                                  //         top: 18,
+                                  //         child: Text(
+                                  //           'Highest Package: ' +
+                                  //               det[selectedIndex]
+                                  //                   .pack
+                                  //                   .toString() +
+                                  //               ' LPA',
+                                  //           style: TextStyle(
+                                  //               fontSize: 20,
+                                  //               letterSpacing: 2,
+                                  //               fontWeight: FontWeight.bold,
+                                  //               color: Colors.white,
+                                  //               fontStyle: FontStyle.italic),
+                                  //         ),
+                                  //       ),
+                                  //       Positioned(
+                                  //         bottom: 20,
+                                  //         child: Container(
+                                  //           height: 300,
+                                  //           width: 300,
+
+                                  //           margin: EdgeInsets.only(top: 80),
+                                  //           decoration: BoxDecoration(
+                                  //               borderRadius:
+                                  //               BorderRadius.circular(60),
+                                  //               color: Colors.white),
+                                  //           //padding: EdgeInsets.symmetric(horizontal: 30),
+                                  //           child: Stack(children: [
+                                  //             Column(
+                                  //               mainAxisAlignment:
+                                  //               MainAxisAlignment.center,
+                                  //               children: [
+                                  //                 Text(
+                                  //                   'PIN: ' +
+                                  //                       det[selectedIndex]
+                                  //                           .stuid
+                                  //                           .toString(),
+                                  //                   style: TextStyle(
+                                  //                       color:
+                                  //                       Colors.deepPurple,
+                                  //                       fontSize: 20),
+                                  //                 ),
+                                  //                 SizedBox(
+                                  //                   height: 10,
+                                  //                 ),
+                                  //                 Text(
+                                  //                   'NAME: ' +
+                                  //                       det[selectedIndex]
+                                  //                           .stuname
+                                  //                           .toString(),
+                                  //                   style: TextStyle(
+                                  //                       color:
+                                  //                       Colors.deepPurple,
+                                  //                       fontSize: 20),
+                                  //                 ),
+                                  //                 SizedBox(
+                                  //                   height: 10,
+                                  //                 ),
+                                  //                 Text(
+                                  //                   det[selectedIndex]
+                                  //                       .pack
+                                  //                       .toString() +
+                                  //                       ' LPA',
+                                  //                   style: TextStyle(
+                                  //                       color:
+                                  //                       Colors.deepPurple,
+                                  //                       fontSize: 25),
+                                  //                 )
+                                  //               ],
+                                  //             ),
+                                  //             Positioned(
+                                  //                 bottom: 0,
+                                  //                 left: 4,
+                                  //                 child: Container(
+                                  //                   padding: EdgeInsets.all(10),
+                                  //                   decoration: BoxDecoration(
+                                  //                       borderRadius:
+                                  //                       BorderRadius.only(
+                                  //                           topRight: Radius
+                                  //                               .circular(
+                                  //                               60),
+                                  //                           bottomLeft: Radius
+                                  //                               .circular(
+                                  //                               60)),
+                                  //                       color: Colors.orange),
+                                  //                   child: Center(
+                                  //                     child: Text(
+                                  //                       'LPA: ' +
+                                  //                           det[selectedIndex]
+                                  //                               .pack
+                                  //                               .toString(),
+                                  //                       style: TextStyle(
+                                  //                         fontSize: 18,
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                 ))
+                                  //           ]),
+                                  //         ),
+                                  //       ),
+                                  //       Positioned(
+                                  //         top: 60,
+                                  //         child: Card(
+                                  //           elevation: 40,
+                                  //           shadowColor: Colors.black,
+                                  //           shape: RoundedRectangleBorder(
+                                  //               borderRadius:
+                                  //               BorderRadius.circular(360)),
+                                  //           child: Container(
+                                  //             height: 130,
+                                  //             width: 130,
+                                  //             decoration: BoxDecoration(
+                                  //                 borderRadius:
+                                  //                 BorderRadius.circular(
+                                  //                     360),
+                                  //                 color: Colors.red),
+                                  //             // child: ClipRRect(
+                                  //             //   borderRadius:
+                                  //             //       BorderRadius.circular(
+                                  //             //           (360)),
+                                  //             //   child: Image.asset(
+                                  //             //       fit: BoxFit.cover,
+                                  //             //       det[selectedIndex]
+                                  //             //           .stuimg
+                                  //             //           .toString()),
+                                  //             // ),
+                                  //           ),
+                                  //         ),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
+                                  (selectedIndex == 7 || selectedIndex == 8 || selectedIndex == 9) ?
+                                  Text("NO PLACEMENTS YET" , style: TextStyle(color: Colors.white , fontSize: 23),) : 
+                                   Container(
                                     height: 450,
                                     width: double.infinity,
                                     margin:
@@ -408,78 +573,72 @@ class _AecbranchState extends State<Aecbranch>
                                                 borderRadius:
                                                 BorderRadius.circular(60),
                                                 color: Colors.white),
-                                            //padding: EdgeInsets.symmetric(horizontal: 30),
-                                            child: Stack(children: [
-                                              Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'PIN: ' +
-                                                        det[selectedIndex]
-                                                            .stuid
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    'NAME: ' +
-                                                        det[selectedIndex]
-                                                            .stuname
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 20),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    det[selectedIndex]
-                                                        .pack
-                                                        .toString() +
-                                                        ' LPA',
-                                                    style: TextStyle(
-                                                        color:
-                                                        Colors.deepPurple,
-                                                        fontSize: 25),
-                                                  )
-                                                ],
-                                              ),
-                                              Positioned(
-                                                  bottom: 0,
-                                                  left: 4,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(10),
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.only(
-                                                            topRight: Radius
-                                                                .circular(
-                                                                60),
-                                                            bottomLeft: Radius
-                                                                .circular(
-                                                                60)),
-                                                        color: Colors.orange),
-                                                    child: Center(
-                                                      child: Text(
-                                                        'LPA: ' +
-                                                            det[selectedIndex]
-                                                                .pack
-                                                                .toString(),
-                                                        style: TextStyle(
-                                                          fontSize: 18,
-                                                        ),
-                                                      ),
+                                            // padding: EdgeInsets.symmetric(horizontal: 30),
+                                            child: Center(
+                                              child: Stack(children: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'PIN: ' +
+                                                          det[selectedIndex]
+                                                              .stuid
+                                                              .toString(),
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.deepPurple,
+                                                          fontSize: 20.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                          textAlign: TextAlign.justify,
                                                     ),
-                                                  ))
-                                            ]),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+                                                        Text('NAME: ' ,style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),),
+                                                        Text(
+                                                              det[selectedIndex]
+                                                                  .stuname
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                              Colors.deepPurple,
+                                                              fontSize: 14.sp,
+                                                              fontWeight: FontWeight.bold
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    Text(
+                                                      det[selectedIndex]
+                                                          .pack
+                                                          .toString() +
+                                                          ' LPA',
+                                                      style: TextStyle(
+                                                          color:
+                                                          Colors.orange.shade900,
+                                                          fontSize: 23.sp,
+                                                          fontWeight: FontWeight.bold
+                                                          ),
+                                                    )
+                                                  ],
+                                                ),
+                                                // 
+                                              ]),
+                                            ),
                                           ),
                                         ),
                                         Positioned(
@@ -497,17 +656,13 @@ class _AecbranchState extends State<Aecbranch>
                                                   borderRadius:
                                                   BorderRadius.circular(
                                                       360),
-                                                  color: Colors.red),
-                                              // child: ClipRRect(
-                                              //   borderRadius:
-                                              //       BorderRadius.circular(
-                                              //           (360)),
-                                              //   child: Image.asset(
-                                              //       fit: BoxFit.cover,
-                                              //       det[selectedIndex]
-                                              //           .stuimg
-                                              //           .toString()),
-                                              // ),
+                                                  color: Colors.grey.shade400),
+                                              child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(360),
+                                                child: Image.asset(fit: BoxFit.fill,'assets/btech/AEC/'+det[selectedIndex]
+                                                                .stuid
+                                                                .toString()+'.jpeg'),
+                                              )
                                             ),
                                           ),
                                         ),
@@ -543,6 +698,33 @@ class _AecbranchState extends State<Aecbranch>
                                   ),
                                   SizedBox(
                                     height: 20,
+                                  ),
+                                  // Container(
+                                  //   width: s.width,
+                                  //   margin:
+                                  //   EdgeInsets.symmetric(horizontal: 20),
+                                  //   padding: EdgeInsets.symmetric(vertical: 20),
+                                  //   decoration: BoxDecoration(
+                                  //       borderRadius: BorderRadius.circular(20),
+                                  //       color: Colors.black.withOpacity(0.4)),
+                                  //   child: Column(
+                                  //     children: [
+                                  //       con('Management Cost: ' +
+                                  //           det[selectedIndex]
+                                  //               .mcost
+                                  //               .toString()),
+                                  //       SizedBox(
+                                  //         height: 20,
+                                  //       ),
+                                  //       con('EAPCET cut off: ' +
+                                  //           det[selectedIndex]
+                                  //               .cutoff
+                                  //               .toString()),
+                                  //     ],
+                                  //   ),
+                                  // ),
+                                  SizedBox(
+                                    height: 20,
                                   )
                                 ],
                               ),
@@ -558,27 +740,27 @@ class _AecbranchState extends State<Aecbranch>
                     flex: 1,
                     child: Container(
                       height: double.maxFinite,
-                      width: double.maxFinite,
-                      padding: EdgeInsets.symmetric(vertical: 3),
-                      child: Container(
-                        // height: 5,
-                        child: ListView.builder(
-                            padding: EdgeInsets.only(left: s.width / 3),
-                            scrollDirection: Axis.horizontal,
-                            itemCount: names.length,
-                            itemBuilder: (context, i) {
-                              return Container(
-                                //height: 5,
+                        width: double.maxFinite,
+                        padding: EdgeInsets.symmetric(vertical: 3),
+                        child: Container(
+                         // height: 5,
+                          child: ListView.builder(
+                          padding: EdgeInsets.only(left: s.width / 4.3),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: names.length,
+                          itemBuilder: (context, i) {
+                            return Container(
+                              //height: 5,
 
-                                margin: EdgeInsets.symmetric(horizontal: 7),
-                                width: (selectedIndex == i) ? 18 : 8,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(360),
-                                  color: Colors.white,
-                                ),
-                              );
-                            }),
-                      ),
+                              margin: EdgeInsets.symmetric(horizontal: 7),
+                              width: (selectedIndex == i) ? 18 : 8,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(360),
+                                color: Colors.white,
+                              ),
+                            );
+                          }),
+                        ),
                     ),
                   ),
                   SizedBox(height: 20,)

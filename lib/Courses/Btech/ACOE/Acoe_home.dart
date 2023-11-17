@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:slide_action/slide_action.dart';
 
 import 'Acoe_Branches.dart';
@@ -17,12 +18,11 @@ class _Acoe_homeState extends State<Acoe_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CupertinoColors.activeOrange,
-        title: const Text("Aditya College of Engineering"),
+        centerTitle: true,
+        title: Text("Aditya College of Engineering"),
         leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -33,22 +33,28 @@ class _Acoe_homeState extends State<Acoe_home> {
             CarouselSlider(
               items: [
                 Container(
-                  child: Image.asset("assets/ADITYA/aditya1.jpg",fit: BoxFit.fill,)
+                  color: Colors.grey.shade300,
+                  child: Image.asset("assets/aditya/aditya1.jpg",fit: BoxFit.cover,)
                 ),
                 Container(
-                  child: Image.asset("assets/ADITYA/aditya4.jpg",fit: BoxFit.fill,)
+                  color: Colors.grey.shade300,
+                  child: Image.asset("assets/aditya/aditya4.jpg",fit: BoxFit.cover,)
                 ),
                 Container(
-                  child: Image.asset("assets/ADITYA/aditya3.jpg",fit: BoxFit.fill,)
+                  color: Colors.grey.shade300,
+                  child: Image.asset("assets/aditya/aditya3.jpg",fit: BoxFit.cover,)
                 ),
                 Container(
-                  child:Image.asset("assets/ADITYA/aditya8.jpg",fit: BoxFit.fill,)
+                  color: Colors.grey.shade300,
+                  child:Image.asset("assets/aditya/aditya8.jpg",fit: BoxFit.cover,)
                 ),
                 Container(
-                  child: Image.asset("assets/ADITYA/adity7.jpg",fit: BoxFit.fill,),
+                  color: Colors.grey.shade300,
+                  child: Image.asset("assets/aditya/adity7.jpg",fit: BoxFit.cover,),
                 ),
                 Container(
-                  child: Image.asset("assets/ADITYA/aditya13.jpg",fit: BoxFit.fill,)
+                  color: Colors.grey.shade300,
+                  child: Image.asset("assets/aditya/aditya13.jpg",fit: BoxFit.cover,)
                 ),
 
               ],
@@ -81,7 +87,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                     margin: const EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.orange),
+                        color: Colors.deepPurple[400]),
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,14 +98,14 @@ class _Acoe_homeState extends State<Acoe_home> {
                         Text(
                           "Tevit",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 30, fontWeight: FontWeight.bold , color: Colors.white),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "31.31",
-                          style: TextStyle(fontSize: 25),
+                          style: TextStyle(fontSize: 25 , color: Colors.white),
                         ),
                         SizedBox(
                           height: 10,
@@ -107,7 +113,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                         Text(
                           "AWS",
                           style: TextStyle(
-                              fontSize: 30, fontStyle: FontStyle.italic),
+                              fontSize: 30, fontStyle: FontStyle.italic , color: Colors.white),
                         )
                       ],
                     ),
@@ -125,9 +131,7 @@ class _Acoe_homeState extends State<Acoe_home> {
                           color: Colors.transparent),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular((360)),
-                        child: Image.network(
-                            fit: BoxFit.cover,
-                            "http://acet.ac.in/ACET/banners/153.jpg"),
+                        child: Image.asset('assets/aditya/tevit.jpg')
                       ),
                     ),
                   ),
@@ -137,52 +141,55 @@ class _Acoe_homeState extends State<Acoe_home> {
                       child: Text(
                         1.toString(),
                         style: TextStyle(
-                            color: Colors.black.withOpacity(0.3),
+                            color: Colors.white.withOpacity(0.4),
                             fontSize: 150,
                             fontWeight: FontWeight.bold),
                       ))
                 ],
               ),
             ),
-            SlideAction(
-              trackBuilder: (context, state) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 8,
-                      ),
-                    ],
-                  ),
-                  child: const Center(
-                    child: Text("Slide to Next Page"),
-                  ),
-                );
-              },
-              thumbBuilder: (context, state) {
-                return Container(
-                  margin: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.chevron_right,
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SlideAction(
+                trackBuilder: (context, state) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 8,
+                        ),
+                      ],
                     ),
-                  ),
-                );
-              },
-              action: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AcoeBranches()));
-              },
+                    child: const Center(
+                      child: Text("Slide to Next Page"),
+                    ),
+                  );
+                },
+                thumbBuilder: (context, state) {
+                  return Container(
+                    margin: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.chevron_right,
+                        color: Colors.white,
+                      ),
+                    ),
+                  );
+                },
+                action: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AcoeBranches()));
+                },
+              ),
             ),
           ],
         ),

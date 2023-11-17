@@ -71,28 +71,14 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                   width: double.maxFinite,
                   child: Row(
                     children: [
-                      Card(
-                        // elevation: 20,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(360),
-                        ),
-                        child: Container(
-                            //margin: EdgeInsets.only(left: 0),
-                            height: 10.w,
-                            width: 10.w,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(360),
-                                border: Border.all(color: Colors.black)),
-                            child: Center(
-                              child: IconButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  icon: Icon(
-                                    Icons.arrow_back,
-                                    size: 6.w,
-                                  )),
+                      Center(
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.arrow_back,
+                              size: 6.w,
                             )),
                       ),
                     ],
@@ -145,7 +131,7 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                                   width: 88.w,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(40),
-                                      color: Colors.purpleAccent),
+                                      color: Colors.grey.shade300),
                                   child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40),
                                       child: Image.network(
@@ -181,37 +167,37 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                           ),
                         ),
                       ),
-                      Container(
-                        height: double.maxFinite,
-                        width: double.maxFinite,
-                        color: Colors.white,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Transform.rotate(
-                              angle: (-10 * 3.14) / 180,
-                              child: Container(
-                                height: 70.w,
-                                width: 40.w,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    color: Colors.greenAccent),
-                              ),
-                            ),
-                            Transform.rotate(
-                              angle: (10 * 3.14) / 180,
-                              child: Container(
-                                height: 70.w,
-                                width: 40.w,
-                                // color: Colors.red,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    color: Colors.red),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      // Container(
+                      //   height: double.maxFinite,
+                      //   width: double.maxFinite,
+                      //   color: Colors.white,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.center,
+                      //     children: [
+                      //       Transform.rotate(
+                      //         angle: (-10 * 3.14) / 180,
+                      //         child: Container(
+                      //           height: 70.w,
+                      //           width: 40.w,
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(30),
+                      //               color: Colors.greenAccent),
+                      //         ),
+                      //       ),
+                      //       Transform.rotate(
+                      //         angle: (10 * 3.14) / 180,
+                      //         child: Container(
+                      //           height: 70.w,
+                      //           width: 40.w,
+                      //           // color: Colors.red,
+                      //           decoration: BoxDecoration(
+                      //               borderRadius: BorderRadius.circular(30),
+                      //               color: Colors.red),
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                       Container(
                         height: double.maxFinite,
                         width: double.maxFinite,
@@ -235,9 +221,7 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                                 margin: EdgeInsets.symmetric(horizontal: 8),
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
-                                    child: Image.asset("assets/dip_img/" +
-                                        widget.branch +
-                                        ".jpg"))),
+                                    child: Image.asset("assets/dip_img/EEE.jpg"))),
                           ],
                         ),
                       ),
@@ -272,24 +256,24 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                         SizedBox(
                           width: 2.w,
                         ),
-                        Container(
-                          height: 4.w,
-                          width: 4.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(360),
-                            border: Border.all(
-                                color: (cur_page == 1)
-                                    ? Colors.black
-                                    : Colors.transparent,
-                                width: 2),
-                          ),
-                          child: Container(
-                            margin: EdgeInsets.all(2.sp),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(360),
-                                color: Colors.black),
-                          ),
-                        ),
+                        // Container(
+                        //   height: 4.w,
+                        //   width: 4.w,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(360),
+                        //     border: Border.all(
+                        //         color: (cur_page == 1)
+                        //             ? Colors.black
+                        //             : Colors.transparent,
+                        //         width: 2),
+                        //   ),
+                        //   child: Container(
+                        //     margin: EdgeInsets.all(2.sp),
+                        //     decoration: BoxDecoration(
+                        //         borderRadius: BorderRadius.circular(360),
+                        //         color: Colors.black),
+                        //   ),
+                        // ),
                         SizedBox(
                           width: 2.w,
                         ),
@@ -299,7 +283,7 @@ class _AGBS_branch_detState extends State<AGBS_branch_det>
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(360),
                             border: Border.all(
-                                color: (cur_page == 2)
+                                color: (cur_page == 1)
                                     ? Colors.black
                                     : Colors.transparent,
                                 width: 2),

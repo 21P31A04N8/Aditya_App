@@ -138,7 +138,7 @@ class _branch_detState extends State<branch_det>
                                   width: 88.w,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(40),
-                                      color: Colors.purpleAccent),
+                                      color: Colors.grey.shade300),
                                   child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40),
                                       child: Image.network(
@@ -178,7 +178,7 @@ class _branch_detState extends State<branch_det>
                         height: double.maxFinite,
                         width: double.maxFinite,
                         // color: Colors.white,
-                        child: Column(
+                        child: (widget.branch == "CSN") ? Text("NO ECET RANKS YET" , style: TextStyle(fontSize: 20),) :Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text('ECET RANKS - 2K23' , style: TextStyle(
@@ -235,7 +235,7 @@ class _branch_detState extends State<branch_det>
                             SizedBox(
                               height: 30,
                             ),
-                            Container(
+                            (widget.branch == "CSN") ? Text("NO PLACEMENTS YET" , style: TextStyle(fontSize: 20),) :Container(
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(

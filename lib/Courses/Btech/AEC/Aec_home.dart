@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/Btech/AEC/Aec_Branches.dart';
 
 //import 'package:myapplication/Courses/Btech/Btech.dart';
@@ -19,12 +20,11 @@ class _Aec_homeState extends State<Aec_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 149, 0),
+        centerTitle: true,
         title: Text("Aditya Engineering College"),
         leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
-        ),
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,11 +41,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: "https://www.acoe.edu.in/acoe/banners/240.jpg",
-                        fit: BoxFit.fill,
-                      ),
+                      child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/one.jpeg")
                     )),
                 Container(
                     decoration: BoxDecoration(
@@ -54,11 +50,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: "https://www.acoe.edu.in/acoe/banners/204.jpg",
-                        fit: BoxFit.fill,
-                      ),
+                      child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/two.jpeg")
                     )),
                 Container(
                     decoration: BoxDecoration(
@@ -67,12 +59,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image:
-                            "https://www.acoe.edu.in/acoe/banners/Btech_courses_2023.jpeg",
-                        fit: BoxFit.fill,
-                      ),
+                      child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/three.jpeg")
                     )),
                 Container(
                     decoration: BoxDecoration(
@@ -81,11 +68,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: "http://acet.ac.in/ACET/banners/Crouse.jpg",
-                        fit: BoxFit.fill,
-                      ),
+                      child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/four.jpeg")
                     )),
                 Container(
                     decoration: BoxDecoration(
@@ -94,11 +77,7 @@ class _Aec_homeState extends State<Aec_home> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: "http://acet.ac.in/ACET/banners/153.jpg",
-                        fit: BoxFit.fill,
-                      ),
+                      child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/five.jpeg")
                     )),
               ],
               options: CarouselOptions(
@@ -130,7 +109,7 @@ class _Aec_homeState extends State<Aec_home> {
                     margin: EdgeInsets.only(top: 100),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.orange),
+                        color: Colors.deepPurple[400]),
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,24 +118,30 @@ class _Aec_homeState extends State<Aec_home> {
                           height: 110,
                         ),
                         Text(
-                          "Tevit",
+                          "P.Krishna Reddy",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 30, fontWeight: FontWeight.bold,
+                              color: Colors.white
+                              ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "31.31",
-                          style: TextStyle(fontSize: 25),
+                          "28.95",
+                          style: TextStyle(fontSize: 25,
+                          color: Colors.white
+                          ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "AWS",
+                          "JAPAN",
                           style: TextStyle(
-                              fontSize: 30, fontStyle: FontStyle.italic),
+                              fontSize: 30, fontStyle: FontStyle.italic,
+                              color: Colors.white
+                              ),
                         )
                       ],
                     ),
@@ -174,9 +159,7 @@ class _Aec_homeState extends State<Aec_home> {
                           color: Colors.transparent),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular((360)),
-                        child: Image.network(
-                            fit: BoxFit.cover,
-                            "http://acet.ac.in/ACET/banners/153.jpg"),
+                        child: Image.asset(fit:BoxFit.cover , "assets/btech/AEC/20A91A0518.jpeg"),
                       ),
                     ),
                   ),
@@ -186,50 +169,53 @@ class _Aec_homeState extends State<Aec_home> {
                       child: Text(
                         1.toString(),
                         style: TextStyle(
-                            color: Colors.black.withOpacity(0.3),
+                            color: Colors.white.withOpacity(0.3),
                             fontSize: 150,
                             fontWeight: FontWeight.bold),
                       ))
                 ],
               ),
             ),
-            SlideAction(
-              trackBuilder: (context, state) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 8,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text("Slide to Next Page"),
-                  ),
-                );
-              },
-              thumbBuilder: (context, state) {
-                return Container(
-                  margin: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.chevron_right,
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: SlideAction(
+                trackBuilder: (context, state) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 8,
+                        ),
+                      ],
                     ),
-                  ),
-                );
-              },
-              action: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Aecbranch()));
-              },
+                    child: Center(
+                      child: Text("Slide to Next Page"),
+                    ),
+                  );
+                },
+                thumbBuilder: (context, state) {
+                  return Container(
+                    margin: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.chevron_right,
+                        color: Colors.white,
+                      ),
+                    ),
+                  );
+                },
+                action: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Aecbranch()));
+                },
+              ),
             ),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/Courses/BBA/AGBS_branches.dart';
 // import 'package:myapplication/Courses/Diploma/Branches.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -162,8 +163,7 @@ class _AGBSState extends State<AGBS> with TickerProviderStateMixin {
         context: context,
         builder: (context) {
           return AlertDialog(
-              icon: Icon(Icons.card_travel),
-              iconPadding: EdgeInsets.only(right: 4),
+              
               content: Container(
                   height: height,
                   width: width,
@@ -190,432 +190,438 @@ class _AGBSState extends State<AGBS> with TickerProviderStateMixin {
         curve: Interval(0, 0.5, curve: Curves.decelerate)));
 
     // timeDilation: 1.0;
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 20,
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Aditya Global Business School"),
+        backgroundColor: Colors.blue,
+        leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            CarouselSlider.builder(
+              itemCount: img.length,
+              itemBuilder: (context, i, j) {
+                return Container(
+                  decoration:
+                      BoxDecoration(color: Colors.black.withOpacity(0.4)),
+                  child: FadeInImage.memoryNetwork(
+                      fit: BoxFit.fill,
+                      placeholder: kTransparentImage,
+                      image: img[i]),
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                );
+              },
+              options: CarouselOptions(
+                  // scrollDirection: Axis.vertical,
+                  enlargeCenterPage: true,
+                  viewportFraction: 1,
+                  autoPlay: true),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 240, top: 22),
+              child: Text(
+                "WHY AGBS?",
+                style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
               ),
-              CarouselSlider.builder(
-                itemCount: img.length,
-                itemBuilder: (context, i, j) {
-                  return Container(
-                    decoration:
-                        BoxDecoration(color: Colors.black.withOpacity(0.4)),
-                    child: FadeInImage.memoryNetwork(
-                        fit: BoxFit.fill,
-                        placeholder: kTransparentImage,
-                        image: img[i]),
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                  );
-                },
-                options: CarouselOptions(
-                    scrollDirection: Axis.vertical,
-                    enlargeCenterPage: true,
-                    viewportFraction: 1,
-                    autoPlay: true),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 240, top: 22),
-                child: Text(
-                  "WHY AGBS?",
-                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 20, right: 18),
-                child: Text(
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                    textAlign: TextAlign.justify,
-                    "AGBS is the first of its kind B School in this region, born out of sheer passion of the founding Chairman. The 30 year churning educational & pedagogic experience of Aditya is the foundation of AGBS. Aditya Global Business School (AGBS) guiding factors are inspired by internationally accepted values, such as the principles of the United Nations Global Compact. These principles seek to establish a process of continuous improvement of the management Institutions education to develop new generation business leaders capable of managing the complex challenges faced by business and the society at large. Taking the cue from these guiding factors AGBS adapts its curricula, research, teaching methodologies and institutional strategies to suit the new business challenges and opportunities."),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text("BRANCHES",
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, left: 20, right: 18),
+              child: Text(
                   style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  )),
-              Container(
-                // margin: EdgeInsets.only(top: 100),
-                padding: EdgeInsets.only(left: 20),
-                width: double.infinity,
-                height: 270 + ((s.width / 2) + 100),
-                // color: Colors.black,
-                child: Stack(
-                  // alignment: Alignment.centerRight,
-                  children: [
-                    Positioned(
-                      // left: 65,
-                      bottom: two!.value,
-                      child: GestureDetector(
-                        onTap: () {
-                          _animationController1!.reset();
-                          _animationController3!.reset();
-                          _animationController4!.reset();
-                          _animationController5!.reset();
-                          _animationController6!.reset();
-                          _animationController7!.reset();
-                          _animationController8!.reset();
-                          check1 = !check1;
-                          (check1)
-                              ? _animationController2!.forward()
-                              : _animationController2!.reset();
-                        },
-                        child: Transform(
-                          transform: Matrix4.skewY(twod!.value),
-                          // origin: Offset(100,100),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 20,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12),
-                              height: (s.width / 2) + 100,
-                              width: (s.width / 2),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  color: Colors.yellowAccent,
-                                  border: Border.all(
-                                      color: Colors.yellow.shade900, width: 2)),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'BDM',
-                                        style: TextStyle(
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Card(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(360)),
-                                        elevation: 10,
-                                        child: Container(
-                                          height: (s.width) / 8,
-                                          width: (s.width) / 8,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(360),
-                                              border: Border.all(
-                                                  color: Colors.black),
-                                              color: Colors.white),
-                                          child: Center(
-                                            child: IconButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            AGBS_branch_det(
-                                                                bgcol: Colors
-                                                                    .yellowAccent
-                                                                    .shade400,
-                                                                branch: 'BDM',
-                                                                branchimg:
-                                                                    'https://img.freepik.com/free-vector/pitch-meeting-concept-illustration_114360-6300.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
-                                              },
-                                              icon: Icon(Icons.arrow_forward),
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    // margin: EdgeInsets.only(left: 50),
-                                    height: ((s.width / 2) + 100) / 2,
-                                    width: (s.width / 2) - 10,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(30),
-                                      child: Image.network(
-                                          fit: BoxFit.cover,
-                                          'https://img.freepik.com/free-vector/business-people-working-giving-tasks_1262-19728.jpg'),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 60,
-                      bottom: three!.value,
-                      // bottom: 10,
-                      child: InkWell(
-                        onTap: () {
-                          _animationController1!.reset();
-                          _animationController2!.reset();
-                          _animationController4!.reset();
-                          _animationController5!.reset();
-                          _animationController6!.reset();
-                          _animationController7!.reset();
-                          _animationController8!.reset();
-                          check2 = !check2;
-                          (check2)
-                              ? _animationController3!.forward()
-                              : _animationController3!.reset();
-                        },
-                        child: Transform(
-                          transform: Matrix4.skewY(threed!.value),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            elevation: 20,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12),
-                              height: (s.width / 2) + 100,
-                              width: (s.width / 2),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  color: Colors.redAccent.shade200,
-                                  border: Border.all(
-                                      color: Colors.black, width: 2)),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'BA',
-                                        style: TextStyle(
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Card(
-                                        elevation: 20,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(360)),
-                                        child: Container(
-                                          height: (s.width) / 8,
-                                          width: (s.width) / 8,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(360),
-                                              border: Border.all(
-                                                  color: Colors.black),
-                                              color: Colors.white),
-                                          child: Center(
-                                            child: IconButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            AGBS_branch_det(
-                                                                bgcol: Colors
-                                                                    .orange
-                                                                    .shade400,
-                                                                branch: 'BA',
-                                                                branchimg:
-                                                                    'https://img.freepik.com/premium-vector/businessmen-businesswomen-meeting_693425-10.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
-                                              },
-                                              icon: Icon(Icons.arrow_forward),
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    // margin: EdgeInsets.only(left: 50),
-                                    height: ((s.width / 2) + 100) / 2,
-                                    width: (s.width / 2) - 10,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(30),
-                                      child: Image.network(
-                                          fit: BoxFit.cover,
-                                          'https://img.freepik.com/free-vector/young-businessman-with-professional-equipment-work-cartoon-vector_24797-1921.jpg'),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 120,
-                      bottom: four!.value,
-                      child: InkWell(
-                        onTap: () {
-                          _animationController1!.reset();
-                          _animationController2!.reset();
-                          _animationController3!.reset();
-                          _animationController5!.reset();
-                          _animationController6!.reset();
-                          _animationController7!.reset();
-                          _animationController8!.reset();
-                          check3 = !check3;
-                          (check3)
-                              ? _animationController4!.forward()
-                              : _animationController4!.reset();
-                        },
-                        child: Transform(
-                          transform: Matrix4.skewY(fourd!.value),
-                          child: Card(
-                            elevation: 20,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12),
-                              height: (s.width / 2) + 100,
-                              width: (s.width / 2),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  border: Border.all(
-                                      color: Colors.blue.shade900, width: 2),
-                                  color: Colors.blueAccent.shade200),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'BBA',
-                                        style: TextStyle(
-                                          fontSize: 28,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Card(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(360)),
-                                        elevation: 10,
-                                        child: Container(
-                                          height: (s.width) / 8,
-                                          width: (s.width) / 8,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(360),
-                                              border: Border.all(
-                                                  color: Colors.black),
-                                              color: Colors.white),
-                                          child: Center(
-                                            child: IconButton(
-                                                onPressed: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              AGBS_branch_det(
-                                                                  bgcol: Colors
-                                                                      .blueAccent
-                                                                      .shade200,
-                                                                  branch: "BBA",
-                                                                  branchimg:
-                                                                      'https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
-                                                },
-                                                icon: Icon(
-                                                  Icons.arrow_forward,
-                                                )),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Container(
-                                    // margin: EdgeInsets.only(left: 50),
-                                    height: ((s.width / 2) + 100) / 2,
-                                    width: (s.width / 2) - 10,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(30),
-                                      child: Image.network(
-                                          fit: BoxFit.cover,
-                                          'https://img.freepik.com/free-vector/isometric-business-growth-abstract-concept-with-startup-rocket-launch-vector-illustration_1284-78731.jpg'),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 100),
-              Text("Latest information:", style: TextStyle(fontSize: 30)),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    GestureDetector(
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.justify,
+                  "AGBS is the first of its kind B School in this region, born out of sheer passion of the founding Chairman. The 30 year churning educational & pedagogic experience of Aditya is the foundation of AGBS. Aditya Global Business School (AGBS) guiding factors are inspired by internationally accepted values, such as the principles of the United Nations Global Compact. These principles seek to establish a process of continuous improvement of the management Institutions education to develop new generation business leaders capable of managing the complex challenges faced by business and the society at large. Taking the cue from these guiding factors AGBS adapts its curricula, research, teaching methodologies and institutional strategies to suit the new business challenges and opportunities."),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text("BRANCHES",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+            Container(
+              // margin: EdgeInsets.only(top: 100),
+              padding: EdgeInsets.only(left: 20),
+              width: double.infinity,
+              height: 270 + ((s.width / 2) + 100),
+              // color: Colors.black,
+              child: Stack(
+                // alignment: Alignment.centerRight,
+                children: [
+                  Positioned(
+                    // left: 65,
+                    bottom: two!.value,
+                    child: GestureDetector(
                       onTap: () {
-                        show('assets/BBA_img/bba_latest_info.jpg', 200,
-                            double.infinity);
+                        _animationController1!.reset();
+                        _animationController3!.reset();
+                        _animationController4!.reset();
+                        _animationController5!.reset();
+                        _animationController6!.reset();
+                        _animationController7!.reset();
+                        _animationController8!.reset();
+                        check1 = !check1;
+                        (check1)
+                            ? _animationController2!.forward()
+                            : _animationController2!.reverse();
                       },
-                      child: Container(
-                        height: 200,
-                        width: double.infinity,
-                        margin: EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.blue,
-                            border: Border.all(color: Colors.orange, width: 3)),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Image.asset(
-                              fit: BoxFit.cover,
-                              'assets/BBA_img/bba_latest_info.jpg'),
+                      child: Transform(
+                        transform: Matrix4.skewY(twod!.value),
+                        // origin: Offset(100,100),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40)),
+                          elevation: 20,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            height: (s.width / 2) + 100,
+                            width: (s.width / 2),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.yellowAccent,
+                                border: Border.all(
+                                    color: Colors.yellow.shade900, width: 2)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'BDM',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(360)),
+                                      elevation: 10,
+                                      child: Container(
+                                        height: (s.width) / 8,
+                                        width: (s.width) / 8,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(360),
+                                            border: Border.all(
+                                                color: Colors.black),
+                                            color: Colors.white),
+                                        child: Center(
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          AGBS_branch_det(
+                                                              bgcol: Colors
+                                                                  .yellowAccent
+                                                                  .shade400,
+                                                              branch: 'BDM',
+                                                              branchimg:
+                                                                  'https://img.freepik.com/free-vector/pitch-meeting-concept-illustration_114360-6300.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
+                                            },
+                                            icon: Icon(Icons.arrow_forward),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  // margin: EdgeInsets.only(left: 50),
+                                  height: ((s.width / 2) + 100) / 2,
+                                  width: (s.width / 2) - 10,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.network(
+                                        fit: BoxFit.cover,
+                                        'https://img.freepik.com/free-vector/business-people-working-giving-tasks_1262-19728.jpg'),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
-                  ],
-                ),
+                  ),
+                  Positioned(
+                    left: 60,
+                    bottom: three!.value,
+                    // bottom: 10,
+                    child: InkWell(
+                      onTap: () {
+                        _animationController1!.reset();
+                        _animationController2!.reset();
+                        _animationController4!.reset();
+                        _animationController5!.reset();
+                        _animationController6!.reset();
+                        _animationController7!.reset();
+                        _animationController8!.reset();
+                        check2 = !check2;
+                        (check2)
+                            ? _animationController3!.forward()
+                            : _animationController3!.reverse();
+                      },
+                      child: Transform(
+                        transform: Matrix4.skewY(threed!.value),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          elevation: 20,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            height: (s.width / 2) + 100,
+                            width: (s.width / 2),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.redAccent.shade200,
+                                border: Border.all(
+                                    color: Colors.black, width: 2)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'BA',
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Card(
+                                      elevation: 20,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(360)),
+                                      child: Container(
+                                        height: (s.width) / 8,
+                                        width: (s.width) / 8,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(360),
+                                            border: Border.all(
+                                                color: Colors.black),
+                                            color: Colors.white),
+                                        child: Center(
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          AGBS_branch_det(
+                                                              bgcol: Colors
+                                                                  .orange
+                                                                  .shade400,
+                                                              branch: 'BA',
+                                                              branchimg:
+                                                                  'https://img.freepik.com/premium-vector/businessmen-businesswomen-meeting_693425-10.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
+                                            },
+                                            icon: Icon(Icons.arrow_forward),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  // margin: EdgeInsets.only(left: 50),
+                                  height: ((s.width / 2) + 100) / 2,
+                                  width: (s.width / 2) - 10,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.network(
+                                        fit: BoxFit.cover,
+                                        'https://img.freepik.com/free-vector/young-businessman-with-professional-equipment-work-cartoon-vector_24797-1921.jpg'),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 120,
+                    bottom: four!.value,
+                    child: InkWell(
+                      onTap: () {
+                        _animationController1!.reset();
+                        _animationController2!.reset();
+                        _animationController3!.reset();
+                        _animationController5!.reset();
+                        _animationController6!.reset();
+                        _animationController7!.reset();
+                        _animationController8!.reset();
+                        check3 = !check3;
+                        (check3)
+                            ? _animationController4!.forward()
+                            : _animationController4!.reverse();
+                      },
+                      child: Transform(
+                        transform: Matrix4.skewY(fourd!.value),
+                        child: Card(
+                          elevation: 20,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            height: (s.width / 2) + 100,
+                            width: (s.width / 2),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                border: Border.all(
+                                    color: Colors.blue.shade900, width: 2),
+                                color: Colors.blueAccent.shade200),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'BBA',
+                                      style: TextStyle(
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(360)),
+                                      elevation: 10,
+                                      child: Container(
+                                        height: (s.width) / 8,
+                                        width: (s.width) / 8,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(360),
+                                            border: Border.all(
+                                                color: Colors.black),
+                                            color: Colors.white),
+                                        child: Center(
+                                          child: IconButton(
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            AGBS_branch_det(
+                                                                bgcol: Colors
+                                                                    .blueAccent
+                                                                    .shade200,
+                                                                branch: "BBA",
+                                                                branchimg:
+                                                                    'https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?size=626&ext=jpg&ga=GA1.1.1724511929.1694535439&semt=sph')));
+                                              },
+                                              icon: Icon(
+                                                Icons.arrow_forward,
+                                              )),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  // margin: EdgeInsets.only(left: 50),
+                                  height: ((s.width / 2) + 100) / 2,
+                                  width: (s.width / 2) - 10,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.network(
+                                        fit: BoxFit.cover,
+                                        'https://img.freepik.com/free-vector/isometric-business-growth-abstract-concept-with-startup-rocket-launch-vector-illustration_1284-78731.jpg'),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 100),
+            Text("Latest information:", style: TextStyle(fontSize: 30)),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      show('assets/BBA_img/bba_latest_info.jpg', 200,
+                          double.infinity);
+                    },
+                    child: Container(
+                      height: 200,
+                      width: double.infinity,
+                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.blue,
+                          border: Border.all(color: Colors.orange, width: 3)),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                            fit: BoxFit.cover,
+                            'assets/BBA_img/bba_latest_info.jpg'),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

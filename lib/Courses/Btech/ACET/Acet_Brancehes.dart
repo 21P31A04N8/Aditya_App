@@ -467,7 +467,7 @@ class _BranchesState extends State<Branches>
                                                   color: Colors.grey.shade400),
                                               child: ClipRRect(
                                                 borderRadius: BorderRadius.circular(360),
-                                                child: Image.asset(fit: BoxFit.fill,'assets/btech/ACET/'+det[selectedIndex]
+                                                child: (selectedIndex == 3 || selectedIndex == 6) ? Icon(Icons.account_circle) : Image.asset(fit: BoxFit.fill,'assets/btech/ACET/'+det[selectedIndex]
                                                                 .stuid
                                                                 .toString()+'.jpg'),
                                               )
