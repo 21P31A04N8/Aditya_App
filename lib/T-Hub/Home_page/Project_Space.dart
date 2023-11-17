@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Project_Space extends StatefulWidget {
   const Project_Space({super.key});
@@ -128,6 +129,8 @@ class _Project_SpaceState extends State<Project_Space> {
             ),
             Expanded(
               child: ListView.builder(
+                shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: project_tech.length,
                   itemBuilder: (context, index) {
                     return Column(
@@ -139,7 +142,7 @@ class _Project_SpaceState extends State<Project_Space> {
                                 individual_tech(
                                     context,
                                     Project_Individual[index],
-                                    project_Individualdata_1[index],
+                                    Project_Individual[index],
                                     project_name[index]);
                               },
                               child: Container(
@@ -148,104 +151,21 @@ class _Project_SpaceState extends State<Project_Space> {
                                     (index % 2 == 0)
                                         ? Padding(
                                             padding:
-                                                const EdgeInsets.only(left: 45),
+                                                EdgeInsets.only(left: 24.w),
                                             child: Container(
-                                              height: 150,
-                                              width: 350,
+                                              height: 19.h,
+                                              width: 70.w,
                                               decoration: BoxDecoration(
-                                                  color: Color.fromRGBO(
-                                                      255, 224, 145, 1),
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10))),
+                                                  color: Colors.blue[100],
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10))),
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            left: 20),
-                                                    child: Container(
-                                                      width: 100,
-                                                      child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Text(
-                                                            project_name[index],
-                                                            style: TextStyle(
-                                                                fontSize: 18,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Card(
-                                                    shape: RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                                10)),
-                                                    elevation: 30,
-                                                    shadowColor: Colors.black,
-                                                    child: Container(
-                                                      height: 200,
-                                                      width: 200,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius.all(
-                                                                  Radius.circular(
-                                                                      10)),
-                                                          image: DecorationImage(
-                                                              image: AssetImage(
-                                                                  project_tech[
-                                                                      index]))),
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          )
-                                        : Container(
-                                            decoration: BoxDecoration(
-                                                color: Color.fromRGBO(
-                                                    255, 224, 145, 1),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10))),
-                                            height: 150,
-                                            width: 350,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Card(
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10)),
-                                                  elevation: 30,
-                                                  shadowColor: Colors.black,
-                                                  child: Container(
-                                                    height: 200,
-                                                    width: 200,
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                                10),
-                                                        image: DecorationImage(
-                                                            image: AssetImage(
-                                                                project_tech[
-                                                                    index]))),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      right: 20),
-                                                  child: Container(
+                                                  Container(
                                                     width: 100,
                                                     child: Column(
                                                       mainAxisAlignment:
@@ -263,6 +183,83 @@ class _Project_SpaceState extends State<Project_Space> {
                                                       ],
                                                     ),
                                                   ),
+                                                  Card(
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10)),
+                                                    elevation: 30,
+                                                    shadowColor: Colors.black,
+                                                    child: Container(
+                                                      height: 18.h,
+                                                      width: 35.w,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                          image: DecorationImage(
+                                                              image: AssetImage(
+                                                                  project_tech[
+                                                                      index]))),
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        : Container(
+                                            height: 19.h,
+                                            width: 70.w,
+                                            decoration: BoxDecoration(
+                                                color: Colors.blue[100],
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Card(
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10)),
+                                                  elevation: 30,
+                                                  shadowColor: Colors.black,
+                                                  child: Container(
+                                                    height: 18.h,
+                                                    width: 35.w,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                project_tech[
+                                                                    index]))),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: 100,
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        project_name[index],
+                                                        style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -273,7 +270,7 @@ class _Project_SpaceState extends State<Project_Space> {
                             )),
                       ],
                     );
-                  }),
+                  })
             ),
           ],
         ),

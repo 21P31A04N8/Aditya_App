@@ -23,6 +23,11 @@ class _Contact_usState extends State<Contact_us> {
                     bottomRight: Radius.circular(50))),
             height: 40.h,
             width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50)),
+              child: Image.asset('assets/aditya/drone.png',fit: BoxFit.cover,)),
           ),
           SizedBox(
             height: 6.h,

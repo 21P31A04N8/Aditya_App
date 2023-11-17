@@ -69,7 +69,10 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.grey.shade400,
+
                         ),
+                        child: ClipRRect(borderRadius: BorderRadius.circular(20),
+                          child: Image.asset("assets/Thub/THub_home/Thub1.png",fit: BoxFit.cover,)),
                       )),
                   SizedBox(
                     height: 2.5.h,

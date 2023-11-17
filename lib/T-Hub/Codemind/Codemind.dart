@@ -131,7 +131,7 @@ class _codemindState extends State<codemind> {
                                               height: 19.h,
                                               width: 70.w,
                                               decoration: BoxDecoration(
-                                                  color: Colors.blue[100],
+                                                  color: Colors.pink[100],
                                                   borderRadius:
                                                       BorderRadius.all(
                                                           Radius.circular(10))),
@@ -190,7 +190,7 @@ class _codemindState extends State<codemind> {
                                             height: 19.h,
                                             width: 70.w,
                                             decoration: BoxDecoration(
-                                                color: Colors.blue[100],
+                                                color: Colors.pink[100],
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(10))),
                                             child: Row(
