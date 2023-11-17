@@ -24,10 +24,13 @@ class _Contact_usState extends State<Contact_us> {
             height: 40.h,
             width: double.infinity,
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
+                borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50)),
-              child: Image.asset('assets/aditya/drone.png',fit: BoxFit.cover,)),
+                child: Image.asset(
+                  'assets/aditya/drone.png',
+                  fit: BoxFit.cover,
+                )),
           ),
           SizedBox(
             height: 6.h,
@@ -36,8 +39,9 @@ class _Contact_usState extends State<Contact_us> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10.w),
-                child: InkWell( onTap: () {
-                     final u1 = Uri.parse("tel://9949876662");
+                child: InkWell(
+                  onTap: () {
+                    final u1 = Uri.parse("tel://9949876662");
                     launchUrl(u1);
                   },
                   child: Card(
@@ -62,7 +66,8 @@ class _Contact_usState extends State<Contact_us> {
                 padding: EdgeInsets.only(right: 10.w),
                 child: InkWell(
                   onTap: () {
-                     final u2 = Uri.parse('mailto:kumarnrv@aditya.ac.in.org?subject=Greetings&body=Hello%20World');
+                    final u2 = Uri.parse(
+                        'mailto:kumarnrv@aditya.ac.in.org?subject=Greetings&body=Hello%20World');
                     launchUrl(u2);
                   },
                   child: Card(
@@ -97,7 +102,7 @@ class _Contact_usState extends State<Contact_us> {
                     shadowColor: Colors.purpleAccent,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 119, 40, 143),
+                          color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
                       width: 17.w,
@@ -112,8 +117,10 @@ class _Contact_usState extends State<Contact_us> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10.w),
-                child: InkWell(onTap: () {
-                    final u4 = Uri.parse('https://www.linkedin.com/school/adityaedugroup/');
+                child: InkWell(
+                  onTap: () {
+                    final u4 = Uri.parse(
+                        'https://www.linkedin.com/school/adityaedugroup/');
                     launchUrl(u4);
                   },
                   child: Card(
@@ -128,7 +135,8 @@ class _Contact_usState extends State<Contact_us> {
                       height: 17.w,
                       width: 17.w,
                       child: Center(
-                        child: Image.asset('assets/Thub/THub_home/linkedin.png'),
+                        child:
+                            Image.asset('assets/Thub/THub_home/linkedin.png'),
                       ),
                     ),
                   ),
@@ -136,8 +144,10 @@ class _Contact_usState extends State<Contact_us> {
               ),
               Padding(
                 padding: EdgeInsets.only(right: 10.w),
-                child: InkWell(onTap: () {
-                    final u5 = Uri.parse('https://www.instagram.com/aditya_engg_colleges/');
+                child: InkWell(
+                  onTap: () {
+                    final u5 = Uri.parse(
+                        'https://www.instagram.com/aditya_engg_colleges/');
                     launchUrl(u5);
                   },
                   child: Card(
@@ -152,7 +162,8 @@ class _Contact_usState extends State<Contact_us> {
                       height: 17.w,
                       width: 17.w,
                       child: Center(
-                        child: Image.asset('assets/Thub/THub_home/instagram.png'),
+                        child:
+                            Image.asset('assets/Thub/THub_home/instagram.png'),
                       ),
                     ),
                   ),
@@ -160,8 +171,10 @@ class _Contact_usState extends State<Contact_us> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: InkWell(onTap: () {
-                    final u6 = Uri.parse('https://www.youtube.com/@AdityaEduGrp');
+                child: InkWell(
+                  onTap: () {
+                    final u6 =
+                        Uri.parse('https://www.youtube.com/@AdityaEduGrp');
                     launchUrl(u6);
                   },
                   child: Card(
