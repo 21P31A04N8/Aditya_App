@@ -807,12 +807,13 @@ class _MenuScreenState extends State<MenuScreen> {
                             PopupMenuItem(
                               child: InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Aec_home()));
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => Aec_home()));
+                                  widget.onpagechange(Acet_home());
                                   setState(() {
-                                    _expansionTileController.collapse();
+                                    // _expansionTileController.collapse();
                                     zoomDrawerController.close;
                                   });
                                 },
@@ -827,32 +828,38 @@ class _MenuScreenState extends State<MenuScreen> {
                               ),
                             ),
                             PopupMenuItem(
-                              child: Text(
-                                'ACET',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
+                              child: InkWell(
+                                onTap: () {
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => Acet_home()));
+                                  widget.onpagechange(Acet_home());
+                                  setState(() {
+                                    // _expansionTileController.collapse();
+                                    zoomDrawerController.close;
+                                  });
+                                },
+                                child: Container(
+                                    width: double.infinity,
+                                    child: Text(
+                                      'ACET',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                    )),
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acet_home()));
-                                setState(() {
-                                  _expansionTileController.collapse();
-                                  zoomDrawerController.close;
-                                });
-                              },
                             ),
                             PopupMenuItem(
                                 child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acoe_home()));
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) => Acoe_home()));
+                                widget.onpagechange(Acoe_home());
                                 setState(() {
-                                  _expansionTileController.collapse();
+                                  // _expansionTileController.collapse();
                                   zoomDrawerController.close;
                                 });
                               },

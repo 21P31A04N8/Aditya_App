@@ -60,6 +60,7 @@ class _codemindState extends State<codemind> {
       appBar: AppBar(
         title: Text("Codemind"),
         centerTitle: true,
+        backgroundColor: Colors.pink[300],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -82,26 +83,19 @@ class _codemindState extends State<codemind> {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Container(
-                    width: double.infinity,
-                    height: 28.h,
+                    width: double.infinity-20,
+                    padding: EdgeInsets.all(14),
+                    // height: 28.h,
                     decoration: BoxDecoration(
-                        color: Colors.pink[200],
+                        color: Colors.pink[300],
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       children: [
+                       
                         Text(
-                          'Codemind',
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 5),
-                          child: Text(
-                            "Code Mind is a platform that focuses on crafting a skilled individual. Our unique and interactive secenario based learning modules are designed to help a student look at a problem in a life like perspective. We stongly believe that every mind isn't alike, and therefore we give the student a chace to express their opinion rather than trying to abide by a generalized one.",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                            textAlign: TextAlign.justify,
-                          ),
+                          "Code Mind is a platform that focuses on crafting a skilled individual. Our unique and interactive secenario based learning modules are designed to help a student look at a problem in a life like perspective. We stongly believe that every mind isn't alike, and therefore we give the student a chace to express their opinion rather than trying to abide by a generalized one.",
+                          style: TextStyle(fontSize: 17, color: Colors.white , height: 1.3),
+                          textAlign: TextAlign.justify,
                         )
                       ],
                     )

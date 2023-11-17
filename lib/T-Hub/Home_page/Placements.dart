@@ -10,11 +10,11 @@ class place extends StatefulWidget {
 
 class _placeState extends State<place> {
   final Img = [
-    "assets/ADITYA/tevit.jpg",
-    "assets/ADITYA/satya.jpg",
-    "assets/ADITYA/placement.jpg",
-    "assets/ADITYA/placement2.jpg",
-    "assets/ADITYA/placement3.jpg",
+    "assets/aditya/tevit.jpg",
+    "assets/aditya/satya.jpg",
+    "assets/aditya/placement.jpg",
+    "assets/aditya/placement2.jpg",
+    "assets/aditya/placement3.jpg",
 
 
 
@@ -23,6 +23,9 @@ class _placeState extends State<place> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+      ),
         body: Stack(children: [
       Container(
         color: Colors.white12,
@@ -31,10 +34,10 @@ class _placeState extends State<place> {
         children: [
           Stack(clipBehavior: Clip.none, children: [
             Container(
-              color: Colors.red,
+              color: Colors.grey.shade300,
               height: 300,
               width: double.infinity,
-              child:Image.asset("assets/ADITYA/placecover1.jpg",fit: BoxFit.fill,)
+              child:Image.asset("assets/aditya/placecover1.jpg",fit: BoxFit.fill,)
             ),
             Positioned(
                 bottom: -30,

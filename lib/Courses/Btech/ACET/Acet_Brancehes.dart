@@ -183,6 +183,7 @@ class _BranchesState extends State<Branches>
               width: container!.value,
               child: Column(
                 children: [
+
                   SizedBox(
                     height: 20,
                   ),
@@ -190,14 +191,28 @@ class _BranchesState extends State<Branches>
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Opacity(
                         opacity: blink_val!.value,
-                        child: Text('Aditya college of engineering and technology' ,
-                          style: TextStyle(
-                              color: Colors.white ,
-                              fontSize: 23,
-                              // decoration: TextDecoration.underline
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                IconButton(onPressed: (){
+                                    Navigator.pop(context);
+                                    
+                                  },
+                                  icon: Icon(Icons.arrow_back , color: Colors.white,)
+                                  ),
+                              ],
+                            ),
+                            Text('Aditya college of engineering and technology' ,
+                              style: TextStyle(
+                                  color: Colors.white ,
+                                  fontSize: 23,
+                                  // decoration: TextDecoration.underline
 
-                          ),
-                          textAlign: TextAlign.justify,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ],
                         )
                     ),
                   ),
@@ -391,6 +406,7 @@ class _BranchesState extends State<Branches>
                                                       height: 10,
                                                     ),
                                                     Row(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
                                                       children: [
                                                         Text('NAME: ' ,style: TextStyle(
                                                               color:
@@ -451,7 +467,7 @@ class _BranchesState extends State<Branches>
                                                   color: Colors.grey.shade400),
                                               child: ClipRRect(
                                                 borderRadius: BorderRadius.circular(360),
-                                                child: Image.asset(fit: BoxFit.fill,'assets/Btech/ACET/'+det[selectedIndex]
+                                                child: Image.asset(fit: BoxFit.fill,'assets/btech/ACET/'+det[selectedIndex]
                                                                 .stuid
                                                                 .toString()+'.jpg'),
                                               )

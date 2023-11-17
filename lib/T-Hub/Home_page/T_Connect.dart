@@ -34,11 +34,13 @@ class _T_ConnectState extends State<T_Connect> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Center(child: Text("T-Connect")),
+          title: Text("T-Connect"),
+          centerTitle: true,
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -59,19 +61,22 @@ class _T_ConnectState extends State<T_Connect> {
                     decoration: BoxDecoration(
                         color: Colors.teal,
                         borderRadius: BorderRadius.circular(10)),
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(18),
                     child: Text(
                       "T-Connect is a technical hub dedicated to providing students with up-to-date knowledge and skills in the field of new technologies. Its main goal is to bridge the gap between the rapidly evolving technological landscape and the knowledge base of students. Showing a brief note about those technologies by stalls. Some of the growing technologies are presnted below.",
                       textAlign: TextAlign.justify,
+                      
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 17,
+                        height: 1.3
                       ),
                     ),
                   ),
                 ),
               ),
               GridView.builder(
+                padding: EdgeInsets.all(12),
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 18,

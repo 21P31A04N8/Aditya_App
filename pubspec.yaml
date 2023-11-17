@@ -95,6 +95,9 @@ flutter:
       - assets/Thub/events/
       - assets/Thub/certify/
       - assets/aditya/
+      - assets/Thub/
+      - assets/btech/ACET/
+      
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

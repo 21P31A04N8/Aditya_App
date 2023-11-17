@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:myapplication/T-Hub/Codemind/Codemind.dart';
 import 'package:myapplication/T-Hub/Drive_Ready/Technologies.dart';
+import 'package:myapplication/T-Hub/Home_page/Placements.dart';
 import 'package:myapplication/T-Hub/Home_page/Project_Space.dart';
 import 'package:myapplication/T-Hub/Home_page/T_Connect.dart';
 import 'package:myapplication/T-Hub/Home_page/owl_coder.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class Thub extends StatefulWidget {
@@ -42,14 +44,14 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
   var img = [];
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.green,
-        title: Text("TECHNICAL HUB"),
-        leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () => ZoomDrawer.of(context)!.toggle()),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   backgroundColor: Colors.green,
+      //   title: Text("TECHNICAL HUB"),
+      //   leading: IconButton(
+      //       icon: Icon(Icons.menu),
+      //       onPressed: () => ZoomDrawer.of(context)!.toggle()),
+      // ),
       body: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
@@ -76,30 +78,38 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomLeft,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.lightBlue.shade300,
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.blue.shade900,
-                              width: 2,
-                            )),
-                        child: Text('OWL CODER',
-                            style: TextStyle(
-                                fontSize: 20.sp, fontWeight: FontWeight.bold)),
+                      InkWell(
+                        onTap: (){
+                          
+                          Navigator.push(context, PageTransition(child: owl_coder() ,
+                           type: PageTransitionType.leftToRight,
+                           duration: Duration(milliseconds: 600)
+                           ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w, top: 5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                              color: Colors.purple.shade300,
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(30),
+                                  bottomLeft: Radius.circular(30)),
+                              ),
+                          child: Center(
+                            child: Text('OWL CODER',
+                                style: TextStyle(
+                                    fontSize: 2.3.h, fontWeight: FontWeight.bold)),
+                          ),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => owl_coder()));
+                          Navigator.push(context, PageTransition(child: owl_coder() ,
+                           type: PageTransitionType.leftToRight,
+                           duration: Duration(milliseconds: 600)
+                           ));
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -128,32 +138,41 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomRight,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.green.shade200,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.green.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('T CONNECT',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
+                      InkWell(
+                        onTap:(){
+                          Navigator.push(context , PageTransition(
+                            child: T_Connect(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w, left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                              color: Colors.green.shade200,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  bottomRight: Radius.circular(30)),
+                              ),
+                          child: Center(
+                              child: Text('T CONNECT',
+                                  style: TextStyle(
+                                      fontSize: 2.4.h,
+                                      fontWeight: FontWeight.bold))),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => T_Connect()));
+                          Navigator.push(context , PageTransition(
+                            child: T_Connect(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -182,30 +201,42 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomLeft,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade400,
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.grey.shade700,
-                              width: 2,
-                            )),
-                        child: Text('DRIVE READY',
-                            style: TextStyle(
-                                fontSize: 20.sp, fontWeight: FontWeight.bold)),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context , PageTransition(
+                            child: Technology(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.leftToRight
+                          )
+                             );
+                        },
+                        
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w, top: 5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade400,
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(30),
+                                  bottomLeft: Radius.circular(30)),
+                              ),
+                          child: Center(
+                            child: Text('DRIVE READY',
+                                style: TextStyle(
+                                    fontSize: 2.4.h, fontWeight: FontWeight.bold)),
+                          ),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Technology()));
+                          Navigator.push(context , PageTransition(
+                            child: Technology(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.leftToRight
+                          )
+                             );
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -234,32 +265,41 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomRight,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: Colors.amber.shade300,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.orange.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('PROJECT SPACE',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context , PageTransition(
+                            child: Project_Space(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w, left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                              color: Colors.amber.shade300,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  bottomRight: Radius.circular(30)),
+                              ),
+                          child: Center(
+                              child: Text('PROJECT SPACE',
+                                  style: TextStyle(
+                                      fontSize: 2.2.h,
+                                      fontWeight: FontWeight.bold))),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Project_Space()));
+                          Navigator.push(context , PageTransition(
+                            child: Project_Space(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -288,32 +328,41 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomLeft,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 40.w, top: 5.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 232, 147, 176),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.pink.shade700,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('CODEMIND',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context , PageTransition(
+                            child: codemind(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.leftToRight
+                          )
+                             );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30.w, top: 5.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 232, 147, 176),
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(30),
+                                  bottomLeft: Radius.circular(30)),
+                              ),
+                          child: Center(
+                              child: Text('CODEMIND',
+                                  style: TextStyle(
+                                      fontSize: 2.2.h,
+                                      fontWeight: FontWeight.bold))),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => codemind()));
+                          Navigator.push(context , PageTransition(
+                            child: codemind(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.leftToRight
+                          )
+                             );
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -342,33 +391,43 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                     //crossAxisAlignment: CrossAxisAlignment.end,
                     alignment: Alignment.bottomRight,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(right: 40.w, left: 10.sp),
-                        width: 70.w,
-                        height: 8.h,
-                        margin: EdgeInsets.only(right: 1.h),
-                        decoration: BoxDecoration(
-
-                            // color: Colors.white.shade300,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30)),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 2,
-                            )),
-                        child: Center(
-                            child: Text('PLACEMENTS',
-                                style: TextStyle(
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold))),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context , PageTransition(
+                            child: place(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(right: 30.w, left: 10.sp),
+                          width: 70.w,
+                          height: 8.h,
+                          margin: EdgeInsets.only(right: 1.h),
+                          decoration: BoxDecoration(
+                      
+                              // color: Colors.white.shade300,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  bottomRight: Radius.circular(30)),
+                                  color: Colors.brown[300]
+                             ),
+                          child: Center(
+                              child: Text('PLACEMENTS',
+                                  style: TextStyle(
+                                      fontSize: 2.2.h,
+                                      fontWeight: FontWeight.bold))),
+                        ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => owl_coder()));
+                          Navigator.push(context , PageTransition(
+                            child: place(),
+                            duration: Duration(milliseconds: 600),
+                             type: PageTransitionType.rightToLeft
+                          )
+                             );
                         },
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -463,18 +522,20 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
                         ),
                       ],
                       options: CarouselOptions(
-                        height: 35.h,
-                        scrollDirection: Axis.vertical,
+                        // height: 23.h,
+                        // scrollDirection: Axis.vertical,
                         autoPlay: true,
                         enlargeCenterPage: true,
+                        enlargeFactor: 0.5,
                         viewportFraction: 0.8,
                         aspectRatio: 2.0,
                         initialPage: 2,
+                        autoPlayInterval: Duration(seconds: 2)
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 3.h,
+                    height: 8.h,
                   ),
                 ],
               ),

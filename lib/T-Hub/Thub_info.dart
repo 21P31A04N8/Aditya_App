@@ -32,7 +32,7 @@ class _Thub_infoState extends State<Thub_info> {
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
                  ),
-              height: 35.h,
+              height: 30.h,
               width: double.infinity,
               child: Image.asset('assets/Thub/ceo.png',fit: BoxFit.fill,),
             ),

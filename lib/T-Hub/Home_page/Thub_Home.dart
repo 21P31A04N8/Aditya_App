@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 import 'package:myapplication/Home.dart';
 import 'package:myapplication/T-Hub/Certifications.dart';
@@ -54,6 +55,14 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
 
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        title: Text("TECHNICAL HUB"),
+        leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
+      ),
       resizeToAvoidBottomInset: false,
       extendBody: true,
       body: screens[selectedIndex],
@@ -95,16 +104,16 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                           Container(
                             padding: EdgeInsets.all(3),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 0)
-                                  ? Colors.green
-                                  : Colors.transparent,
+                              color: (selectedIndex == 0) ? Colors.green : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(
                                 controller: home,
                                 fit: BoxFit.fill,
+                                
                                 "assets/Thub/lotties/HOME.json"),
                           ),
+                          
                         ],
                       ),
                     ),
@@ -127,9 +136,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                           Container(
                             padding: EdgeInsets.all(3),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 1)
-                                  ? Colors.green
-                                  : Colors.transparent,
+                              color: (selectedIndex == 1) ? Colors.green : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(
@@ -137,6 +144,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                                 fit: BoxFit.cover,
                                 "assets/Thub/lotties/EVENTS.json"),
                           ),
+                          
                         ],
                       ),
                     ),
@@ -152,21 +160,20 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                       setState(() {});
                     },
                     child: SizedBox(
-                      height: 49,
+                      height: 37,
                       width: 35,
                       child: Container(
-                        padding: EdgeInsets.all(3),
+                        
+                        // padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                          color: (selectedIndex == 2)
-                              ? Colors.green
-                              : Colors.transparent,
+                          color: (selectedIndex == 2) ? Colors.green : Colors.transparent,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Lottie.asset(
                             controller: certify,
                             fit: BoxFit.cover,
-                            height: 40,
-                            width: 35,
+                            // height: 40,
+                            // width: 35,
                             "assets/Thub/lotties/CERTIFICATIONS.json"),
                       ),
                     ),
@@ -187,11 +194,9 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                       child: Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 3)
-                                  ? Colors.green
-                                  : Colors.transparent,
+                              color: (selectedIndex == 3) ? Colors.green : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(
@@ -199,6 +204,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                                 fit: BoxFit.cover,
                                 "assets/Thub/lotties/TEAM.json"),
                           ),
+                          
                         ],
                       ),
                     ),
@@ -219,11 +225,9 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                       child: Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                              color: (selectedIndex == 4)
-                                  ? Colors.green
-                                  : Colors.transparent,
+                              color: (selectedIndex == 4) ? Colors.green : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Lottie.asset(
@@ -231,6 +235,7 @@ class _Thub_HomeState extends State<Thub_Home> with TickerProviderStateMixin {
                                 fit: BoxFit.cover,
                                 "assets/Thub/lotties/CALL.json"),
                           ),
+                          
                         ],
                       ),
                     ),

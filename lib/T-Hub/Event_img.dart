@@ -22,7 +22,7 @@ class _Event_ImgState extends State<Event_Img> {
     "skill" : ["vice.jpg" , "C_1.png" , "C_2.jpeg" , "C_3.jpeg" , "babjisir.jpg"],
     "grow" :  ["dance.JPG" , "dance2.JPG"],
     "pgday" : ["pg1.jpg" , "pg2.jpg" ,"pg3.png" ,"pg4.jpg"],
-    "ani" : ["Best.png" , "bestdeveloper.png" ,"besttechcoach.JPG" , "beyondthecod.JPG" , "emergingtech.JPG"]
+    "ani" : ["Best.png" , "bestdeveloper.png" ,"besttechcoach.JPG" , "beyondthecod.JPG" , "emergingtech.JPG" , "prasanth.jpg"]
     };
 
 
@@ -31,6 +31,9 @@ class _Event_ImgState extends State<Event_Img> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+      ),
       body: ListView.builder(
         itemCount: m[widget.event]!.length,
         itemBuilder: (context , ind){

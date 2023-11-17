@@ -16,7 +16,7 @@ class _CertificationsState extends State<Certifications> {
 
   List<Data> list = [
       Data('assets/Thub/certify/REDHAT.jpg', 'Redhat\nSystem\nAdministrator', '100+'),
-      Data('assets/Thub/certify/SECURITY.jpg', 'Comptia security+', '10+'),
+      
       Data('assets/Thub/certify/UNITY PROG.jpg' , 'Unity Certified Programmer' , '10+'),
       Data('assets/Thub/certify/AWS.jpg' , 'AWS Cloud Practitioner' , '100+'),
       Data('assets/Thub/certify/AZURE AI.jpg' , 'Microsoft Azure AI Fundamentals' , '50+'),
@@ -27,6 +27,7 @@ class _CertificationsState extends State<Certifications> {
       Data('assets/Thub/certify/PYTHON.jpg' , 'IT Specialist PYTHON' , '2000+'),
       Data('assets/Thub/certify/PS.jpg' , 'Adobe Professional' , '10+'),
       Data('assets/Thub/certify/SALES.jpg' , 'Salesforce Administrator' , '10+'),
+      Data('assets/Thub/certify/SECURITY.jpg', 'Comptia security+', '10+'),
     ];
 
     double change = 0;
@@ -54,19 +55,19 @@ class _CertificationsState extends State<Certifications> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                   Text(name , style: TextStyle(
-                    fontSize: 20.sp, fontWeight: FontWeight.bold,
+                    fontSize: 23, fontWeight: FontWeight.bold,
                     color: Colors.white
                   ),
                   
                   ),
                   SizedBox(height: 5,),
                   Text(count , style: TextStyle(
-                    color: Colors.white , fontSize: 25.sp , fontWeight: FontWeight.bold
+                    color: Colors.white , fontSize: 23 , fontWeight: FontWeight.bold
                   ),),
                   SizedBox(height: 5,),
                   Text('certified' , style: TextStyle(
                     color: Colors.white,
-                    fontSize: 15.sp
+                    fontSize: 20
                     
                   ),)
               

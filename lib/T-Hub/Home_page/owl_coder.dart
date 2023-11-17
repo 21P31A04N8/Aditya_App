@@ -73,7 +73,11 @@ class _owl_coderState extends State<owl_coder> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text("Owl Coder"),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
           child: Column(
         children: [
@@ -87,21 +91,21 @@ class _owl_coderState extends State<owl_coder> with TickerProviderStateMixin {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.green),
+                    color: Colors.grey.shade400),
                 height: 20.h,
                 width: 90.w,
               ),
             ),
           ),
           Container(
-            height: 17.h,
+            // height: 17.h,
             width: 90.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.pink,
+              color: Colors.purple,
             ),
             child: Padding(
-              padding: EdgeInsets.all(2.w),
+              padding: EdgeInsets.all(10),
               child: Text(
                 'Owl Coder is an innovative training program of 60 days which enhances trainees on coding skills like Data structures and algorithms,Problem solving skills,Reasoning and Soft skills',
                 textAlign: TextAlign.justify,
@@ -146,16 +150,7 @@ class _owl_coderState extends State<owl_coder> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            Positioned(
-                bottom: -25,
-                left: 225,
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(360),
-                      color: Colors.green),
-                )),
+            
             InkWell(
                 onTap: () {
                   _top_2 = 20;
