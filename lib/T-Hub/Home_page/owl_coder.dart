@@ -94,6 +94,9 @@ class _owl_coderState extends State<owl_coder> with TickerProviderStateMixin {
                     color: Colors.grey.shade400),
                 height: 20.h,
                 width: 90.w,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(fit: BoxFit.cover,"assets/Thub/THub_home/Thub1.png")),
               ),
             ),
           ),
@@ -102,7 +105,7 @@ class _owl_coderState extends State<owl_coder> with TickerProviderStateMixin {
             width: 90.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.purple,
+              color: Colors.purple[400],
             ),
             child: Padding(
               padding: EdgeInsets.all(10),

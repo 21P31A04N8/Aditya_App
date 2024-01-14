@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import 'package:myapplication/Courses/Btech/Btech.dart';
 import 'package:myapplication/Courses/Pharmacy/APCS/Apcs_branches.dart';
@@ -20,17 +21,10 @@ class _Apcs_homeState extends State<Apcs_home> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 255, 219, 59),
-        title: Text(
-          "Aditya  Pharmacy College",
-          style: TextStyle(color: Colors.black),
-        ),
+        title: Text("Aditya Pharmacy College" , style: TextStyle(color: Colors.black),),
         leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
+            icon: Icon(Icons.menu , color: Colors.black,),
+            onPressed: () => ZoomDrawer.of(context)!.toggle()),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -75,12 +69,13 @@ class _Apcs_homeState extends State<Apcs_home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(18.0),
               child: Text(
                 "Aditya, the premier promoter of quality education in the coastal districts of Andhra Pradesh for the past two decades, leads various institutions ranging from K.G to P.G besides professional colleges like Engineering, Pharmacy and Nursing. Sri Nallamilli Seshareddy as a founder chairman, promoted the educational society in the name and style of Aditya Academy at Kakinada in the year 1984, with a vision and mission to create a platform for holistic growth and success to students at all levels."
                 "Aditya has made its entry into the educational arena with a public school to meet the needs of primary and secondary education. In succession and with rapid strides, the academy established a number of Junior Colleges, Degree Colleges, PG Colleges, Engineering Colleges, Pharmacy Colleges, Nursing Colleges, Teacher Training Institutions"
                 " The silver-jubilee educational group with 50,000+ students in 50+ institutions with 5000+ staff across three districts in Andhra Pradesh has become the standard bearer for quality education. In every stream, Aditya has become a spring-board for success through its powered vision, constant innovation and professional excellence.",
                 style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,
               ),
             ),
             // Container(

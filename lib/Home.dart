@@ -384,7 +384,7 @@ class _MainScreenState extends State<MainScreen> {
               LocationListItem(
                   imageUrl: "assets/aditya/aec.png",
                   name: "Aditya Engineering College",
-                  country: "ACET"),
+                  country: "AEC"),
               LocationListItem(
                   imageUrl: "assets/aditya/2nd.png",
                   name: "Aditya College of Engineering & Technology",
@@ -409,11 +409,11 @@ class _MainScreenState extends State<MainScreen> {
               LocationListItem(
                   imageUrl: "assets/aditya/apc.png",
                   name: "Aditya Pharmacy college",
-                  country: "ACET"),
+                  country: "APCS"),
               LocationListItem(
                   imageUrl: "assets/aditya/acp.png",
                   name: "Aditya College of Pharmacy",
-                  country: "ACES"),
+                  country: "ACPS"),
               Padding(
                 padding: EdgeInsets.only(right: 0.w),
                 child: Container(
@@ -430,7 +430,7 @@ class _MainScreenState extends State<MainScreen> {
               LocationListItem(
                   imageUrl: "assets/aditya/poly.png",
                   name: "Aditya Polytechnic college",
-                  country: "ACET"),
+                  country: "ADTP"),
               Padding(
                 padding: EdgeInsets.only(right: 0.w),
                 child: Container(
@@ -447,7 +447,7 @@ class _MainScreenState extends State<MainScreen> {
               LocationListItem(
                   imageUrl: "assets/aditya/agbs.png",
                   name: "Aditya Business School",
-                  country: "ACES"),
+                  country: "AGBS"),
             ],
           ),
         )
@@ -789,6 +789,7 @@ class _MenuScreenState extends State<MenuScreen> {
             ExpansionTile(
               textColor: Colors.white,
               collapsedTextColor: Colors.white,
+              iconColor: Colors.white,
               controller: _expansionTileController,
               title: Text(
                 'Courses',
@@ -909,7 +910,7 @@ class _MenuScreenState extends State<MenuScreen> {
                               onTap: () {
                                 widget.onpagechange(Apcs_home());
                                 setState(() {
-                                  _expansionTileController.collapse();
+                                  _expansionTileController1.collapse();
                                   zoomDrawerController.close;
                                 });
                               },
@@ -925,12 +926,9 @@ class _MenuScreenState extends State<MenuScreen> {
                             PopupMenuItem(
                                 child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Acop_home()));
+                                widget.onpagechange(Acop_home());
                                 setState(() {
-                                  _expansionTileController.collapse();
+                                  _expansionTileController1.collapse();
                                   zoomDrawerController.close;
                                 });
                               },
@@ -1007,7 +1005,8 @@ class _MenuScreenState extends State<MenuScreen> {
             ExpansionTile(
               onExpansionChanged: _onExpansion,
               controller: _expansionTileController1,
-              title: Text("Events"),
+              iconColor: Colors.white,
+              title: Text("Events" , style: TextStyle(color: Colors.white),),
               children: [
                 InkWell(
                   onTap: () {
@@ -1021,15 +1020,16 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: SizedBox(
                     height: 30,
                     width: 160,
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                          child: Text(
-                        "VEDA",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                    ),
+                    child: Center(
+                        child: Text(
+                      "VEDA", 
+                      
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold ,
+                          fontSize: 17,
+                          
+                          ),
+                    )),
                   ),
                 ),
                 InkWell(
@@ -1044,19 +1044,19 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: SizedBox(
                     height: 30,
                     width: 160,
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                          child: Text(
-                        "PRO KABADDI",
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                    ),
+                    child: Center(
+                        child: Text(
+                      "PRO KABADDI",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold,
+                          fontSize: 17
+                          ),
+                    )),
                   ),
                 ),
               ],
             ),
+            SizedBox(height: 10,),
             ListTile(
               title: Text('Thub'),
               leading: Icon(Icons.style_outlined),

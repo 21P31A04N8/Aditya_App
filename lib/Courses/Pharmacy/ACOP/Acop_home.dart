@@ -18,10 +18,10 @@ class _Acop_homeState extends State<Acop_home> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor:Color.fromARGB(255, 255, 219, 59),
-        title: Text("Aditya Engineering College"),
+        backgroundColor: const Color.fromARGB(255, 255, 219, 59),
+        title: Text("Aditya College of Pharmacy" , style: TextStyle(color: Colors.black),),
         leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(Icons.menu , color: Colors.black,),
             onPressed: () => ZoomDrawer.of(context)!.toggle()),
       ),
       body: SingleChildScrollView(
@@ -73,6 +73,7 @@ class _Acop_homeState extends State<Acop_home> {
                 "Aditya has made its entry into the educational arena with a public school to meet the needs of primary and secondary education. In succession and with rapid strides, the academy established a number of Junior Colleges, Degree Colleges, PG Colleges, Engineering Colleges, Pharmacy Colleges, Nursing Colleges, Teacher Training Institutions"
                 " The silver-jubilee educational group with 50,000+ students in 50+ institutions with 5000+ staff across three districts in Andhra Pradesh has become the standard bearer for quality education. In every stream, Aditya has become a spring-board for success through its powered vision, constant innovation and professional excellence.",
                 style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.justify,
               ),
             ),
             // Container(

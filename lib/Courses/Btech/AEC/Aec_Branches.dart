@@ -157,8 +157,8 @@ class _AecbranchState extends State<Aecbranch>
         '16591 to 32732'),
      //Petroleum
     Details(
-        'Andhra Pradesh is well known for its Petroleum resources as one of the biggest petroliferous basins of the world known as KG basin endows the state. The basin expands all along the coast of AP on the east coast of India and lies merely 30km from ADITYA. Taking this advantage of being in the vicinity of major oil and gas players within the KG basin, ADITYA stands first to introduce B.Tech in Petroleum Technology in the state, actively fed by the experts around us in the KG basin and across.',
-       'The institute has introduced the B.Tech Petroleum Technology course to meet the growing demand for skilled human resources in Petroleum Industry. The course enables students to develop a good foundation of petroleum ventures well in time.'
+        'Andhra Pradesh is well known for its Petroleum resources as one of the biggest petroliferous basins of the world known as KG basin endows the state. The basin expands all along the coast of AP on the east coast of India and lies merely 30km from ADITYA. Taking this advantage of being in the vicinity of major oil and gas players within the KG basin, ADITYA stands first to introduce B.Tech in Petroleum Technology in the state, actively fed by the experts around us in the KG basin and across.'
+       ,
         'https://cdn.pixabay.com/photo/2012/04/18/00/25/drilling-36265_1280.png',
         '5',
         '60',

@@ -200,11 +200,12 @@ class _Login_pageState extends State<Login_page> {
                         child: Text("OR"),
                       ),
                       SizedBox(
-                          width: 180,
+                          width: 160,
                           child: Divider(
                             color: Colors.black45,
                             thickness: 2,
                             height: 100,
+                            endIndent: 5,
                           )),
                     ],
                   ), //Divider(height: 180,color: Colors.black,),

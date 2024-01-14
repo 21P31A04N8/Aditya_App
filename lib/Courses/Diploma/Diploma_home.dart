@@ -279,9 +279,11 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.yellowAccent,
-                                border: Border.all(
-                                    color: Colors.yellow.shade900, width: 2)),
+                                // color: Colors.yellowAccent,
+                                gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -388,9 +390,10 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.redAccent.shade200,
-                                border: Border.all(
-                                    color: Colors.black, width: 2)),
+                                gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                                ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -495,9 +498,11 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                border: Border.all(
-                                    color: Colors.blue.shade900, width: 2),
-                                color: Colors.blueAccent.shade200),
+                                gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                                // border: Border.all(color: Colors.lightBlue , width: 2)
+                                ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -616,9 +621,11 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.orange.shade400,
-                                border: Border.all(
-                                    color: Colors.orange.shade900, width: 2)),
+                                
+                                gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                                ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -726,9 +733,10 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.greenAccent,
-                                border: Border.all(
-                                    color: Colors.green.shade900, width: 2)),
+                                gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                                ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -833,10 +841,10 @@ class _CoursesState extends State<Courses> with TickerProviderStateMixin {
                             width: (s.width / 2),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
-                                color: Colors.deepPurple[300],
-                                border: Border.all(
-                                    color: Colors.deepPurple.shade900,
-                                    width: 2)),
+                               gradient: LinearGradient(begin: Alignment.bottomLeft , end: Alignment.topRight ,
+                                colors: [Colors.cyan , Colors.white]
+                                ),
+                               ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
