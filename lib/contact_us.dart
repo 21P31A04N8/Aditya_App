@@ -16,7 +16,7 @@ class _Contact_usState extends State<Contact_us> {
       body: Column(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 56, 5, 71),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
@@ -24,7 +24,7 @@ class _Contact_usState extends State<Contact_us> {
             height: 40.h,
             width: double.infinity,
             child: ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50)),
                 child: Image.asset(
@@ -45,17 +45,17 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u1);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
                       width: 17.w,
-                      child: Center(
+                      child: const Center(
                         child: Icon(Icons.call),
                       ),
                     ),
@@ -71,17 +71,17 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u2);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
                       width: 17.w,
-                      child: Center(
+                      child: const Center(
                         child: Icon(Icons.mail_outline),
                       ),
                     ),
@@ -96,17 +96,17 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u3);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
                       width: 17.w,
-                      child: Icon(Icons.desktop_mac),
+                      child: const Icon(Icons.desktop_mac),
                     ),
                   ),
                 ),
@@ -124,12 +124,12 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u4);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
@@ -151,12 +151,12 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u5);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,
@@ -178,12 +178,12 @@ class _Contact_usState extends State<Contact_us> {
                     launchUrl(u6);
                   },
                   child: Card(
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     elevation: 30,
                     shadowColor: Colors.purpleAccent,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 213, 180, 223),
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       height: 17.w,

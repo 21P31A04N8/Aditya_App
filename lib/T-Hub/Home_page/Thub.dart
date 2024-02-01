@@ -29,6 +29,7 @@ class _ThubState extends State<Thub> with SingleTickerProviderStateMixin {
       duration: Duration(
           seconds: 1), // Adjust the duration to decrease or increase the speed
       vsync: this,
+
     );
 
     _animation = Tween<double>(begin: -1.0, end: 0.0).animate(
